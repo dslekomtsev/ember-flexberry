@@ -2346,6 +2346,51 @@ define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-checked-
     assert.ok(true, 'acceptance/components/flexberry-objectlistview/folv-checked-test.js should pass jshint.');
   });
 });
+define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-column-config-save-button-test', ['exports', 'ember', 'dummy/tests/acceptance/components/flexberry-objectlistview/execute-folv-test'], function (exports, _ember, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest) {
+
+  (0, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest.executeTest)('check column config save button test', function (store, assert, app) {
+    assert.expect(3);
+    var path = 'ember-flexberry-dummy-suggestion-list';
+    visit(path);
+
+    andThen(function () {
+      assert.equal(currentPath(), path);
+
+      var $configButton = _ember['default'].$('button.config-button');
+      click($configButton);
+
+      andThen(function () {
+        var $field = _ember['default'].$('div.ui.action.input');
+        var $fieldInput = $field.children('input');
+
+        assert.equal($field.children('.cols-config-save.disabled').length === 1, true, 'button disabled');
+        fillIn($fieldInput, 'aaayyyeee leemaauuuu');
+      });
+
+      andThen(function () {
+        var $field = _ember['default'].$('div.ui.action.input');
+        assert.equal($field.children('.cols-config-save.disabled').length === 0, true, 'button active');
+      });
+    });
+  });
+});
+define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-column-config-save-button-test.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - acceptance/components/flexberry-objectlistview');
+  test('acceptance/components/flexberry-objectlistview/folv-column-config-save-button-test.js should pass jscs', function () {
+    ok(true, 'acceptance/components/flexberry-objectlistview/folv-column-config-save-button-test.js should pass jscs.');
+  });
+});
+define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-column-config-save-button-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - acceptance/components/flexberry-objectlistview/folv-column-config-save-button-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'acceptance/components/flexberry-objectlistview/folv-column-config-save-button-test.js should pass jshint.');
+  });
+});
 define('dummy/tests/acceptance/components/flexberry-objectlistview/folv-configurate-row-test', ['exports', 'ember', 'dummy/tests/acceptance/components/flexberry-objectlistview/execute-folv-test'], function (exports, _ember, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest) {
 
   (0, _dummyTestsAcceptanceComponentsFlexberryObjectlistviewExecuteFolvTest.executeTest)('check configurate row test', function (store, assert, app) {
