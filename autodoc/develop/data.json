@@ -24378,7 +24378,7 @@
         },
         {
             "file": "addon/services/user-settings.js",
-            "line": 814,
+            "line": 819,
             "description": "Deletes user settings record.",
             "itemtype": "method",
             "name": "_deleteExistingRecord",
@@ -24405,7 +24405,7 @@
         },
         {
             "file": "addon/services/user-settings.js",
-            "line": 852,
+            "line": 857,
             "description": "Looks for already created user settings record.",
             "itemtype": "method",
             "name": "_getExistingRecord",
@@ -24432,7 +24432,7 @@
         },
         {
             "file": "addon/services/user-settings.js",
-            "line": 888,
+            "line": 893,
             "description": "Looks for all created user settings records.",
             "itemtype": "method",
             "name": "_getExistingSettings",
