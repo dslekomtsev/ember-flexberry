@@ -5166,27 +5166,28 @@ define('dummy/tests/acceptance/components/readonly-test/edit-form-readonly-test'
 
     visit(path);
     andThen(function () {
-      var controller = app.__container__.lookup('controller:' + currentRouteName());
       var $addButton = _ember['default'].$('.in-groupedit .ui-add');
-      assert.strictEqual(_ember['default'].$.trim($addButton.attr('disabled')), 'disabled', 'Flexberry-groupedit\'s button \'Add\' is readonly');
-
       var $removeButton = _ember['default'].$('.in-groupedit .ui-delete');
-      assert.strictEqual(_ember['default'].$.trim($removeButton.attr('disabled')), 'disabled', 'Flexberry-groupedit\'s button \'Remove\' is readonly');
-
       var $checkbox = _ember['default'].$('.in-groupedit .flexberry-checkbox');
-      assert.strictEqual($checkbox.hasClass('read-only'), true, 'Flexberry-groupedit\'s checkbox helper is readonly');
-
       var $removeButtonRow = _ember['default'].$('.in-groupedit .object-list-view-row-delete-button');
-      assert.strictEqual($removeButtonRow.hasClass('disabled'), true, 'Flexberry-groupedit\'s button \'Remove in row\' is readonly');
-
       var $itemEditMenu = _ember['default'].$('.in-groupedit .edit-menu');
-      assert.strictEqual($itemEditMenu.hasClass('disabled'), true, 'Flexberry-groupedit\'s item \'Edit\' in left menu is readonly');
       var $itemDeleteMenu = _ember['default'].$('.in-groupedit .delete-menu');
+
+      assert.strictEqual(_ember['default'].$.trim($addButton.attr('disabled')), 'disabled', 'Flexberry-groupedit\'s button \'Add\' is readonly');
+      assert.strictEqual(_ember['default'].$.trim($removeButton.attr('disabled')), 'disabled', 'Flexberry-groupedit\'s button \'Remove\' is readonly');
+      assert.strictEqual($checkbox.hasClass('read-only'), true, 'Flexberry-groupedit\'s checkbox helper is readonly');
+      assert.strictEqual($removeButtonRow.hasClass('disabled'), true, 'Flexberry-groupedit\'s button \'Remove in row\' is readonly');
+      assert.strictEqual($itemEditMenu.hasClass('disabled'), true, 'Flexberry-groupedit\'s item \'Edit\' in left menu is readonly');
       assert.strictEqual($itemDeleteMenu.hasClass('disabled'), true, 'Flexberry-groupedit\'s item \'Delete\' in left menu is readonly');
 
+      var controller = app.__container__.lookup('controller:' + currentRouteName());
       controller.set('readonly', false);
       _ember['default'].run.scheduleOnce('afterRender', function () {
+        $checkbox = _ember['default'].$('.in-groupedit .flexberry-checkbox');
+        $itemEditMenu = _ember['default'].$('.in-groupedit .edit-menu');
+        $itemDeleteMenu = _ember['default'].$('.in-groupedit .delete-menu');
         $removeButtonRow = _ember['default'].$('.in-groupedit .object-list-view-row-delete-button');
+
         assert.strictEqual($(_this).is('disabled'), false, 'Flexberry-groupedit\'s button \'Add\' don\'t readonly');
         assert.strictEqual($(_this).is('disabled'), false, 'Flexberry-groupedit\'s button \'Remove\' don\'t readonly');
         assert.strictEqual($checkbox.hasClass('read-only'), false, 'Flexberry-groupedit\'s checkbox helper don\'t readonly');

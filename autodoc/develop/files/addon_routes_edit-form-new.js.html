@@ -241,30 +241,59 @@ export default EditFormRoute.extend({
   newSuffix: &#x27;.new&#x27;,
 
   /**
+    The projection name to be used when creating record
+    by prototype (has value only on new routes).
+    Overrides the value of &#x60;prototypeProjection&#x60; model property.
+
+    @property prototypeProjection
+    @type String
+   */
+  prototypeProjection: undefined,
+
+  /**
     A hook you can implement to convert the URL into the model for this route.
     [More info](http://emberjs.com/api/classes/Ember.Route.html#method_model).
 
     @method model
     @param {Object} params
     @param {Object} transition
-  */
+   */
   model(params, transition) {
-    const flexberryDetailInteractionService = this.get(&#x27;flexberryDetailInteractionService&#x27;);
-    const modelCurrentNotSaved = flexberryDetailInteractionService.get(&#x27;modelCurrentNotSaved&#x27;);
-    const modelSelectedDetail = flexberryDetailInteractionService.get(&#x27;modelSelectedDetail&#x27;);
-    flexberryDetailInteractionService.set(&#x27;modelCurrentNotSaved&#x27;, undefined);
-    flexberryDetailInteractionService.set(&#x27;modelSelectedDetail&#x27;, undefined);
+    let modelName = transition.queryParams.modelName || this.modelName;
+    let prototypeId = transition.queryParams.prototypeId;
+    let store = this.get(&#x27;store&#x27;);
 
-    if (modelCurrentNotSaved) {
-      return modelCurrentNotSaved;
+    if (Ember.isNone(prototypeId))
+    {
+      let flexberryDetailInteractionService = this.get(&#x27;flexberryDetailInteractionService&#x27;);
+      let modelCurrentNotSaved = flexberryDetailInteractionService.get(&#x27;modelCurrentNotSaved&#x27;);
+      let modelSelectedDetail = flexberryDetailInteractionService.get(&#x27;modelSelectedDetail&#x27;);
+      flexberryDetailInteractionService.set(&#x27;modelCurrentNotSaved&#x27;, undefined);
+      flexberryDetailInteractionService.set(&#x27;modelSelectedDetail&#x27;, undefined);
+
+      if (modelCurrentNotSaved) {
+        return modelCurrentNotSaved;
+      }
+
+      if (modelSelectedDetail) {
+        return modelSelectedDetail;
+      }
+
+      return store.createRecord(modelName, { id: generateUniqueId() });
     }
 
-    if (modelSelectedDetail) {
-      return modelSelectedDetail;
-    }
+    // Get the copyable instance.
+    let prototype = store.peekRecord(modelName, prototypeId);
 
-    const modelName = transition.queryParams.modelName || this.modelName;
-    return this.store.createRecord(modelName, { id: generateUniqueId() });
+    let promise = prototype.copy(this.get(&#x27;prototypeProjection&#x27;));
+    return promise.then(record =&gt; {
+      if (Ember.isNone(record)) {
+        transition.queryParams.prototypeId = undefined;
+        return this.model(...arguments);
+      }
+
+      return record;
+    });
   },
 
   /**
@@ -274,7 +303,7 @@ export default EditFormRoute.extend({
     @method renderTemplate
     @param {Object} controller
     @param {Object} model
-  */
+   */
   renderTemplate(controller, model) {
     const templateName = this.get(&#x27;templateName&#x27;);
     Ember.assert(&#x27;Template name must be defined.&#x27;, templateName);
