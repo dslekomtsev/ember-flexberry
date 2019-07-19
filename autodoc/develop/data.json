@@ -51,6 +51,15 @@
             "fors": {},
             "namespaces": {}
         },
+        "addon/components/advlimit-dialog-content.js": {
+            "name": "addon/components/advlimit-dialog-content.js",
+            "modules": {},
+            "classes": {
+                "AdvLimitDialogContentComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
         "addon/components/colsconfig-dialog-content.js": {
             "name": "addon/components/colsconfig-dialog-content.js",
             "modules": {},
@@ -422,6 +431,13 @@
             "classes": {
                 "UIMessage": 1
             },
+            "fors": {},
+            "namespaces": {}
+        },
+        "addon/controllers/advlimit-dialog.js": {
+            "name": "addon/controllers/advlimit-dialog.js",
+            "modules": {},
+            "classes": {},
             "fors": {},
             "namespaces": {}
         },
@@ -992,6 +1008,15 @@
             "fors": {},
             "namespaces": {}
         },
+        "addon/models/flexberry-adv-limit.js": {
+            "name": "addon/models/flexberry-adv-limit.js",
+            "modules": {},
+            "classes": {
+                "FlexberryAdvLimitModel": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
         "addon/models/i-i-s-caseberry-logging-objects-application-log.js": {
             "name": "addon/models/i-i-s-caseberry-logging-objects-application-log.js",
             "modules": {},
@@ -1116,6 +1141,15 @@
             "fors": {},
             "namespaces": {}
         },
+        "addon/serializers/flexberry-adv-limit.js": {
+            "name": "addon/serializers/flexberry-adv-limit.js",
+            "modules": {},
+            "classes": {
+                "FlexberryAdvLimitSerializer": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
         "addon/serializers/i-i-s-caseberry-logging-objects-application-log.js": {
             "name": "addon/serializers/i-i-s-caseberry-logging-objects-application-log.js",
             "modules": {},
@@ -1139,6 +1173,15 @@
             "modules": {},
             "classes": {
                 "NewPlatformFlexberryServicesLockSerializer": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "addon/services/adv-limit.js": {
+            "name": "addon/services/adv-limit.js",
+            "modules": {},
+            "classes": {
+                "AdvLimitService": 1
             },
             "fors": {},
             "namespaces": {}
@@ -1307,6 +1350,7 @@
                 "Mobile.FlexberryObjectlistview": 1,
                 "Mobile.ObjectListViewRowComponent": 1,
                 "Mobile.ObjectListViewComponent": 1,
+                "AdvLimitDialogContentComponent": 1,
                 "ColsconfigDialogContentComponent": 1,
                 "FlexberryBaseComponent": 1,
                 "FlexberryDdauCheckboxComponent": 1,
@@ -1392,6 +1436,7 @@
                 "SortableColumn": 1,
                 "SortableControllerMixin": 1,
                 "SortableRoute": 1,
+                "FlexberryAdvLimitModel": 1,
                 "IISCaseberryLoggingObjectsApplicationLogModel": 1,
                 "NewPlatformFlexberryFlexberryUserSettingModel": 1,
                 "NewPlatformFlexberryServicesLockModel": 1,
@@ -1403,9 +1448,11 @@
                 "IISCaseberryLoggingObjectsApplicationLogLRoute": 1,
                 "NewPlatformFlexberryServicesLockListRoute": 1,
                 "ProjectedModelForm": 1,
+                "FlexberryAdvLimitSerializer": 1,
                 "IISCaseberryLoggingObjectsApplicationLogSerializer": 1,
                 "NewPlatformFlexberryFlexberryUserSettingSerializer": 1,
                 "NewPlatformFlexberryServicesLockSerializer": 1,
+                "AdvLimitService": 1,
                 "AppStateService": 1,
                 "ColsConfigMenuService": 1,
                 "DetailInterationService": 1,
@@ -1516,6 +1563,21 @@
             "line": 8,
             "description": "Mobile version of {{#crossLink \"ObjectListViewComponent\"}}{{/crossLink}} (with mobile-specific defaults).",
             "extends": "ObjectListViewComponent"
+        },
+        "AdvLimitDialogContentComponent": {
+            "name": "AdvLimitDialogContentComponent",
+            "shortname": "AdvLimitDialogContentComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry",
+            "namespace": "",
+            "file": "addon/components/advlimit-dialog-content.js",
+            "line": 6,
+            "description": "AdvLimit dialog Content component.",
+            "extends": "FlexberryBaseComponent"
         },
         "ColsconfigDialogContentComponent": {
             "name": "ColsconfigDialogContentComponent",
@@ -2899,7 +2961,7 @@
             "module": "ember-flexberry",
             "namespace": "",
             "file": "addon/mixins/reload-list-mixin.js",
-            "line": 19,
+            "line": 13,
             "description": "Mixin for {{#crossLink \"DS.Controller\"}}Controller{{/crossLink}} to support data reload.",
             "extends": "Ember.Mixin",
             "access": "public",
@@ -3014,6 +3076,21 @@
             "uses": [
                 "<a href=\"http://emberjs.com/api/classes/Ember.Mixin.html\">Ember.Mixin</a>"
             ]
+        },
+        "FlexberryAdvLimitModel": {
+            "name": "FlexberryAdvLimitModel",
+            "shortname": "FlexberryAdvLimitModel",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry",
+            "namespace": "",
+            "file": "addon/models/flexberry-adv-limit.js",
+            "line": 22,
+            "description": "Adv limit model.",
+            "extends": "BaseModel"
         },
         "IISCaseberryLoggingObjectsApplicationLogModel": {
             "name": "IISCaseberryLoggingObjectsApplicationLogModel",
@@ -3181,6 +3258,21 @@
             "description": "Base route with support projection.",
             "extends": "<a href=\"http://emberjs.com/api/classes/Ember.Route.html\">Ember.Route</a>"
         },
+        "FlexberryAdvLimitSerializer": {
+            "name": "FlexberryAdvLimitSerializer",
+            "shortname": "FlexberryAdvLimitSerializer",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry",
+            "namespace": "",
+            "file": "addon/serializers/flexberry-adv-limit.js",
+            "line": 6,
+            "description": "Serializer for {{#crossLink \"FlexberryAdvLimitModel\"}}model{{/crossLink}}",
+            "extends": "Serializer.Odata"
+        },
         "IISCaseberryLoggingObjectsApplicationLogSerializer": {
             "name": "IISCaseberryLoggingObjectsApplicationLogSerializer",
             "shortname": "IISCaseberryLoggingObjectsApplicationLogSerializer",
@@ -3224,6 +3316,21 @@
             "line": 6,
             "description": "Serializer for {{#crossLink \"NewPlatformFlexberryServicesLockModel\"}}{{/crossLink}}.",
             "extends": "Serializer.OData"
+        },
+        "AdvLimitService": {
+            "name": "AdvLimitService",
+            "shortname": "AdvLimitService",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry",
+            "namespace": "",
+            "file": "addon/services/adv-limit.js",
+            "line": 12,
+            "description": "Service to store/read adv limits to/from application storage.",
+            "extends": "<a href=\"http://emberjs.com/api/classes/Ember.Service.html\">Ember.Service</a>"
         },
         "AppStateService": {
             "name": "AppStateService",
@@ -3845,6 +3952,131 @@
             "type": "Number",
             "readonly": "",
             "class": "Mobile.ObjectListViewComponent",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/advlimit-dialog-content.js",
+            "line": 13,
+            "description": "Columns configiration menu.",
+            "itemtype": "property",
+            "name": "colsConfigMenu",
+            "type": "{Class}",
+            "default": "Ember.inject.service()",
+            "class": "AdvLimitDialogContentComponent",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/advlimit-dialog-content.js",
+            "line": 22,
+            "description": "Service that triggers objectlistview events.",
+            "itemtype": "property",
+            "name": "objectlistviewEvents",
+            "type": "{Class}",
+            "default": "Ember.inject.service()",
+            "class": "AdvLimitDialogContentComponent",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/advlimit-dialog-content.js",
+            "line": 31,
+            "description": "Service for managing the state of the application.",
+            "itemtype": "property",
+            "name": "appState",
+            "type": "AppStateService",
+            "class": "AdvLimitDialogContentComponent",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/advlimit-dialog-content.js",
+            "line": 39,
+            "description": "Service for managing advLimits for lists.",
+            "itemtype": "property",
+            "name": "advLimit",
+            "type": "AdvLimitService",
+            "class": "AdvLimitDialogContentComponent",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/advlimit-dialog-content.js",
+            "line": 48,
+            "description": "Apply specified advLimit.",
+            "itemtype": "method",
+            "name": "actions.apply",
+            "class": "AdvLimitDialogContentComponent",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/advlimit-dialog-content.js",
+            "line": 76,
+            "description": "Checks specified advLimit.",
+            "itemtype": "method",
+            "name": "actions.check",
+            "class": "AdvLimitDialogContentComponent",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/advlimit-dialog-content.js",
+            "line": 91,
+            "description": "Save specified advLimit.",
+            "itemtype": "method",
+            "name": "actions.saveAdvLimit",
+            "class": "AdvLimitDialogContentComponent",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/advlimit-dialog-content.js",
+            "line": 139,
+            "description": "Show message.",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "Message type."
+                },
+                {
+                    "name": "caption",
+                    "description": "Message caption."
+                },
+                {
+                    "name": "message",
+                    "description": "Message text."
+                }
+            ],
+            "itemtype": "method",
+            "name": "_showMessage",
+            "class": "AdvLimitDialogContentComponent",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/advlimit-dialog-content.js",
+            "line": 155,
+            "description": "Hide message.",
+            "itemtype": "method",
+            "name": "_hideMessage",
+            "class": "AdvLimitDialogContentComponent",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/advlimit-dialog-content.js",
+            "line": 164,
+            "description": "Checks predicateString.",
+            "params": [
+                {
+                    "name": "stringPredicate",
+                    "description": "Predicate in string form."
+                }
+            ],
+            "itemtype": "method",
+            "name": "_checkPredicate",
+            "class": "AdvLimitDialogContentComponent",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/advlimit-dialog-content.js",
+            "line": 176,
+            "description": "Scrolling content to bottom.",
+            "itemtype": "method",
+            "name": "_scrollToBottom",
+            "class": "AdvLimitDialogContentComponent",
             "module": "ember-flexberry"
         },
         {
@@ -15537,6 +15769,16 @@
         {
             "file": "addon/components/olv-toolbar.js",
             "line": 39,
+            "description": "Service for managing advLimits for lists.",
+            "itemtype": "property",
+            "name": "advLimit",
+            "type": "AdvLimitService",
+            "class": "OlvToolbar",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/olv-toolbar.js",
+            "line": 47,
             "description": "Flag to use creation button at toolbar.",
             "itemtype": "property",
             "name": "createNewButton",
@@ -15547,7 +15789,7 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 48,
+            "line": 56,
             "description": "Flag to specify whether the create button is enabled.",
             "itemtype": "property",
             "name": "enableCreateNewButton",
@@ -15558,7 +15800,7 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 57,
+            "line": 65,
             "description": "Flag to use refresh button at toolbar.",
             "itemtype": "property",
             "name": "refreshButton",
@@ -15569,7 +15811,7 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 66,
+            "line": 74,
             "description": "Flag to use delete button at toolbar.",
             "itemtype": "property",
             "name": "deleteButton",
@@ -15580,7 +15822,7 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 75,
+            "line": 83,
             "description": "Flag to use colsConfigButton button at toolbar.",
             "itemtype": "property",
             "name": "colsConfigButton",
@@ -15592,7 +15834,19 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 85,
+            "line": 93,
+            "description": "Flag to use advLimitButton button at toolbar.",
+            "itemtype": "property",
+            "name": "advLimitButton",
+            "type": "Boolean",
+            "default": "true",
+            "readonly": "",
+            "class": "OlvToolbar",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/olv-toolbar.js",
+            "line": 103,
             "description": "Flag indicates whether to show exportExcelButton button at toolbar.",
             "itemtype": "property",
             "name": "exportExcelButton",
@@ -15603,7 +15857,7 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 94,
+            "line": 112,
             "description": "Flag to use filter button at toolbar.",
             "itemtype": "property",
             "name": "filterButton",
@@ -15614,7 +15868,7 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 103,
+            "line": 121,
             "description": "Used to specify default 'filter by any match' field text.",
             "itemtype": "property",
             "name": "filterText",
@@ -15625,7 +15879,7 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 111,
+            "line": 129,
             "description": "Used to link to objectListView with same componentName.",
             "itemtype": "property",
             "name": "componentName",
@@ -15636,7 +15890,7 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 120,
+            "line": 138,
             "description": "The flag to specify whether the delete button is enabled.",
             "itemtype": "property",
             "name": "enableDeleteButton",
@@ -15647,7 +15901,7 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 129,
+            "line": 147,
             "description": "The flag to specify whether the select all button is on.",
             "itemtype": "property",
             "name": "selectAll",
@@ -15658,7 +15912,7 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 138,
+            "line": 156,
             "description": "Name of action to send out, action triggered by click on user button.",
             "itemtype": "property",
             "name": "customButtonAction",
@@ -15669,7 +15923,7 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 147,
+            "line": 165,
             "description": "Array of custom buttons of special structures [{ buttonName: ..., buttonAction: ..., buttonClasses: ... }, {...}, ...].",
             "example": [
                 "\n  ```\n  {\n    buttonName: '...', // Button displayed name.\n    buttonAction: '...', // Action that is called from controller on this button click (it has to be registered at component).\n    buttonClasses: '...', // Css classes for button.\n    buttonTitle: '...' // Button title.\n  }\n  ```"
@@ -15682,7 +15936,7 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 165,
+            "line": 183,
             "itemtype": "property",
             "name": "listNamedUserSettings",
             "class": "OlvToolbar",
@@ -15690,7 +15944,7 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 170,
+            "line": 188,
             "description": "Current store. Used for loading data for autocomplete and for dropdown.",
             "itemtype": "property",
             "name": "store",
@@ -15701,7 +15955,7 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 188,
+            "line": 206,
             "itemtype": "property",
             "name": "listNamedExportSettings",
             "class": "OlvToolbar",
@@ -15709,7 +15963,17 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 205,
+            "line": 223,
+            "description": "Current adv limits.",
+            "itemtype": "property",
+            "name": "namedAdvLimits",
+            "type": "Object",
+            "class": "OlvToolbar",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/olv-toolbar.js",
+            "line": 231,
             "itemtype": "property",
             "name": "colsConfigMenu",
             "type": "Service",
@@ -15718,7 +15982,16 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 217,
+            "line": 237,
+            "itemtype": "property",
+            "name": "menus",
+            "readonly": "",
+            "class": "OlvToolbar",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/olv-toolbar.js",
+            "line": 247,
             "itemtype": "property",
             "name": "colsSettingsItems",
             "readonly": "",
@@ -15727,17 +16000,16 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 277,
-            "description": "Observe colsSettingsItems changes.",
+            "line": 307,
             "itemtype": "property",
-            "name": "_colsSettingsItems",
+            "name": "advLimitItems",
             "readonly": "",
             "class": "OlvToolbar",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 286,
+            "line": 362,
             "itemtype": "property",
             "name": "exportExcelItems",
             "readonly": "",
@@ -15746,7 +16018,7 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 329,
+            "line": 405,
             "description": "Flag shows enable-state of delete button.\nIf there are selected rows button is enabled. Otherwise - not.",
             "itemtype": "property",
             "name": "isDeleteButtonEnabled",
@@ -15757,7 +16029,7 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 339,
+            "line": 415,
             "description": "Stores the text from \"Filter by any match\" input field.",
             "itemtype": "property",
             "name": "filterByAnyMatchText",
@@ -15767,7 +16039,7 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 347,
+            "line": 423,
             "description": "Caption to be displayed in info modal dialog.\nIt will be displayed only if some info occurs.",
             "itemtype": "property",
             "name": "_infoModalDialogCaption",
@@ -15780,7 +16052,7 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 358,
+            "line": 434,
             "description": "Content to be displayed in info modal dialog.\nIt will be displayed only if some info occurs.",
             "itemtype": "property",
             "name": "_infoModalDialogContent",
@@ -15793,7 +16065,7 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 369,
+            "line": 445,
             "description": "Selected jQuery object, containing HTML of error modal dialog.",
             "itemtype": "property",
             "name": "_errorModalDialog",
@@ -15806,7 +16078,7 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 379,
+            "line": 455,
             "description": "Shows info modal dialog.",
             "itemtype": "method",
             "name": "showInfoModalDialog",
@@ -15831,7 +16103,7 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 402,
+            "line": 478,
             "description": "Handles action from object-list-view when no handler for this component is defined.",
             "itemtype": "method",
             "name": "actions.refresh",
@@ -15842,7 +16114,7 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 412,
+            "line": 488,
             "description": "Handles action from object-list-view when no handler for this component is defined.",
             "itemtype": "method",
             "name": "actions.createNew",
@@ -15853,7 +16125,7 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 440,
+            "line": 516,
             "description": "Delete selected rows.",
             "itemtype": "method",
             "name": "actions.delete",
@@ -15864,7 +16136,7 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 472,
+            "line": 548,
             "description": "Filters the content by \"Filter by any match\" field value.",
             "itemtype": "method",
             "name": "actions.filterByAnyMatch",
@@ -15875,7 +16147,7 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 483,
+            "line": 559,
             "description": "Checks if \"Enter\" button was pressed.\nIf \"Enter\" button was pressed then filters the content by \"Filter by any match\" field value.",
             "itemtype": "method",
             "name": "actions.keyDownFilterAction",
@@ -15886,7 +16158,7 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 498,
+            "line": 574,
             "description": "Remove filter from url.",
             "itemtype": "method",
             "name": "actions.removeFilter",
@@ -15897,7 +16169,7 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 514,
+            "line": 590,
             "description": "Action for custom button.",
             "itemtype": "method",
             "name": "actions.customButtonAction",
@@ -15915,7 +16187,7 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 532,
+            "line": 608,
             "description": "Action to show confis dialog.",
             "itemtype": "method",
             "name": "actions.showConfigDialog",
@@ -15926,7 +16198,18 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 543,
+            "line": 619,
+            "description": "Action to show confis dialog.",
+            "itemtype": "method",
+            "name": "actions.showConfigDialog",
+            "access": "public",
+            "tagname": "",
+            "class": "OlvToolbar",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/olv-toolbar.js",
+            "line": 630,
             "description": "Action to show export dialog.",
             "itemtype": "method",
             "name": "actions.showExportDialog",
@@ -15937,7 +16220,7 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 555,
+            "line": 642,
             "description": "Handler click on flexberry-menu.",
             "itemtype": "method",
             "name": "actions.onMenuItemClick",
@@ -15955,7 +16238,25 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 632,
+            "line": 719,
+            "description": "Handler click on flexberry-menu of advLimits.",
+            "itemtype": "method",
+            "name": "actions.onLimitMenuItemClick",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "e",
+                    "description": "jQuery.Event by click on menu item",
+                    "type": "jQuery.Event"
+                }
+            ],
+            "class": "OlvToolbar",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/olv-toolbar.js",
+            "line": 772,
             "description": "Handler click on flexberry-menu.",
             "itemtype": "method",
             "name": "actions.onExportMenuItemClick",
@@ -15973,21 +16274,21 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 681,
+            "line": 821,
             "description": "An overridable method called when objects are instantiated.\nFor more information see [init](http://emberjs.com/api/classes/Ember.View.html#method_init) method of [Ember.View](http://emberjs.com/api/classes/Ember.View.html).",
             "class": "OlvToolbar",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 718,
+            "line": 859,
             "description": "Override to implement teardown.\nFor more information see [willDestroy](http://emberjs.com/api/classes/Ember.Component.html#method_willDestroy) method of [Ember.Component](http://emberjs.com/api/classes/Ember.Component.html).",
             "class": "OlvToolbar",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 732,
+            "line": 874,
             "description": "Event handler for \"row has been selected\" event in objectlistview.",
             "itemtype": "method",
             "name": "_rowSelected",
@@ -16025,7 +16326,7 @@
         },
         {
             "file": "addon/components/olv-toolbar.js",
-            "line": 750,
+            "line": 892,
             "description": "Handler for \"Olv rows deleted\" event in objectlistview.",
             "itemtype": "method",
             "name": "_rowsDeleted",
@@ -16039,6 +16340,43 @@
                     "name": "count",
                     "description": "Number of deleted records",
                     "type": "Integer"
+                }
+            ],
+            "class": "OlvToolbar",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/olv-toolbar.js",
+            "line": 984,
+            "description": "Refresh current adv limits list.",
+            "itemtype": "method",
+            "name": "_updateNamedAdvLimits",
+            "params": [
+                {
+                    "name": "componentName",
+                    "description": "The name of objectlistview component",
+                    "type": "String"
+                }
+            ],
+            "class": "OlvToolbar",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/olv-toolbar.js",
+            "line": 1001,
+            "description": "Creating menu subitems.",
+            "itemtype": "method",
+            "name": "_createMenuSubitems",
+            "params": [
+                {
+                    "name": "itemsNameList",
+                    "description": "Object with items names as keys.",
+                    "type": "Object"
+                },
+                {
+                    "name": "icon",
+                    "description": "Icon class for menu items.",
+                    "type": "String"
                 }
             ],
             "class": "OlvToolbar",
@@ -16210,6 +16548,42 @@
             "access": "private",
             "tagname": "",
             "class": "UIMessage",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/controllers/advlimit-dialog.js",
+            "line": 21,
+            "description": "Current opened modal window.",
+            "itemtype": "property",
+            "name": "_openedModalDialog",
+            "type": "JQuery",
+            "default": "undefined",
+            "class": "DetailEditFormController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/controllers/advlimit-dialog.js",
+            "line": 33,
+            "description": "Handles create modal window action.\nIt saves created window to have opportunity to close it later.",
+            "itemtype": "method",
+            "name": "createdModalDialog",
+            "params": [
+                {
+                    "name": "modalDialog",
+                    "description": "Created modal window.",
+                    "type": "JQuery"
+                }
+            ],
+            "class": "DetailEditFormController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/controllers/advlimit-dialog.js",
+            "line": 45,
+            "description": "Close current modal window if it exists.",
+            "itemtype": "method",
+            "name": "closeModalDialog",
+            "class": "DetailEditFormController",
             "module": "ember-flexberry"
         },
         {
@@ -20818,6 +21192,16 @@
             "module": "ember-flexberry"
         },
         {
+            "file": "addon/mixins/multi-list-model-edit.js",
+            "line": 16,
+            "description": "Service for managing advLimits for lists.",
+            "itemtype": "property",
+            "name": "advLimit",
+            "type": "AdvLimitService",
+            "class": "MultiListModelEditMixin",
+            "module": "ember-flexberry"
+        },
+        {
             "file": "addon/mixins/multi-list-route.js",
             "line": 13,
             "description": "Settings for all lists on form.",
@@ -20839,7 +21223,17 @@
         },
         {
             "file": "addon/mixins/multi-list-route.js",
-            "line": 70,
+            "line": 29,
+            "description": "Service for managing advLimits for lists.",
+            "itemtype": "property",
+            "name": "advLimit",
+            "type": "AdvLimitService",
+            "class": "PaginatedController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/mixins/multi-list-route.js",
+            "line": 78,
             "description": "Sets sorting and reload component content by component name.",
             "itemtype": "method",
             "name": "setSorting",
@@ -20860,7 +21254,7 @@
         },
         {
             "file": "addon/mixins/multi-list-route.js",
-            "line": 89,
+            "line": 97,
             "description": "Reload list's data by name.",
             "itemtype": "method",
             "name": "actions.reloadListByName",
@@ -20876,7 +21270,7 @@
         },
         {
             "file": "addon/mixins/multi-list-route.js",
-            "line": 118,
+            "line": 130,
             "description": "Return predicate for `QueryBuilder` or `undefined`.",
             "itemtype": "method",
             "name": "_filtersPredicate",
@@ -20898,7 +21292,7 @@
         },
         {
             "file": "addon/mixins/multi-list-route.js",
-            "line": 145,
+            "line": 157,
             "description": "Reloads list's data by name.",
             "itemtype": "method",
             "name": "_reloadListByName",
@@ -20916,7 +21310,28 @@
         },
         {
             "file": "addon/mixins/olv-toolbar-controller.js",
-            "line": 6,
+            "line": 7,
+            "description": "Controller to show advlimit config modal window.",
+            "itemtype": "property",
+            "name": "advLimitController",
+            "type": "<a href=\"http://emberjs.com/api/classes/Ember.InjectedProperty.html\">Ember.InjectedProperty</a>",
+            "default": "Ember.inject.controller('advlimit-dialog')",
+            "class": "PaginatedController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/mixins/olv-toolbar-controller.js",
+            "line": 16,
+            "description": "Service for managing advLimits for lists.",
+            "itemtype": "property",
+            "name": "advLimit",
+            "type": "advLimit",
+            "class": "PaginatedController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/mixins/olv-toolbar-controller.js",
+            "line": 24,
             "description": "Default cell component that will be used to display values in columns cells.",
             "itemtype": "property",
             "name": "cellComponent",
@@ -20942,7 +21357,7 @@
         },
         {
             "file": "addon/mixins/olv-toolbar-controller.js",
-            "line": 18,
+            "line": 36,
             "description": "Columns widtghs for current component.",
             "itemtype": "property",
             "name": "currentColumnsWidths",
@@ -20952,7 +21367,86 @@
         },
         {
             "file": "addon/mixins/olv-toolbar-controller.js",
-            "line": 191,
+            "line": 44,
+            "description": "Show columns config dialog.",
+            "itemtype": "method",
+            "name": "actions.showConfigDialog",
+            "params": [
+                {
+                    "name": "componentName",
+                    "description": "Component name."
+                },
+                {
+                    "name": "settingName",
+                    "description": "Setting name."
+                },
+                {
+                    "name": "isExportExcel",
+                    "description": "Indicates if it's export excel dialog."
+                },
+                {
+                    "name": "immediateExport",
+                    "description": "Indicate if auto export is needed."
+                }
+            ],
+            "class": "PaginatedController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/mixins/olv-toolbar-controller.js",
+            "line": 57,
+            "description": "Show adv limit config dialog.",
+            "itemtype": "method",
+            "name": "actions.showAdvLimitDialog",
+            "params": [
+                {
+                    "name": "componentName",
+                    "description": "Component name."
+                },
+                {
+                    "name": "advLimitName",
+                    "description": "Adv limit name."
+                }
+            ],
+            "class": "PaginatedController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/mixins/olv-toolbar-controller.js",
+            "line": 87,
+            "description": "Show columns config dialog.",
+            "itemtype": "method",
+            "name": "_showConfigDialog",
+            "params": [
+                {
+                    "name": "componentName",
+                    "description": ""
+                },
+                {
+                    "name": "settingName",
+                    "description": ""
+                },
+                {
+                    "name": "settingsSource",
+                    "description": ""
+                },
+                {
+                    "name": "isExportExcel",
+                    "description": ""
+                },
+                {
+                    "name": "immediateExport",
+                    "description": ""
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "PaginatedController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/mixins/olv-toolbar-controller.js",
+            "line": 257,
             "description": "Generate the columns.",
             "itemtype": "method",
             "name": "_generateColumns",
@@ -20963,14 +21457,14 @@
         },
         {
             "file": "addon/mixins/olv-toolbar-controller.js",
-            "line": 254,
+            "line": 320,
             "description": "Create the key from locales.",
             "class": "PaginatedController",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/mixins/olv-toolbar-controller.js",
-            "line": 282,
+            "line": 348,
             "description": "Create the column.",
             "itemtype": "method",
             "name": "_createColumn",
@@ -21256,7 +21750,7 @@
         },
         {
             "file": "addon/mixins/reload-list-mixin.js",
-            "line": 27,
+            "line": 21,
             "description": "Service that triggers objectlistview events.",
             "itemtype": "property",
             "name": "objectlistviewEvents",
@@ -21267,7 +21761,7 @@
         },
         {
             "file": "addon/mixins/reload-list-mixin.js",
-            "line": 36,
+            "line": 30,
             "description": "It reloads data by parameters.\n\n    This method is called to get data for flexberry-objectlistview\n    (both on list-form and lookup modal window).",
             "itemtype": "method",
             "name": "reloadList",
@@ -21333,7 +21827,7 @@
         },
         {
             "file": "addon/mixins/reload-list-mixin.js",
-            "line": 143,
+            "line": 145,
             "description": "Create predicate for attribute. Can you overload this function for extended logic.\n\nDefault supported attribute types:\n- `string`\n- `number`",
             "example": [
                 "\n  ```javascript\n  // app/routes/example.js\n  ...\n  // Add support for logical attribute\n  predicateForAttribute(attribute, filter) {\n    switch (attribute.type) {\n      case 'boolean':\n        let yes = ['TRUE', 'True', 'true', 'YES', 'Yes', 'yes', 'ДА', 'Да', 'да', '1', '+'];\n        let no = ['False', 'False', 'false', 'NO', 'No', 'no', 'НЕТ', 'Нет', 'нет', '0', '-'];\n\n        if (yes.indexOf(filter) > 0) {\n          return new SimplePredicate(attribute.name, 'eq', 'true');\n        }\n\n        if (no.indexOf(filter) > 0) {\n          return new SimplePredicate(attribute.name, 'eq', 'false');\n        }\n\n        return null;\n\n      default:\n        return this._super(...arguments);\n    }\n  },\n  ...\n  ```"
@@ -21397,7 +21891,7 @@
         },
         {
             "file": "addon/mixins/reload-list-mixin.js",
-            "line": 239,
+            "line": 241,
             "description": "It forms the filter predicate for data loading.",
             "itemtype": "method",
             "name": "_getFilterPredicate",
@@ -21424,7 +21918,7 @@
         },
         {
             "file": "addon/mixins/reload-list-mixin.js",
-            "line": 265,
+            "line": 267,
             "description": "Generates array attributes for filter.",
             "itemtype": "method",
             "name": "_attributesForFilter",
@@ -21451,7 +21945,7 @@
         },
         {
             "file": "addon/mixins/reload-list-mixin.js",
-            "line": 312,
+            "line": 314,
             "description": "Generates new predicate for neq value predicate.",
             "itemtype": "method",
             "name": "_normalizeNeqPredicate",
@@ -22216,6 +22710,16 @@
         {
             "file": "addon/routes/list-form.js",
             "line": 87,
+            "description": "Service for managing advLimits for lists.",
+            "itemtype": "property",
+            "name": "advLimit",
+            "type": "AdvLimitService",
+            "class": "ListFormRoute",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/routes/list-form.js",
+            "line": 95,
             "description": "A hook you can implement to convert the URL into the model for this route.\n[More info](http://emberjs.com/api/classes/Ember.Route.html#method_model).",
             "itemtype": "method",
             "name": "model",
@@ -22236,7 +22740,7 @@
         },
         {
             "file": "addon/routes/list-form.js",
-            "line": 223,
+            "line": 238,
             "description": "This method will be invoked before model loading operation will be called.\nOverride this method to add some custom logic on model loading operation start.",
             "example": [
                 "\n  ```javascript\n  onModelLoadingStarted(queryParameters, transition) {\n    alert('Model loading operation started!');\n  }\n  ```"
@@ -22260,7 +22764,7 @@
         },
         {
             "file": "addon/routes/list-form.js",
-            "line": 240,
+            "line": 255,
             "description": "This method will be invoked when model loading operation successfully completed.\nOverride this method to add some custom logic on model loading operation success.",
             "example": [
                 "\n  ```javascript\n  onModelLoadingFulfilled(model, transition) {\n    alert('Model loading operation succeed!');\n  }\n  ```"
@@ -22284,7 +22788,7 @@
         },
         {
             "file": "addon/routes/list-form.js",
-            "line": 257,
+            "line": 272,
             "description": "This method will be invoked when model loading operation completed, but failed.\nOverride this method to add some custom logic on model loading operation fail.\nBy default showing error form.",
             "example": [
                 "\n  ```javascript\n  onModelLoadingRejected(errorData, transition) {\n    alert('Model loading operation failed!');\n  }\n  ```"
@@ -22308,7 +22812,7 @@
         },
         {
             "file": "addon/routes/list-form.js",
-            "line": 276,
+            "line": 291,
             "description": "This method will be invoked always when model loading operation completed,\nregardless of model loading promise's state (was it fulfilled or rejected).\nOverride this method to add some custom logic on model loading operation completion.",
             "example": [
                 "\n  ```js\n  onModelLoadingAlways(data, transition) {\n    alert('Model loading operation completed!');\n  }\n  ```"
@@ -22332,7 +22836,7 @@
         },
         {
             "file": "addon/routes/list-form.js",
-            "line": 295,
+            "line": 310,
             "description": "A hook you can use to setup the controller for the current route.\n[More info](http://emberjs.com/api/classes/Ember.Route.html#method_setupController).",
             "itemtype": "method",
             "name": "setupController",
@@ -22353,7 +22857,7 @@
         },
         {
             "file": "addon/routes/list-form.js",
-            "line": 325,
+            "line": 340,
             "itemtype": "method",
             "name": "_invalidSorting",
             "params": [
@@ -22440,6 +22944,436 @@
             "type": "String",
             "default": "'__PrimaryKey'",
             "class": "NewPlatformFlexberryServicesLockSerializer",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/services/adv-limit.js",
+            "line": 19,
+            "description": "Ember data store.",
+            "itemtype": "property",
+            "name": "store",
+            "type": "DS.Store",
+            "class": "AdvLimitService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/services/adv-limit.js",
+            "line": 27,
+            "description": "Flag: indicates whether to use adv limit service.\nThis flag is readed from config setting `APP.isAdvLimitServiceEnabled` and can be changed programatically later.",
+            "itemtype": "property",
+            "name": "isAdvLimitServiceEnabled",
+            "type": "Boolean",
+            "default": "false",
+            "class": "AdvLimitService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/services/adv-limit.js",
+            "line": 37,
+            "description": "Current application page name.",
+            "itemtype": "property",
+            "name": "currentAppPage",
+            "type": "String",
+            "default": "''",
+            "class": "AdvLimitService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/services/adv-limit.js",
+            "line": 46,
+            "description": "Adv limit model name.",
+            "itemtype": "property",
+            "name": "avdLimitModelName",
+            "type": "String",
+            "default": "'flexberry-adv-limit'",
+            "class": "AdvLimitService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/services/adv-limit.js",
+            "line": 55,
+            "description": "Adv limit projection name.",
+            "itemtype": "property",
+            "name": "avdLimitProjectionName",
+            "type": "String",
+            "default": "'AdvLimitE'",
+            "class": "AdvLimitService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/services/adv-limit.js",
+            "line": 64,
+            "description": "Current user settings for all pages",
+            "itemtype": "property",
+            "name": "currentAdvLimits",
+            "type": "Object",
+            "default": "{}",
+            "class": "AdvLimitService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/services/adv-limit.js",
+            "line": 82,
+            "description": "Set current Web Page.",
+            "itemtype": "method",
+            "name": "setCurrentAppPage",
+            "params": [
+                {
+                    "name": "pageName.",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "AdvLimitService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/services/adv-limit.js",
+            "line": 92,
+            "description": "Get current App Page.",
+            "itemtype": "method",
+            "name": "getCurrentAppPage",
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "AdvLimitService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/services/adv-limit.js",
+            "line": 102,
+            "description": "Get adv limits from store.",
+            "itemtype": "method",
+            "name": "getAdvLimitsFromStore",
+            "params": [
+                {
+                    "name": "componentNames",
+                    "description": "",
+                    "type": "Array"
+                }
+            ],
+            "class": "AdvLimitService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/services/adv-limit.js",
+            "line": 139,
+            "description": "Get list of component names.",
+            "itemtype": "method",
+            "name": "getListComponentNames",
+            "return": {
+                "description": "",
+                "type": "Array"
+            },
+            "class": "AdvLimitService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/services/adv-limit.js",
+            "line": 157,
+            "description": "Returns  true if adv limit for current appPage exists.",
+            "itemtype": "method",
+            "name": "exists",
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "AdvLimitService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/services/adv-limit.js",
+            "line": 167,
+            "description": "Returns current list of named adv limits.",
+            "itemtype": "method",
+            "name": "getNamedAdvLimits",
+            "params": [
+                {
+                    "name": "componentName",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Object"
+            },
+            "class": "AdvLimitService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/services/adv-limit.js",
+            "line": 188,
+            "description": "Returns current adv limits for specified component.",
+            "itemtype": "method",
+            "name": "getCurrentAdvLimits",
+            "params": [
+                {
+                    "name": "componentName",
+                    "description": "Name of component.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Object"
+            },
+            "class": "AdvLimitService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/services/adv-limit.js",
+            "line": 201,
+            "description": "Returns current adv limit by name.",
+            "itemtype": "method",
+            "name": "getCurrentAdvLimit",
+            "params": [
+                {
+                    "name": "componentName",
+                    "description": "Name of component.",
+                    "type": "String"
+                },
+                {
+                    "name": "advLimitName",
+                    "description": "Name of adv limit.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Object"
+            },
+            "class": "AdvLimitService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/services/adv-limit.js",
+            "line": 215,
+            "description": "Deletes given adv limit from storage.",
+            "itemtype": "method",
+            "name": "deleteAdvLimit",
+            "params": [
+                {
+                    "name": "componentName",
+                    "description": "Component name.",
+                    "type": "String"
+                },
+                {
+                    "name": "settingName",
+                    "description": "Setting name.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "AdvLimitService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/services/adv-limit.js",
+            "line": 240,
+            "description": "Saves given adv limit to storage.",
+            "itemtype": "method",
+            "name": "saveAdvLimit",
+            "params": [
+                {
+                    "name": "advLimit",
+                    "description": "Adv limit data to save.",
+                    "type": "String"
+                },
+                {
+                    "name": "componentName",
+                    "description": "Component name.",
+                    "type": "String"
+                },
+                {
+                    "name": "settingName",
+                    "description": "Setting name.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Save operation promise.",
+                "type": "Promise"
+            },
+            "class": "AdvLimitService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/services/adv-limit.js",
+            "line": 287,
+            "description": "Returns  adv limits for current appPage from storage.",
+            "itemtype": "method",
+            "name": "_getAdvLimits",
+            "params": [
+                {
+                    "name": "componentNames",
+                    "description": "",
+                    "type": "Array"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Object"
+            },
+            "class": "AdvLimitService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/services/adv-limit.js",
+            "line": 314,
+            "description": "Sets current adv limits",
+            "itemtype": "method",
+            "name": "_setCurrentAdvLimits",
+            "params": [
+                {
+                    "name": "appPageAdvLimits",
+                    "description": "Current adv limits",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Object"
+            },
+            "class": "AdvLimitService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/services/adv-limit.js",
+            "line": 338,
+            "description": "Deletes adv limit record from storage.",
+            "itemtype": "method",
+            "name": "_deleteExistingRecord",
+            "params": [
+                {
+                    "name": "componentName",
+                    "description": "Component name.",
+                    "type": "Object"
+                },
+                {
+                    "name": "settingName",
+                    "description": "Setting name.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "AdvLimitService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/services/adv-limit.js",
+            "line": 365,
+            "description": "Looks for already created adv limit record.",
+            "itemtype": "method",
+            "name": "_getExistingRecord",
+            "params": [
+                {
+                    "name": "componentName",
+                    "description": "Component name.",
+                    "type": "Object"
+                },
+                {
+                    "name": "settingName",
+                    "description": "Setting name.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "A promise that returns founded record\nor `undefined` if there is no such setting.",
+                "type": "<a href=\"http://emberjs.com/api/classes/RSVP.Promise.html\">Promise</a>"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "AdvLimitService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/services/adv-limit.js",
+            "line": 392,
+            "description": "Looks for all created adv limits.",
+            "itemtype": "method",
+            "name": "_getExistingLimits",
+            "params": [
+                {
+                    "name": "componentName",
+                    "description": "Component name.",
+                    "type": "String"
+                },
+                {
+                    "name": "settingName",
+                    "description": "Setting name.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "A promise that returns found records or `undefined` if there is no such adv limit.",
+                "type": "Promise"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "AdvLimitService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/services/adv-limit.js",
+            "line": 414,
+            "description": "Gets adv limit from storage.",
+            "itemtype": "method",
+            "name": "_getLimitFromStore",
+            "params": [
+                {
+                    "name": "componentName",
+                    "description": "Component name.",
+                    "type": "String"
+                },
+                {
+                    "name": "settingName",
+                    "description": "Setting name.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "A promise that returns found records or `undefined` if there is no such adv limit.",
+                "type": "Promise"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "AdvLimitService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/services/adv-limit.js",
+            "line": 436,
+            "description": "Creates predicate for adv limit.",
+            "itemtype": "method",
+            "name": "_getLimitFromStore",
+            "params": [
+                {
+                    "name": "componentName",
+                    "description": "Component name.",
+                    "type": "String"
+                },
+                {
+                    "name": "settingName",
+                    "description": "Setting name.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Predicate for adv limit.",
+                "type": "Object"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "AdvLimitService",
             "module": "ember-flexberry"
         },
         {
@@ -23536,11 +24470,11 @@
         {
             "file": "addon/services/objectlistview-events.js",
             "line": 284,
-            "description": "Current limit function for OLV.",
+            "description": "Current limit functions for OLV by componentNames.",
             "itemtype": "property",
-            "name": "currentLimitFunction",
-            "type": "BasePredicate",
-            "default": "undefined",
+            "name": "currentLimitFunctions",
+            "type": "Object",
+            "default": "{}",
             "class": "ObjectlistviewEvents",
             "module": "ember-flexberry"
         },
@@ -23575,6 +24509,11 @@
                     "name": "limitFunction",
                     "description": "Current limit function.",
                     "type": "BasePredicate"
+                },
+                {
+                    "name": "componentName",
+                    "description": "Component name.",
+                    "type": "String"
                 }
             ],
             "class": "ObjectlistviewEvents",
@@ -23582,10 +24521,17 @@
         },
         {
             "file": "addon/services/objectlistview-events.js",
-            "line": 320,
+            "line": 321,
             "description": "Gets current limit function for OLV.",
             "itemtype": "method",
             "name": "getLimitFunction",
+            "params": [
+                {
+                    "name": "componentName",
+                    "description": "Component name.",
+                    "type": "String"
+                }
+            ],
             "return": {
                 "description": "Current limit function.",
                 "type": "BasePredicate"
@@ -23595,7 +24541,7 @@
         },
         {
             "file": "addon/services/objectlistview-events.js",
-            "line": 330,
+            "line": 332,
             "description": "Method that sets the form's loading state.\nThis method is deprecated, use {{#crossLink \"AppStateService\"}}app state service{{/crossLink}}.",
             "itemtype": "method",
             "name": "setLoadingState",
@@ -23611,7 +24557,7 @@
         },
         {
             "file": "addon/services/objectlistview-events.js",
-            "line": 369,
+            "line": 371,
             "description": "Returns map with previously saved selected records for OLV component with specified name.",
             "itemtype": "method",
             "name": "getSelectedRecords",
@@ -23631,7 +24577,7 @@
         },
         {
             "file": "addon/services/objectlistview-events.js",
-            "line": 381,
+            "line": 383,
             "description": "Clears set of previously saved selected records for OLV component with specified name.",
             "itemtype": "method",
             "name": "clearSelectedRecords",
@@ -24766,7 +25712,7 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " addon/components/olv-toolbar.js:379"
+            "line": " addon/components/olv-toolbar.js:455"
         },
         {
             "message": "replacing incorrect tag: extend with extends",
@@ -25166,11 +26112,11 @@
         },
         {
             "message": "Missing item type\nAn overridable method called when objects are instantiated.\nFor more information see [init](http://emberjs.com/api/classes/Ember.View.html#method_init) method of [Ember.View](http://emberjs.com/api/classes/Ember.View.html).",
-            "line": " addon/components/olv-toolbar.js:681"
+            "line": " addon/components/olv-toolbar.js:821"
         },
         {
             "message": "Missing item type\nOverride to implement teardown.\nFor more information see [willDestroy](http://emberjs.com/api/classes/Ember.Component.html#method_willDestroy) method of [Ember.Component](http://emberjs.com/api/classes/Ember.Component.html).",
-            "line": " addon/components/olv-toolbar.js:718"
+            "line": " addon/components/olv-toolbar.js:859"
         },
         {
             "message": "Missing item type\nI can not remember what it is.",
@@ -25234,7 +26180,7 @@
         },
         {
             "message": "Missing item type\nCreate the key from locales.",
-            "line": " addon/mixins/olv-toolbar-controller.js:254"
+            "line": " addon/mixins/olv-toolbar-controller.js:320"
         },
         {
             "message": "Missing item type\nInitializes required actions logic.",

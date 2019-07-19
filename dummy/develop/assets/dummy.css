@@ -10991,6 +10991,15 @@ span.lookup-field {
   color: #9F3A38;
   box-shadow: none;
 }
+.ui.form .flexberry-advlimit-input {
+  width: 100%;
+}
+.ui.form .flexberry-advlimit-input .flexberry-textarea {
+  width: 100%;
+}
+.ui.form .flexberry-advlimit-input .flexberry-textarea textarea {
+  resize: none;
+}
 /*!
  * # Semantic UI - Label
  * http://github.com/semantic-org/semantic-ui/
