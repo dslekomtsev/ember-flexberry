@@ -20484,7 +20484,7 @@
         },
         {
             "file": "addon/mixins/multi-list-controller.js",
-            "line": 22,
+            "line": 26,
             "description": "Apply user settings to list by name.",
             "itemtype": "method",
             "name": "userSettingsApply",
@@ -20510,7 +20510,7 @@
         },
         {
             "file": "addon/mixins/multi-list-controller.js",
-            "line": 41,
+            "line": 45,
             "description": "This action is called when user click on refresh button.",
             "itemtype": "method",
             "name": "actions.refreshList",
@@ -20526,7 +20526,7 @@
         },
         {
             "file": "addon/mixins/multi-list-controller.js",
-            "line": 51,
+            "line": 55,
             "description": "Transition to page with number.",
             "itemtype": "method",
             "name": "actions.gotoPage",
@@ -20547,7 +20547,7 @@
         },
         {
             "file": "addon/mixins/multi-list-controller.js",
-            "line": 65,
+            "line": 69,
             "description": "Transition to next page.",
             "itemtype": "method",
             "name": "actions.nextPage",
@@ -20563,7 +20563,7 @@
         },
         {
             "file": "addon/mixins/multi-list-controller.js",
-            "line": 79,
+            "line": 83,
             "description": "Transition to previous page.",
             "itemtype": "method",
             "name": "actions.previousPage",
@@ -20579,7 +20579,7 @@
         },
         {
             "file": "addon/mixins/multi-list-controller.js",
-            "line": 93,
+            "line": 97,
             "description": "Sorting list by column.",
             "itemtype": "method",
             "name": "actions.sortByColumn",
@@ -20605,7 +20605,7 @@
         },
         {
             "file": "addon/mixins/multi-list-controller.js",
-            "line": 130,
+            "line": 134,
             "description": "Add column into end list sorting.",
             "itemtype": "method",
             "name": "actions.addColumnToSorting",
@@ -20631,7 +20631,7 @@
         },
         {
             "file": "addon/mixins/multi-list-controller.js",
-            "line": 169,
+            "line": 173,
             "description": "Show usersettings config dialog.",
             "itemtype": "method",
             "name": "actions.showConfigDialog",
@@ -20662,7 +20662,7 @@
         },
         {
             "file": "addon/mixins/multi-list-controller.js",
-            "line": 183,
+            "line": 187,
             "description": "Save filters and refresh list.",
             "itemtype": "method",
             "name": "actions.applyFilters",
@@ -20683,7 +20683,7 @@
         },
         {
             "file": "addon/mixins/multi-list-controller.js",
-            "line": 197,
+            "line": 201,
             "description": "Reset filters and refresh list.",
             "itemtype": "method",
             "name": "actions.resetFilters",
@@ -20699,7 +20699,7 @@
         },
         {
             "file": "addon/mixins/multi-list-controller.js",
-            "line": 211,
+            "line": 215,
             "description": "Changes current pattern for objects filtering.",
             "itemtype": "method",
             "name": "filterByAnyMatch",
@@ -20725,7 +20725,7 @@
         },
         {
             "file": "addon/mixins/multi-list-controller.js",
-            "line": 235,
+            "line": 239,
             "description": "Switch hierarchical mode.",
             "itemtype": "method",
             "name": "actions.switchHierarchicalMode",
@@ -20741,7 +20741,7 @@
         },
         {
             "file": "addon/mixins/multi-list-controller.js",
-            "line": 247,
+            "line": 251,
             "description": "Switch collapse/expand mode.",
             "itemtype": "method",
             "name": "actions.switchExpandMode",
@@ -20757,7 +20757,7 @@
         },
         {
             "file": "addon/mixins/multi-list-controller.js",
-            "line": 259,
+            "line": 263,
             "description": "Saves attribute name and switches the mode if necessary.",
             "itemtype": "method",
             "name": "actions.saveHierarchicalAttribute",
@@ -20783,7 +20783,7 @@
         },
         {
             "file": "addon/mixins/multi-list-controller.js",
-            "line": 280,
+            "line": 284,
             "description": "Redirect actions into route.",
             "itemtype": "method",
             "name": "actions.loadRecords",
