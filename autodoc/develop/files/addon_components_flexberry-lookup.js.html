@@ -1162,8 +1162,10 @@ export default FlexberryBaseComponent.extend({
     // Add select first autocomplete result by enter click.
     this.$(&#x27;input&#x27;).keyup(function(event) {
       if (event.keyCode === 13) {
-        let resultField = _this.$(&#x27;div.results.transition.visible&#x27;).children(&#x27;a.result&#x27;)[0];
-        if (resultField) {
+        let result = _this.$(&#x27;div.results.transition.visible&#x27;);
+        let activeField = result.children(&#x27;a.result.active&#x27;);
+        let resultField = result.children(&#x27;a.result&#x27;)[0];
+        if (resultField &amp;&amp; activeField.length === 0) {
           resultField.click();
         }
       }
