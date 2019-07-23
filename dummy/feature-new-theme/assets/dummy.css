@@ -956,6 +956,9 @@ template {
         Page
 --------------------*/
 /*-------------------
+        Input
+--------------------*/
+/*-------------------
  Component Variables
 ---------------------*/
 /* Default */
@@ -1191,6 +1194,9 @@ template {
 --------------------*/
 /*-------------------
         Page
+--------------------*/
+/*-------------------
+        Input
 --------------------*/
 /*******************************
              Mix-ins
@@ -1599,6 +1605,9 @@ input::selection {
         Page
 --------------------*/
 /*-------------------
+        Input
+--------------------*/
+/*-------------------
  Component Variables
 ---------------------*/
 /* Default */
@@ -1997,6 +2006,9 @@ lang {
 --------------------*/
 /*-------------------
         Page
+--------------------*/
+/*-------------------
+        Input
 --------------------*/
 /*-------------------
  Component Variables
@@ -5524,6 +5536,9 @@ lang {
         Page
 --------------------*/
 /*-------------------
+        Input
+--------------------*/
+/*-------------------
  Component Variables
 ---------------------*/
 /* Default */
@@ -5822,6 +5837,9 @@ lang {
 --------------------*/
 /*-------------------
         Page
+--------------------*/
+/*-------------------
+        Input
 --------------------*/
 /*-------------------
  Component Variables
@@ -8931,6 +8949,9 @@ a.ui.inverted.grey.header:hover {
         Page
 --------------------*/
 /*-------------------
+        Input
+--------------------*/
+/*-------------------
  Component Variables
 ---------------------*/
 /* Default */
@@ -9657,6 +9678,9 @@ i.icons .inverted.corner.icon {
         Page
 --------------------*/
 /*-------------------
+        Input
+--------------------*/
+/*-------------------
  Component Variables
 ---------------------*/
 /* Default */
@@ -10229,6 +10253,9 @@ img.ui.bordered.image {
         Page
 --------------------*/
 /*-------------------
+        Input
+--------------------*/
+/*-------------------
  Component Variables
 ---------------------*/
 /* Default */
@@ -10303,13 +10330,13 @@ img.ui.bordered.image {
 ---------------------*/
 /* browsers require these rules separate */
 .ui.input input::-webkit-input-placeholder {
-  color: #ffffff;
+  color: #848E99;
 }
 .ui.input input::-moz-placeholder {
-  color: #ffffff;
+  color: #848E99;
 }
 .ui.input input:-ms-input-placeholder {
-  color: #ffffff;
+  color: #848E99;
 }
 /*******************************
             States
@@ -10377,15 +10404,15 @@ img.ui.bordered.image {
 }
 .ui.input.focus input::-webkit-input-placeholder,
 .ui.input input:focus::-webkit-input-placeholder {
-  color: #afb5c8;
+  color: #848E99;
 }
 .ui.input.focus input::-moz-placeholder,
 .ui.input input:focus::-moz-placeholder {
-  color: #afb5c8;
+  color: #848E99;
 }
 .ui.input.focus input:-ms-input-placeholder,
 .ui.input input:focus:-ms-input-placeholder {
-  color: #afb5c8;
+  color: #848E99;
 }
 /*--------------------
         Error
@@ -10966,6 +10993,9 @@ img.ui.bordered.image {
 --------------------*/
 /*-------------------
         Page
+--------------------*/
+/*-------------------
+        Input
 --------------------*/
 /*-------------------
  Component Variables
@@ -15038,6 +15068,9 @@ ol.ui.horizontal.list li:before,
         Page
 --------------------*/
 /*-------------------
+        Input
+--------------------*/
+/*-------------------
  Component Variables
 ---------------------*/
 /* Default */
@@ -16009,6 +16042,9 @@ ol.ui.horizontal.list li:before,
 --------------------*/
 /*-------------------
         Page
+--------------------*/
+/*-------------------
+        Input
 --------------------*/
 /*-------------------
  Component Variables
@@ -17586,6 +17622,9 @@ ol.ui.horizontal.list li:before,
         Page
 --------------------*/
 /*-------------------
+        Input
+--------------------*/
+/*-------------------
  Component Variables
 ---------------------*/
 /* Default */
@@ -17634,6 +17673,9 @@ ol.ui.horizontal.list li:before,
        Groups
 --------------------*/
 /* Packaged Theme */
+/*-------------------
+        Input
+--------------------*/
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -17681,10 +17723,10 @@ ol.ui.horizontal.list li:before,
 ---------------------*/
 .ui.form .field > label {
   display: block;
-  margin: 0em 0em 0.25rem 0em;
+  margin: 0em 0em 0.25em 0em;
   color: #3B4256;
-  font-size: 0.9375em;
-  font-weight: bold;
+  font-size: 16px;
+  font-weight: normal;
   text-transform: none;
 }
 /*--------------------
@@ -17729,10 +17771,10 @@ ol.ui.horizontal.list li:before,
   -webkit-appearance: none;
   tap-highlight-color: rgba(255, 255, 255, 0);
   line-height: 1.21428571em;
-  padding: 0.58035714em 0.875em;
+  padding: 0.625em 0.75em 0.625em 0.75em;
   font-size: 1em;
-  background: #FFFFFF;
-  border: 1px solid rgba(34, 36, 38, 0.15);
+  background: #F4F7FB;
+  border: 1px solid #F4F7FB;
   color: #3B4256;
   border-radius: 0.25rem;
   box-shadow: 0em 0em 0em 0em transparent inset;
@@ -17744,8 +17786,8 @@ ol.ui.horizontal.list li:before,
   -webkit-appearance: none;
   tap-highlight-color: rgba(255, 255, 255, 0);
   padding: 0.6875em 0.875em;
-  background: #FFFFFF;
-  border: 1px solid rgba(34, 36, 38, 0.15);
+  background: #F4F7FB;
+  border: 1px solid #F4F7FB;
   outline: none;
   color: #3B4256;
   border-radius: 0.25rem;
@@ -17778,7 +17820,7 @@ ol.ui.horizontal.list li:before,
   height: auto;
   width: 100%;
   background: #FFFFFF;
-  border: 1px solid rgba(34, 36, 38, 0.15);
+  border: 1px solid #F4F7FB;
   border-radius: 0.25rem;
   box-shadow: 0em 0em 0em 0em transparent inset;
   padding: 0.62em 0.875em;
@@ -17897,22 +17939,22 @@ ol.ui.horizontal.list li:before,
 ---------------------*/
 /* browsers require these rules separate */
 .ui.form ::-webkit-input-placeholder {
-  color: #ffffff;
+  color: #848E99;
 }
 .ui.form :-ms-input-placeholder {
-  color: #ffffff;
+  color: #848E99;
 }
 .ui.form ::-moz-placeholder {
-  color: #ffffff;
+  color: #848E99;
 }
 .ui.form :focus::-webkit-input-placeholder {
-  color: #afb5c8;
+  color: #848E99;
 }
 .ui.form :focus:-ms-input-placeholder {
-  color: #afb5c8;
+  color: #848E99;
 }
 .ui.form :focus::-moz-placeholder {
-  color: #afb5c8;
+  color: #848E99;
 }
 /* Error Placeholder */
 .ui.form .error ::-webkit-input-placeholder {
@@ -17949,14 +17991,14 @@ ol.ui.horizontal.list li:before,
 .ui.form input[type="file"]:focus,
 .ui.form input[type="url"]:focus {
   color: rgba(0, 0, 0, 0.95);
-  border-color: #85B7D9;
+  border-color: #62B0FF;
   border-radius: 0.25rem;
   background: #FFFFFF;
   box-shadow: 0px 0em 0em 0em rgba(34, 36, 38, 0.35) inset;
 }
 .ui.form textarea:focus {
   color: rgba(0, 0, 0, 0.95);
-  border-color: #85B7D9;
+  border-color: #62B0FF;
   border-radius: 0.25rem;
   background: #FFFFFF;
   box-shadow: 0px 0em 0em 0em rgba(34, 36, 38, 0.35) inset;
@@ -18255,7 +18297,7 @@ ol.ui.horizontal.list li:before,
 .ui.inverted.form input[type="text"],
 .ui.inverted.form input[type="file"],
 .ui.inverted.form input[type="url"] {
-  background: #FFFFFF;
+  background: #F4F7FB;
   border-color: rgba(255, 255, 255, 0.1);
   color: #3B4256;
   box-shadow: none;
@@ -18272,10 +18314,10 @@ ol.ui.horizontal.list li:before,
   margin-bottom: 0em;
 }
 .ui.form .grouped.fields > label {
-  margin: 0em 0em 0.25rem 0em;
+  margin: 0em 0em 0.25em 0em;
   color: #3B4256;
-  font-size: 0.9375em;
-  font-weight: bold;
+  font-size: 16px;
+  font-weight: normal;
   text-transform: none;
 }
 .ui.form .grouped.fields .field,
@@ -18483,8 +18525,8 @@ ol.ui.horizontal.list li:before,
   margin-top: 0em;
   margin-bottom: 0em;
   vertical-align: baseline;
-  font-size: 0.9375em;
-  font-weight: bold;
+  font-size: 16px;
+  font-weight: normal;
   color: #3B4256;
   text-transform: none;
 }
@@ -20929,6 +20971,9 @@ ol.ui.horizontal.list li:before,
 --------------------*/
 /*-------------------
         Page
+--------------------*/
+/*-------------------
+        Input
 --------------------*/
 /*-------------------
  Component Variables
@@ -23701,6 +23746,9 @@ Floated Menu / Item
         Page
 --------------------*/
 /*-------------------
+        Input
+--------------------*/
+/*-------------------
  Component Variables
 ---------------------*/
 /* Default */
@@ -25474,6 +25522,9 @@ Floated Menu / Item
         Page
 --------------------*/
 /*-------------------
+        Input
+--------------------*/
+/*-------------------
  Component Variables
 ---------------------*/
 /* Default */
@@ -26628,6 +26679,9 @@ a.ui.card:hover,
 --------------------*/
 /*-------------------
         Page
+--------------------*/
+/*-------------------
+        Input
 --------------------*/
 /*-------------------
  Component Variables
@@ -29959,6 +30013,9 @@ a.ui.card:hover,
         Page
 --------------------*/
 /*-------------------
+        Input
+--------------------*/
+/*-------------------
  Component Variables
 ---------------------*/
 /* Default */
@@ -31209,6 +31266,9 @@ body.dimmable > .dimmer {
         Page
 --------------------*/
 /*-------------------
+        Input
+--------------------*/
+/*-------------------
  Component Variables
 ---------------------*/
 /* Default */
@@ -31811,7 +31871,7 @@ select.ui.dropdown {
   opacity: 0.45;
 }
 .ui.active.search.dropdown input.search:focus + .text {
-  color: #afb5c8 !important;
+  color: #848E99 !important;
 }
 /* Search Menu */
 .ui.search.dropdown .menu {
@@ -32007,11 +32067,11 @@ select.ui.dropdown {
 ----------------------*/
 .ui.dropdown:not(.button) > .default.text,
 .ui.default.dropdown:not(.button) > .text {
-  color: #ffffff;
+  color: #848E99;
 }
 .ui.dropdown:not(.button) > input:focus ~ .default.text,
 .ui.default.dropdown:not(.button) > input:focus ~ .text {
-  color: #afb5c8;
+  color: #848E99;
 }
 /*--------------------
         Loading
@@ -33208,6 +33268,9 @@ select.ui.dropdown {
 --------------------*/
 /*-------------------
         Page
+--------------------*/
+/*-------------------
+        Input
 --------------------*/
 /*-------------------
  Component Variables
@@ -37575,6 +37638,9 @@ a.ui.nag {
         Page
 --------------------*/
 /*-------------------
+        Input
+--------------------*/
+/*-------------------
  Component Variables
 ---------------------*/
 /* Default */
@@ -38312,6 +38378,9 @@ body.pushable > .pusher {
 --------------------*/
 /*-------------------
         Page
+--------------------*/
+/*-------------------
+        Input
 --------------------*/
 /*-------------------
  Component Variables
@@ -40455,6 +40524,9 @@ body.pushable > .pusher {
         Page
 --------------------*/
 /*-------------------
+        Input
+--------------------*/
+/*-------------------
  Component Variables
 ---------------------*/
 /* Default */
@@ -40762,6 +40834,9 @@ body.pushable > .pusher {
         Page
 --------------------*/
 /*-------------------
+        Input
+--------------------*/
+/*-------------------
  Component Variables
 ---------------------*/
 /* Default */
@@ -40777,6 +40852,14 @@ body.pushable > .pusher {
      Overrides
 -------------------*/
 /* End Config */
+.ui.form input:hover {
+  border-color: #B3BBC3;
+}
+.ui.form input[readonly="readonly"] {
+  pointer-events: none;
+  background: #DDE1E6;
+  border-color: #DDE1E6;
+}
 /*
 
 ████████╗██╗  ██╗███████╗███╗   ███╗███████╗███████╗
@@ -41047,6 +41130,9 @@ body.pushable > .pusher {
 --------------------*/
 /*-------------------
         Page
+--------------------*/
+/*-------------------
+        Input
 --------------------*/
 /*-------------------
  Component Variables
@@ -41438,6 +41524,9 @@ body.pushable > .pusher {
         Page
 --------------------*/
 /*-------------------
+        Input
+--------------------*/
+/*-------------------
  Component Variables
 ---------------------*/
 /* Default */
@@ -41746,6 +41835,9 @@ body.pushable > .pusher {
 --------------------*/
 /*-------------------
         Page
+--------------------*/
+/*-------------------
+        Input
 --------------------*/
 /*-------------------
  Component Variables
@@ -42110,6 +42202,9 @@ span.lookup-field {
 --------------------*/
 /*-------------------
         Page
+--------------------*/
+/*-------------------
+        Input
 --------------------*/
 /*-------------------
  Component Variables
@@ -42518,7 +42613,6 @@ i.icon.change:before:hover {
   color: #3c87dc;
   opacity: 1;
 }
-/* Pages */
 /*
 
 ████████╗██╗  ██╗███████╗███╗   ███╗███████╗███████╗
@@ -42791,24 +42885,17 @@ i.icon.change:before:hover {
         Page
 --------------------*/
 /*-------------------
+        Input
+--------------------*/
+/*-------------------
  Component Variables
 ---------------------*/
 /* Default */
 /* Packaged Theme */
 /* Site Theme */
-/*******************************
-             Form
-*******************************/
 /*-------------------
-       Elements
+        Input
 --------------------*/
-/* Input */
-/* Select */
-/* Checkbox */
-/*-------------------
-        States
---------------------*/
-/* Input Focus */
 /*******************************
              Mix-ins
 *******************************/
@@ -42819,199 +42906,5 @@ i.icon.change:before:hover {
      Overrides
 -------------------*/
 /* End Config */
-/*******************************
-         Theme Overrides
-
-*******************************/
-.ui.form select {
-  color: #7ba7d9;
-  border: none;
-  border-bottom: 1px solid #b1cae8;
-  border-radius: 0px;
-  outline: none;
-}
-.ui.form select:hover {
-  color: #3c87dc;
-}
-.ui.form input:not([type]),
-.ui.form input[type="date"],
-.ui.form input[type="datetime-local"],
-.ui.form input[type="email"],
-.ui.form input[type="number"],
-.ui.form input[type="password"],
-.ui.form input[type="search"],
-.ui.form input[type="tel"],
-.ui.form input[type="time"],
-.ui.form input[type="text"],
-.ui.form input[type="url"] {
-  border: none;
-  border-bottom: 1px solid #b1cae8;
-  border-radius: 0px;
-  outline: none;
-}
-.ember-view.flexberry-lookup input.lookup-field.ember-view.ember-text-field {
-  border-bottom: none;
-}
-.flexberry-lookup .ui.fluid.action.input {
-  border: none;
-  border-bottom: 1px solid #b1cae8;
-  border-radius: 0px;
-  outline: none;
-}
-.flexberry-simpledatetime .ui.fluid.action.input {
-  border: none;
-  border-bottom: 1px solid #b1cae8;
-  border-radius: 0px;
-  outline: none;
-}
-.flexberry-simpledatetime .ui.fluid.action.input input.flatpickr-input {
-  border-bottom: none;
-}
-input[type="checkbox"]:after {
-  content: "";
-  display: inline-block;
-  font-size: 16px;
-  height: 16px;
-  width: 17px;
-  position: relative;
-  border-radius: 4px;
-  top: -3px;
-  left: -2px;
-  border: 1px solid rgba(34, 36, 38, 0.15);
-  background: #f1f8ff;
-}
-input[type=checkbox]:checked:after,
-input[type=checkbox]:indeterminate:after {
-  content: '\e805';
-  font-family: 'Crimean';
-  color: #7ba7d9;
-  border-color: #7ba7d9;
-  font-size: 16px;
-  border-left: none;
-  border-top: none;
-  width: 17px;
-}
-.ui.form textarea,
-.ui.form input[type="checkbox"] {
-  margin: 5px;
-}
-.ui.form .olv-toolbar-info-modal-dialog-content textarea {
-  background: white;
-}
-.center.aligned.ui.grid div {
-  margin: 0px 0px 10px 0px;
-}
-.ui.button.olv-toolbar-info-modal-dialog-ok-button {
-  padding: 0.8571em 1.284em 0.8571em;
-}
-.ui.button.flexberry-file-error-modal-dialog-ok-button {
-  padding: 0.8571em 1.284em 0.8571em;
-}
-.center.aligned.ui.grid .button {
-  background: white;
-  color: #4f73b0;
-  border: 1px solid #4f73b0;
-  opacity: 1;
-}
-.center.aligned.ui.grid .button:hover {
-  background: #7dd4b4;
-  color: white;
-  border: 1px solid #7dd4b4;
-}
-select {
-  color: #7ba7d9;
-}
-select:hover {
-  color: #3c87dc;
-}
-option {
-  color: rgba(0, 0, 0, 0.87);
-}
-.ui.form .fields .field .ui.input input,
-.ui.form .field .ui.input input {
-  background: none;
-}
-.ui.form .field .ui.input .block-action-input input {
-  width: 100%;
-}
-.flexberry-file-error-modal-dialog .flexberry-file-error-modal-dialog-content {
-  text-align: center;
-}
-.flexberry-file-error-modal-dialog .flexberry-file-error-modal-dialog-button.ui.grid {
-  padding-top: 20px;
-}
-/* styles from ember-flexberry\addon\styles\themes\blue-sky\elements\button.overrides */
-/**************************************
-      Edit panel buttons section
-***************************************/
-.ui.button.save-button,
-.ui.button.save-close-button,
-.ui.button.save-del-button {
-  background: none;
-  border: 1px solid #7ba7d9;
-  color: #3B4256;
-}
-.ui.button.save-button:hover,
-.ui.button.save-close-button:hover {
-  background: #7dd4b4;
-  border: 1px solid #7dd4b4;
-  color: #FFFFFF;
-}
-.ui.button.save-del-button:hover {
-  background-color: #FF7500;
-  border: 1px solid #FF7500;
-  color: #FFFFFF;
-}
-.ui.button.close-button {
-  position: absolute;
-  border: none;
-  width: 43px;
-  height: 43px;
-  right: -2px;
-  top: -33px;
-  font-size: 0px;
-  background: url("themes/gos/assets/images/close.png") center no-repeat;
-}
-.ui.button.close-button:hover {
-  background: url("themes/gos/assets/images/close-hover.png") center no-repeat;
-  border: none;
-}
-/* styles from ember-flexberry\addon\styles\themes\blue-sky\elements\icon.overrides */
-/**************************************
-      Edit panel buttons icons
-***************************************/
-.save-button:before {
-  content: "\e80c";
-  font-family: 'Crimean';
-  color: #7ba7d9;
-  font-size: 21px;
-  padding-right: 10px;
-}
-.save-close-button:before {
-  content: "\e80d";
-  font-family: 'Crimean';
-  color: #7ba7d9;
-  font-size: 21px;
-  padding-right: 10px;
-}
-.save-del-button:before {
-  content: "\e814";
-  font-family: 'Crimean';
-  color: #7ba7d9;
-  font-size: 21px;
-  padding-right: 10px;
-}
-.delete-button:before {
-  content: "\e814";
-  font-family: 'Crimean';
-  visibility: visible;
-  font-size: 21px;
-  color: #FF7500;
-}
-.delete-button:hover:before {
-  color: #FF4800;
-}
-.delete-button.disabled:before {
-  color: #999;
-}
+/* Pages */
 /*# sourceMappingURL=/assets/dummy.css.map */
