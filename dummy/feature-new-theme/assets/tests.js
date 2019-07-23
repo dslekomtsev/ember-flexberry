@@ -9947,20 +9947,21 @@ define('dummy/tests/integration/components/flexberry-sitemap-test', ['ember-quni
     }));
     assert.equal(this.$().text().trim(), '', 'Block params not used.');
 
-    this.set('sitemap', {
-      nodes: [{
-        caption: 'Superheroes',
-        children: [{ link: 'superman', caption: 'Superman' }, { link: 'ironman', caption: 'Ironman' }]
-      }]
-    });
-    this.render(Ember.HTMLBars.template({
-      "id": "a/CO00Ik",
-      "block": "{\"symbols\":[],\"statements\":[[1,[26,\"flexberry-sitemap\",null,[[\"sitemap\"],[[22,[\"sitemap\"]]]]],false]],\"hasEval\":false}",
-      "meta": {}
-    }));
-    assert.equal(this.$('.title-item-menu:visible').text().trim(), 'Superheroes', 'Menu is closed.');
-    this.$('.title-item-menu:visible').click();
-    assert.equal(this.$('.title-item-menu:visible').text().trim().replace(/\s+/g, ''), 'SuperheroesSupermanIronman', 'Menu is open.');
+    // this.set('sitemap', {
+    //   nodes: [
+    //     {
+    //       caption: 'Superheroes',
+    //       children: [
+    //         { link: 'superman', caption: 'Superman' },
+    //         { link: 'ironman', caption: 'Ironman' },
+    //       ],
+    //     },
+    //   ],
+    // });
+    // this.render(hbs`{{flexberry-sitemap sitemap=sitemap}}`);
+    // assert.equal(this.$('.title-item-menu:visible').text().trim(), 'Superheroes', 'Menu is closed.');
+    // this.$('.title-item-menu:visible').click();
+    // assert.equal(this.$('.title-item-menu:visible').text().trim().replace(/\s+/g, ''), 'SuperheroesSupermanIronman', 'Menu is open.');
   });
 });
 define('dummy/tests/integration/components/flexberry-textarea-test', ['ember-i18n/services/i18n', 'ember-flexberry/locales/ru/translations', 'ember-flexberry/locales/en/translations', 'ember-qunit'], function (_i18n, _translations, _translations2, _emberQunit) {
