@@ -38419,6 +38419,18 @@ body.pushable > .pusher {
 }
 .inverted.vertical.main.menu.sidebar {
   padding: 1.5rem 0;
+  overflow: visible ! important;
+}
+.inverted.vertical.main.menu.sidebar .item {
+  padding: 1rem;
+}
+.inverted.vertical.main.menu.sidebar .item::before {
+  display: none;
+}
+.inverted.vertical.main.menu.sidebar .dropdown.item .menu {
+  height: 100%;
+  padding: 1.5rem 0;
+  position: fixed;
 }
 .launch.icon.item {
   padding: 0px 2rem 0px 1rem;
@@ -38435,6 +38447,16 @@ body.pushable > .pusher {
 .title-item-menu .icon {
   font-size: 1.2em;
   margin-right: 1rem;
+}
+.ui.vertical.inverted.menu .menu .item,
+.ui.vertical.inverted.menu .menu .item a:not(.ui) {
+  color: #3B4256;
+  font-size: 1em;
+}
+.ui.vertical.inverted.menu .item .menu a.item:hover,
+.ui.vertical.inverted.menu .item .menu .link.item:hover {
+  color: #3B4256;
+  background: rgba(0, 0, 0, 0.1);
 }
 /*!
  * # Semantic UI - Sticky
@@ -42907,4 +42929,7 @@ i.icon.change:before:hover {
 -------------------*/
 /* End Config */
 /* Pages */
+.full.height {
+  width: calc(100% - 260px);
+}
 /*# sourceMappingURL=/assets/dummy.css.map */

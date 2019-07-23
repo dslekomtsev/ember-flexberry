@@ -6039,6 +6039,11 @@ define('dummy/tests/app.lint-test', [], function () {
     assert.ok(true, 'helpers/to-string.js should pass ESLint\n\n');
   });
 
+  QUnit.test('initializers/flexberry-sitemap.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'initializers/flexberry-sitemap.js should pass ESLint\n\n');
+  });
+
   QUnit.test('locales/en/translations.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'locales/en/translations.js should pass ESLint\n\n');
