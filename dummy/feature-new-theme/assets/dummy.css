@@ -955,9 +955,15 @@ template {
 /*-------------------
         Page
 --------------------*/
+/*---------------------
+        Defaults
+----------------------*/
 /*-------------------
         Input
 --------------------*/
+/*---------------------
+        Checkbox
+----------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -1195,9 +1201,15 @@ template {
 /*-------------------
         Page
 --------------------*/
+/*---------------------
+        Defaults
+----------------------*/
 /*-------------------
         Input
 --------------------*/
+/*---------------------
+        Checkbox
+----------------------*/
 /*******************************
              Mix-ins
 *******************************/
@@ -1604,9 +1616,15 @@ input::selection {
 /*-------------------
         Page
 --------------------*/
+/*---------------------
+        Defaults
+----------------------*/
 /*-------------------
         Input
 --------------------*/
+/*---------------------
+        Checkbox
+----------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -2007,9 +2025,15 @@ lang {
 /*-------------------
         Page
 --------------------*/
+/*---------------------
+        Defaults
+----------------------*/
 /*-------------------
         Input
 --------------------*/
+/*---------------------
+        Checkbox
+----------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -2104,7 +2128,7 @@ lang {
   font-style: normal;
   text-align: center;
   text-decoration: none;
-  border-radius: 0.25rem;
+  border-radius: 4px;
   box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
   user-select: none;
   transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
@@ -2689,7 +2713,7 @@ lang {
   background: transparent none !important;
   color: rgba(0, 0, 0, 0.6) !important;
   font-weight: normal;
-  border-radius: 0.25rem;
+  border-radius: 4px;
   text-transform: none;
   text-shadow: none !important;
   box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.15) inset;
@@ -2697,7 +2721,7 @@ lang {
 .ui.basic.buttons {
   box-shadow: none;
   border: 1px solid rgba(34, 36, 38, 0.15);
-  border-radius: 0.25rem;
+  border-radius: 4px;
 }
 .ui.basic.buttons .button {
   border-radius: 0em;
@@ -2849,20 +2873,20 @@ lang {
   border-radius: 0em;
 }
 .ui.labeled.icon.buttons .button:first-child > .icon {
-  border-top-left-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
 }
 .ui.labeled.icon.buttons .button:last-child > .icon {
-  border-top-right-radius: 0.25rem;
-  border-bottom-right-radius: 0.25rem;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 .ui.vertical.labeled.icon.buttons .button:first-child > .icon {
   border-radius: 0em;
-  border-top-left-radius: 0.25rem;
+  border-top-left-radius: 4px;
 }
 .ui.vertical.labeled.icon.buttons .button:last-child > .icon {
   border-radius: 0em;
-  border-bottom-left-radius: 0.25rem;
+  border-bottom-left-radius: 4px;
 }
 /* Fluid Labeled */
 .ui.fluid[class*="left labeled"].icon.button,
@@ -2948,10 +2972,10 @@ lang {
 }
 /* Top / Bottom */
 .ui.attached.top.button {
-  border-radius: 0.25rem 0.25rem 0em 0em;
+  border-radius: 4px 4px 0em 0em;
 }
 .ui.attached.bottom.button {
-  border-radius: 0em 0em 0.25rem 0.25rem;
+  border-radius: 0em 0em 4px 4px;
 }
 /* Left / Right */
 .ui.left.attached.button {
@@ -2959,13 +2983,13 @@ lang {
   border-left: none;
   text-align: right;
   padding-right: 0.75em;
-  border-radius: 0.25rem 0em 0em 0.25rem;
+  border-radius: 4px 0em 0em 4px;
 }
 .ui.right.attached.button {
   display: inline-block;
   text-align: left;
   padding-left: 0.75em;
-  border-radius: 0em 0.25rem 0.25rem 0em;
+  border-radius: 0em 4px 4px 0em;
 }
 /* Plural */
 .ui.attached.buttons {
@@ -2989,52 +3013,52 @@ lang {
 /* Top / Bottom */
 .ui[class*="top attached"].buttons {
   margin-bottom: -1px;
-  border-radius: 0.25rem 0.25rem 0em 0em;
+  border-radius: 4px 4px 0em 0em;
 }
 .ui[class*="top attached"].buttons .button:first-child {
-  border-radius: 0.25rem 0em 0em 0em;
+  border-radius: 4px 0em 0em 0em;
 }
 .ui[class*="top attached"].buttons .button:last-child {
-  border-radius: 0em 0.25rem 0em 0em;
+  border-radius: 0em 4px 0em 0em;
 }
 .ui[class*="bottom attached"].buttons {
   margin-top: -1px;
-  border-radius: 0em 0em 0.25rem 0.25rem;
+  border-radius: 0em 0em 4px 4px;
 }
 .ui[class*="bottom attached"].buttons .button:first-child {
-  border-radius: 0em 0em 0em 0.25rem;
+  border-radius: 0em 0em 0em 4px;
 }
 .ui[class*="bottom attached"].buttons .button:last-child {
-  border-radius: 0em 0em 0.25rem 0em;
+  border-radius: 0em 0em 4px 0em;
 }
 /* Left / Right */
 .ui[class*="left attached"].buttons {
   display: inline-flex;
   margin-right: 0em;
   margin-left: -1px;
-  border-radius: 0em 0.25rem 0.25rem 0em;
+  border-radius: 0em 4px 4px 0em;
 }
 .ui[class*="left attached"].buttons .button:first-child {
   margin-left: -1px;
-  border-radius: 0em 0.25rem 0em 0em;
+  border-radius: 0em 4px 0em 0em;
 }
 .ui[class*="left attached"].buttons .button:last-child {
   margin-left: -1px;
-  border-radius: 0em 0em 0.25rem 0em;
+  border-radius: 0em 0em 4px 0em;
 }
 .ui[class*="right attached"].buttons {
   display: inline-flex;
   margin-left: 0em;
   margin-right: -1px;
-  border-radius: 0.25rem 0em 0em 0.25rem;
+  border-radius: 4px 0em 0em 4px;
 }
 .ui[class*="right attached"].buttons .button:first-child {
   margin-left: -1px;
-  border-radius: 0.25rem 0em 0em 0em;
+  border-radius: 4px 0em 0em 0em;
 }
 .ui[class*="right attached"].buttons .button:last-child {
   margin-left: -1px;
-  border-radius: 0em 0em 0em 0.25rem;
+  border-radius: 0em 0em 0em 4px;
 }
 /*-------------------
         Fluid
@@ -4915,7 +4939,7 @@ lang {
 /*--- Standard ---*/
 .ui.primary.buttons .button,
 .ui.primary.button {
-  background-color: #7ba7d9;
+  background-color: #0C49CD;
   color: #FFFFFF;
   text-shadow: none;
   background-image: none;
@@ -4925,19 +4949,19 @@ lang {
 }
 .ui.primary.buttons .button:hover,
 .ui.primary.button:hover {
-  background-color: #6299d9;
+  background-color: #023dbd;
   color: #FFFFFF;
   text-shadow: none;
 }
 .ui.primary.buttons .button:focus,
 .ui.primary.button:focus {
-  background-color: #5091dc;
+  background-color: #0038b0;
   color: #FFFFFF;
   text-shadow: none;
 }
 .ui.primary.buttons .button:active,
 .ui.primary.button:active {
-  background-color: #538dce;
+  background-color: #09389d;
   color: #FFFFFF;
   text-shadow: none;
 }
@@ -4945,38 +4969,38 @@ lang {
 .ui.primary.buttons .active.button:active,
 .ui.primary.active.button,
 .ui.primary.button .active.button:active {
-  background-color: #5f99db;
+  background-color: #003dc0;
   color: #FFFFFF;
   text-shadow: none;
 }
 /* Basic */
 .ui.basic.primary.buttons .button,
 .ui.basic.primary.button {
-  box-shadow: 0px 0px 0px 1px #7ba7d9 inset !important;
-  color: #7ba7d9 !important;
+  box-shadow: 0px 0px 0px 1px #0C49CD inset !important;
+  color: #0C49CD !important;
 }
 .ui.basic.primary.buttons .button:hover,
 .ui.basic.primary.button:hover {
   background: transparent !important;
-  box-shadow: 0px 0px 0px 1px #6299d9 inset !important;
-  color: #6299d9 !important;
+  box-shadow: 0px 0px 0px 1px #023dbd inset !important;
+  color: #023dbd !important;
 }
 .ui.basic.primary.buttons .button:focus,
 .ui.basic.primary.button:focus {
   background: transparent !important;
-  box-shadow: 0px 0px 0px 1px #5091dc inset !important;
-  color: #6299d9 !important;
+  box-shadow: 0px 0px 0px 1px #0038b0 inset !important;
+  color: #023dbd !important;
 }
 .ui.basic.primary.buttons .active.button,
 .ui.basic.primary.active.button {
   background: transparent !important;
-  box-shadow: 0px 0px 0px 1px #5f99db inset !important;
-  color: #538dce !important;
+  box-shadow: 0px 0px 0px 1px #003dc0 inset !important;
+  color: #09389d !important;
 }
 .ui.basic.primary.buttons .button:active,
 .ui.basic.primary.button:active {
-  box-shadow: 0px 0px 0px 1px #538dce inset !important;
-  color: #538dce !important;
+  box-shadow: 0px 0px 0px 1px #09389d inset !important;
+  color: #09389d !important;
 }
 .ui.buttons:not(.vertical) > .basic.primary.button:not(:first-child) {
   margin-left: -1px;
@@ -5232,12 +5256,12 @@ lang {
 .ui.buttons .button:first-child {
   border-left: none;
   margin-left: 0em;
-  border-top-left-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
 }
 .ui.buttons .button:last-child {
-  border-top-right-radius: 0.25rem;
-  border-bottom-right-radius: 0.25rem;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 /* Vertical  Style */
 .ui.vertical.buttons {
@@ -5253,16 +5277,16 @@ lang {
   border-radius: 0em;
 }
 .ui.vertical.buttons .button:first-child {
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 .ui.vertical.buttons .button:last-child {
   margin-bottom: 0px;
-  border-bottom-left-radius: 0.25rem;
-  border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 .ui.vertical.buttons .button:only-child {
-  border-radius: 0.25rem;
+  border-radius: 4px;
 }
 /*
 
@@ -5535,9 +5559,15 @@ lang {
 /*-------------------
         Page
 --------------------*/
+/*---------------------
+        Defaults
+----------------------*/
 /*-------------------
         Input
 --------------------*/
+/*---------------------
+        Checkbox
+----------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -5838,9 +5868,15 @@ lang {
 /*-------------------
         Page
 --------------------*/
+/*---------------------
+        Defaults
+----------------------*/
 /*-------------------
         Input
 --------------------*/
+/*---------------------
+        Checkbox
+----------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -8948,9 +8984,15 @@ a.ui.inverted.grey.header:hover {
 /*-------------------
         Page
 --------------------*/
+/*---------------------
+        Defaults
+----------------------*/
 /*-------------------
         Input
 --------------------*/
+/*---------------------
+        Checkbox
+----------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -9677,9 +9719,15 @@ i.icons .inverted.corner.icon {
 /*-------------------
         Page
 --------------------*/
+/*---------------------
+        Defaults
+----------------------*/
 /*-------------------
         Input
 --------------------*/
+/*---------------------
+        Checkbox
+----------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -10252,9 +10300,15 @@ img.ui.bordered.image {
 /*-------------------
         Page
 --------------------*/
+/*---------------------
+        Defaults
+----------------------*/
 /*-------------------
         Input
 --------------------*/
+/*---------------------
+        Checkbox
+----------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -10321,7 +10375,7 @@ img.ui.bordered.image {
   background: #FFFFFF;
   border: 1px solid rgba(34, 36, 38, 0.15);
   color: #3B4256;
-  border-radius: 0.25rem;
+  border-radius: 4px;
   transition: box-shadow 0.1s ease, border-color 0.1s ease;
   box-shadow: none;
 }
@@ -10498,7 +10552,7 @@ img.ui.bordered.image {
   height: 100%;
   width: 2.475em;
   opacity: 0.5;
-  border-radius: 0em 0.25rem 0.25rem 0em;
+  border-radius: 0em 4px 4px 0em;
   transition: opacity 0.3s ease;
 }
 .ui.icon.input > i.icon:not(.link) {
@@ -10527,7 +10581,7 @@ img.ui.bordered.image {
 .ui[class*="left icon"].input > i.icon {
   right: auto;
   left: 1px;
-  border-radius: 0.25rem 0em 0em 0.25rem;
+  border-radius: 4px 0em 0em 4px;
 }
 .ui[class*="left icon"].input > i.circular.icon {
   right: auto;
@@ -10585,7 +10639,7 @@ img.ui.bordered.image {
   top: 1px;
   right: 1px;
   font-size: 0.5625em;
-  border-radius: 0em 0.25rem 0em 0em;
+  border-radius: 0em 4px 0em 0em;
 }
 /* Spacing with corner label */
 .ui[class*="corner labeled"]:not([class*="left corner labeled"]).labeled.input input {
@@ -10645,7 +10699,7 @@ img.ui.bordered.image {
 .ui.action.input:not([class*="left action"]) > .dropdown:last-child,
 .ui.action.input:not([class*="left action"]) > .button:last-child,
 .ui.action.input:not([class*="left action"]) > .buttons:last-child > .button {
-  border-radius: 0px 0.25rem 0.25rem 0px;
+  border-radius: 0px 4px 4px 0px;
 }
 /* Input Focus */
 .ui.action.input:not([class*="left action"]) input:focus {
@@ -10665,7 +10719,7 @@ img.ui.bordered.image {
 .ui[class*="left action"].input > .dropdown:first-child,
 .ui[class*="left action"].input > .button:first-child,
 .ui[class*="left action"].input > .buttons:first-child > .button {
-  border-radius: 0.25rem 0px 0px 0.25rem;
+  border-radius: 4px 0px 0px 4px;
 }
 /* Input Focus */
 .ui[class*="left action"].input > input:focus {
@@ -10994,9 +11048,15 @@ img.ui.bordered.image {
 /*-------------------
         Page
 --------------------*/
+/*---------------------
+        Defaults
+----------------------*/
 /*-------------------
         Input
 --------------------*/
+/*---------------------
+        Checkbox
+----------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -15067,9 +15127,15 @@ ol.ui.horizontal.list li:before,
 /*-------------------
         Page
 --------------------*/
+/*---------------------
+        Defaults
+----------------------*/
 /*-------------------
         Input
 --------------------*/
+/*---------------------
+        Checkbox
+----------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -15127,7 +15193,7 @@ ol.ui.horizontal.list li:before,
   box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
   margin: 1rem 0em;
   padding: 1em 1em;
-  border-radius: 0.25rem;
+  border-radius: 4px;
   border: 1px solid rgba(34, 36, 38, 0.15);
 }
 .ui.segment:first-child {
@@ -15183,7 +15249,7 @@ ol.ui.horizontal.list li:before,
 }
 .ui.grid.segment {
   margin: 1rem 0em;
-  border-radius: 0.25rem;
+  border-radius: 4px;
 }
 /* Table */
 .ui.basic.table.segment {
@@ -15349,7 +15415,7 @@ ol.ui.horizontal.list li:before,
   margin: 1rem 0em;
   border: 1px solid rgba(34, 36, 38, 0.15);
   box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
-  border-radius: 0.25rem;
+  border-radius: 4px;
 }
 .ui.segments:first-child {
   margin-top: 0em;
@@ -15374,7 +15440,7 @@ ol.ui.horizontal.list li:before,
   bottom: 0px;
   margin-bottom: 0em;
   top: 0px;
-  border-radius: 0.25rem 0.25rem 0em 0em;
+  border-radius: 4px 4px 0em 0em;
 }
 /* Bottom */
 .ui.segments:not(.horizontal) > .segment:last-child {
@@ -15383,11 +15449,11 @@ ol.ui.horizontal.list li:before,
   margin-top: 0em;
   margin-bottom: 0em;
   box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15), none;
-  border-radius: 0em 0em 0.25rem 0.25rem;
+  border-radius: 0em 0em 4px 4px;
 }
 /* Only */
 .ui.segments:not(.horizontal) > .segment:only-child {
-  border-radius: 0.25rem;
+  border-radius: 4px;
 }
 /* Nested Group */
 .ui.segments > .ui.segments {
@@ -15410,7 +15476,7 @@ ol.ui.horizontal.list li:before,
   background-color: #FFFFFF;
   box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
   margin: 1rem 0em;
-  border-radius: 0.25rem;
+  border-radius: 4px;
   border: 1px solid rgba(34, 36, 38, 0.15);
 }
 /* Nested Horizontal Group */
@@ -15471,7 +15537,7 @@ ol.ui.horizontal.list li:before,
   background: rgba(255, 255, 255, 0.8);
   width: 100%;
   height: 100%;
-  border-radius: 0.25rem;
+  border-radius: 4px;
   z-index: 100;
 }
 .ui.loading.segment:after {
@@ -15720,7 +15786,7 @@ ol.ui.horizontal.list li:before,
   margin-bottom: 0em;
   top: 0px;
   margin-top: 1rem;
-  border-radius: 0.25rem 0.25rem 0em 0em;
+  border-radius: 4px 4px 0em 0em;
 }
 .ui.segment[class*="top attached"]:first-child {
   margin-top: 0em;
@@ -15732,7 +15798,7 @@ ol.ui.horizontal.list li:before,
   top: 0px;
   margin-bottom: 1rem;
   box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15), none;
-  border-radius: 0em 0em 0.25rem 0.25rem;
+  border-radius: 0em 0em 4px 4px;
 }
 .ui.segment[class*="bottom attached"]:last-child {
   margin-bottom: 0em;
@@ -16043,9 +16109,15 @@ ol.ui.horizontal.list li:before,
 /*-------------------
         Page
 --------------------*/
+/*---------------------
+        Defaults
+----------------------*/
 /*-------------------
         Input
 --------------------*/
+/*---------------------
+        Checkbox
+----------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -17621,9 +17693,15 @@ ol.ui.horizontal.list li:before,
 /*-------------------
         Page
 --------------------*/
+/*---------------------
+        Defaults
+----------------------*/
 /*-------------------
         Input
 --------------------*/
+/*---------------------
+        Checkbox
+----------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -20972,9 +21050,15 @@ ol.ui.horizontal.list li:before,
 /*-------------------
         Page
 --------------------*/
+/*---------------------
+        Defaults
+----------------------*/
 /*-------------------
         Input
 --------------------*/
+/*---------------------
+        Checkbox
+----------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -21074,7 +21158,7 @@ ol.ui.horizontal.list li:before,
   font-weight: normal;
   border: 1px solid rgba(34, 36, 38, 0.15);
   box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
-  border-radius: 0.25rem;
+  border-radius: 4px;
   min-height: 2.875em;
 }
 .ui.menu:after {
@@ -21122,7 +21206,7 @@ ol.ui.horizontal.list li:before,
   transition: background 0.1s ease, box-shadow 0.1s ease, color 0.1s ease;
 }
 .ui.menu > .item:first-child {
-  border-radius: 0.25rem 0px 0px 0.25rem;
+  border-radius: 4px 0px 0px 4px;
 }
 /* Border */
 .ui.menu .item:before {
@@ -21220,7 +21304,7 @@ ol.ui.horizontal.list li:before,
 /* Menu */
 .ui.menu .dropdown.item .menu {
   min-width: calc(100% - 1px);
-  border-radius: 0em 0em 0.25rem 0.25rem;
+  border-radius: 0em 0em 4px 4px;
   background: #FFFFFF;
   margin: 0em 0px 0px;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
@@ -21264,7 +21348,7 @@ ol.ui.horizontal.list li:before,
 /* Secondary */
 .ui.secondary.menu .dropdown.item > .menu,
 .ui.text.menu .dropdown.item > .menu {
-  border-radius: 0.25rem;
+  border-radius: 4px;
   margin-top: 0.3125em;
 }
 /* Pointing */
@@ -21287,7 +21371,7 @@ ol.ui.horizontal.list li:before,
   min-width: 0;
   margin: 0em 0em 0em 0em;
   box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.08);
-  border-radius: 0em 0.25rem 0.25rem 0.25rem;
+  border-radius: 0em 4px 4px 4px;
 }
 .ui.vertical.menu .dropdown.item.upward .menu {
   bottom: 0;
@@ -21468,10 +21552,10 @@ Floated Menu / Item
   border-right: none;
 }
 .ui.vertical.menu > .item:first-child {
-  border-radius: 0.25rem 0.25rem 0px 0px;
+  border-radius: 4px 4px 0px 0px;
 }
 .ui.vertical.menu > .item:last-child {
-  border-radius: 0px 0px 0.25rem 0.25rem;
+  border-radius: 0px 0px 4px 4px;
 }
 /*--- Label ---*/
 .ui.vertical.menu .item > .label {
@@ -21525,13 +21609,13 @@ Floated Menu / Item
   box-shadow: none;
 }
 .ui.vertical.menu > .active.item:first-child {
-  border-radius: 0.25rem 0.25rem 0em 0em;
+  border-radius: 4px 4px 0em 0em;
 }
 .ui.vertical.menu > .active.item:last-child {
-  border-radius: 0em 0em 0.25rem 0.25rem;
+  border-radius: 0em 0em 4px 4px;
 }
 .ui.vertical.menu > .active.item:only-child {
-  border-radius: 0.25rem;
+  border-radius: 4px;
 }
 .ui.vertical.menu .active.item .menu .active.item {
   border-left: none;
@@ -21580,7 +21664,7 @@ Floated Menu / Item
   font-weight: bold;
   margin-bottom: -1px;
   box-shadow: none;
-  border-radius: 0.25rem 0.25rem 0px 0px !important;
+  border-radius: 4px 4px 0px 0px !important;
 }
 /* Coupling with segment for attachment */
 .ui.tabular.menu + .attached:not(.top).segment,
@@ -21616,7 +21700,7 @@ Floated Menu / Item
   color: rgba(0, 0, 0, 0.95);
   border-color: #D4D4D5;
   margin: -1px 0px 0px 0px;
-  border-radius: 0px 0px 0.25rem 0.25rem !important;
+  border-radius: 0px 0px 4px 4px !important;
 }
 /* Vertical Tabular (Left) */
 .ui.vertical.tabular.menu {
@@ -21638,7 +21722,7 @@ Floated Menu / Item
   color: rgba(0, 0, 0, 0.95);
   border-color: #D4D4D5;
   margin: 0px -1px 0px 0px;
-  border-radius: 0.25rem 0px 0px 0.25rem !important;
+  border-radius: 4px 0px 0px 4px !important;
 }
 /* Vertical Right Tabular */
 .ui.vertical.right.tabular.menu {
@@ -21661,7 +21745,7 @@ Floated Menu / Item
   color: rgba(0, 0, 0, 0.95);
   border-color: #D4D4D5;
   margin: 0px 0px 0px -1px;
-  border-radius: 0px 0.25rem 0.25rem 0px !important;
+  border-radius: 0px 4px 4px 0px !important;
 }
 /* Dropdown */
 .ui.tabular.menu .active.dropdown.item {
@@ -21680,10 +21764,10 @@ Floated Menu / Item
   vertical-align: middle;
 }
 .ui.pagination.menu .item:last-child {
-  border-radius: 0em 0.25rem 0.25rem 0em;
+  border-radius: 0em 4px 4px 0em;
 }
 .ui.compact.menu .item:last-child {
-  border-radius: 0em 0.25rem 0.25rem 0em;
+  border-radius: 0em 4px 4px 0em;
 }
 .ui.pagination.menu .item:last-child:before {
   display: none;
@@ -21723,7 +21807,7 @@ Floated Menu / Item
   margin: 0em 0.3125em;
   background: none;
   transition: color 0.1s ease;
-  border-radius: 0.25rem;
+  border-radius: 4px;
 }
 /* No Divider */
 .ui.secondary.menu .item:before {
@@ -21751,7 +21835,7 @@ Floated Menu / Item
   box-shadow: none;
   background: rgba(0, 0, 0, 0.05);
   color: rgba(0, 0, 0, 0.95);
-  border-radius: 0.25rem;
+  border-radius: 4px;
 }
 /* Active Hover */
 .ui.secondary.menu .active.item:hover {
@@ -21799,7 +21883,7 @@ Floated Menu / Item
 .ui.secondary.vertical.menu > .item {
   border: none;
   margin: 0em 0em 0.3125em;
-  border-radius: 0.25rem !important;
+  border-radius: 4px !important;
 }
 .ui.secondary.vertical.menu > .header.item {
   border-radius: 0em;
@@ -22455,7 +22539,7 @@ Floated Menu / Item
   display: inline-block;
 }
 .ui.compact.menu .item:last-child {
-  border-radius: 0em 0.25rem 0.25rem 0em;
+  border-radius: 0em 4px 4px 0em;
 }
 .ui.compact.menu .item:last-child:before {
   display: none;
@@ -22671,7 +22755,7 @@ Floated Menu / Item
   margin-bottom: 0em;
   top: 0px;
   margin-top: 1rem;
-  border-radius: 0.25rem 0.25rem 0em 0em;
+  border-radius: 4px 4px 0em 0em;
 }
 .ui.menu[class*="top attached"]:first-child {
   margin-top: 0em;
@@ -22683,17 +22767,17 @@ Floated Menu / Item
   top: 0px;
   margin-bottom: 1rem;
   box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15), none;
-  border-radius: 0em 0em 0.25rem 0.25rem;
+  border-radius: 0em 0em 4px 4px;
 }
 .ui[class*="bottom attached"].menu:last-child {
   margin-bottom: 0em;
 }
 /* Attached Menu Item */
 .ui.top.attached.menu > .item:first-child {
-  border-radius: 0.25rem 0em 0em 0em;
+  border-radius: 4px 0em 0em 0em;
 }
 .ui.bottom.attached.menu > .item:first-child {
-  border-radius: 0em 0em 0em 0.25rem;
+  border-radius: 0em 0em 0em 4px;
 }
 /* Tabular Attached */
 .ui.attached.menu:not(.tabular) {
@@ -23745,9 +23829,15 @@ Floated Menu / Item
 /*-------------------
         Page
 --------------------*/
+/*---------------------
+        Defaults
+----------------------*/
 /*-------------------
         Input
 --------------------*/
+/*---------------------
+        Checkbox
+----------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -23816,7 +23906,7 @@ Floated Menu / Item
   margin: 1em 0em;
   border: 1px solid rgba(34, 36, 38, 0.15);
   box-shadow: none;
-  border-radius: 0.25rem;
+  border-radius: 4px;
   text-align: left;
   color: #3B4256;
   border-collapse: separate;
@@ -23857,13 +23947,13 @@ Floated Menu / Item
   border-left: none;
 }
 .ui.table thead tr:first-child > th:first-child {
-  border-radius: 0.25rem 0em 0em 0em;
+  border-radius: 4px 0em 0em 0em;
 }
 .ui.table thead tr:first-child > th:last-child {
-  border-radius: 0em 0.25rem 0em 0em;
+  border-radius: 0em 4px 0em 0em;
 }
 .ui.table thead tr:first-child > th:only-child {
-  border-radius: 0.25rem 0.25rem 0em 0em;
+  border-radius: 4px 4px 0em 0em;
 }
 /* Footer */
 .ui.table tfoot {
@@ -23885,13 +23975,13 @@ Floated Menu / Item
   border-left: none;
 }
 .ui.table tfoot tr:first-child > th:first-child {
-  border-radius: 0em 0em 0em 0.25rem;
+  border-radius: 0em 0em 0em 4px;
 }
 .ui.table tfoot tr:first-child > th:last-child {
-  border-radius: 0em 0em 0.25rem 0em;
+  border-radius: 0em 0em 4px 0em;
 }
 .ui.table tfoot tr:first-child > th:only-child {
-  border-radius: 0em 0em 0.25rem 0.25rem;
+  border-radius: 0em 0em 4px 4px;
 }
 /* Table Row */
 .ui.table tr td {
@@ -24286,7 +24376,7 @@ Floated Menu / Item
   margin-bottom: 0em;
   top: 0px;
   margin-top: 1em;
-  border-radius: 0.25rem 0.25rem 0em 0em;
+  border-radius: 4px 4px 0em 0em;
 }
 .ui.table[class*="top attached"]:first-child {
   margin-top: 0em;
@@ -24298,7 +24388,7 @@ Floated Menu / Item
   top: 0px;
   margin-bottom: 1em;
   box-shadow: none, none;
-  border-radius: 0em 0em 0.25rem 0.25rem;
+  border-radius: 0em 0em 4px 4px;
 }
 .ui[class*="bottom attached"].table:last-child {
   margin-bottom: 0em;
@@ -25521,9 +25611,15 @@ Floated Menu / Item
 /*-------------------
         Page
 --------------------*/
+/*---------------------
+        Defaults
+----------------------*/
 /*-------------------
         Input
 --------------------*/
+/*---------------------
+        Checkbox
+----------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -25593,7 +25689,7 @@ Floated Menu / Item
   background: #FFFFFF;
   padding: 0em;
   border: none;
-  border-radius: 0.25rem;
+  border-radius: 4px;
   box-shadow: none;
   transition: box-shadow 0.1s ease, transform 0.1s ease;
   z-index: '';
@@ -25643,16 +25739,16 @@ Floated Menu / Item
 ---------------*/
 .ui.cards > .card > :first-child,
 .ui.card > :first-child {
-  border-radius: 0.25rem 0.25rem 0em 0em !important;
+  border-radius: 4px 4px 0em 0em !important;
   border-top: none !important;
 }
 .ui.cards > .card > :last-child,
 .ui.card > :last-child {
-  border-radius: 0em 0em 0.25rem 0.25rem !important;
+  border-radius: 0em 0em 4px 4px !important;
 }
 .ui.cards > .card > :only-child,
 .ui.card > :only-child {
-  border-radius: 0.25rem !important;
+  border-radius: 4px !important;
 }
 /*--------------
      Images
@@ -26680,9 +26776,15 @@ a.ui.card:hover,
 /*-------------------
         Page
 --------------------*/
+/*---------------------
+        Defaults
+----------------------*/
 /*-------------------
         Input
 --------------------*/
+/*---------------------
+        Checkbox
+----------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -30012,9 +30114,15 @@ a.ui.card:hover,
 /*-------------------
         Page
 --------------------*/
+/*---------------------
+        Defaults
+----------------------*/
 /*-------------------
         Input
 --------------------*/
+/*---------------------
+        Checkbox
+----------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -30051,6 +30159,9 @@ a.ui.card:hover,
       Variations
 --------------------*/
 /* Packaged Theme */
+/* Checkbox */
+/* Radio */
+/* Toggle */
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -30075,10 +30186,10 @@ a.ui.card:hover,
   outline: none;
   vertical-align: baseline;
   font-style: normal;
-  min-height: 17px;
+  min-height: 24px;
   font-size: 1rem;
-  line-height: 17px;
-  min-width: 17px;
+  line-height: 24px;
+  min-width: 24px;
 }
 /* HTML Checkbox */
 .ui.checkbox input[type="checkbox"],
@@ -30090,8 +30201,8 @@ a.ui.card:hover,
   opacity: 0 !important;
   outline: none;
   z-index: 3;
-  width: 17px;
-  height: 17px;
+  width: 24px;
+  height: 24px;
 }
 /*--------------
       Box
@@ -30101,7 +30212,7 @@ a.ui.card:hover,
   cursor: auto;
   position: relative;
   display: block;
-  padding-left: 1.85714em;
+  padding-left: 40px;
   outline: none;
   font-size: 1em;
 }
@@ -30110,13 +30221,13 @@ a.ui.card:hover,
   position: absolute;
   top: 0px;
   left: 0px;
-  width: 17px;
-  height: 17px;
+  width: 24px;
+  height: 24px;
   content: '';
-  background: #FFFFFF;
-  border-radius: 0.1875rem;
+  background: #F4F7FB;
+  border-radius: 4px;
   transition: border 0.1s ease, opacity 0.1s ease, transform 0.1s ease, box-shadow 0.1s ease;
-  border: 1px solid #D4D4D5;
+  border: 1px solid #DDE1E6;
 }
 /*--------------
     Checkmark
@@ -30124,11 +30235,11 @@ a.ui.card:hover,
 .ui.checkbox .box:after,
 .ui.checkbox label:after {
   position: absolute;
-  font-size: 14px;
+  font-size: 12px;
   top: 0px;
   left: 0px;
-  width: 17px;
-  height: 17px;
+  width: 24px;
+  height: 24px;
   text-align: center;
   opacity: 0;
   color: #3B4256;
@@ -30155,12 +30266,12 @@ a.ui.card:hover,
 ---------------*/
 .ui.checkbox .box:hover::before,
 .ui.checkbox label:hover::before {
-  background: #FFFFFF;
-  border-color: rgba(34, 36, 38, 0.35);
+  background: #F4F7FB;
+  border-color: #0C49CD;
 }
 .ui.checkbox label:hover,
 .ui.checkbox + label:hover {
-  color: rgba(0, 0, 0, 0.8);
+  color: #0C49CD;
 }
 /*--------------
       Down
@@ -30182,41 +30293,41 @@ a.ui.card:hover,
 ---------------*/
 .ui.checkbox input:focus ~ .box:before,
 .ui.checkbox input:focus ~ label:before {
-  background: #FFFFFF;
-  border-color: #96C8DA;
+  background: #F4F7FB;
+  border-color: #62B0FF;
 }
 .ui.checkbox input:focus ~ .box:after,
 .ui.checkbox input:focus ~ label:after {
   color: rgba(0, 0, 0, 0.95);
 }
 .ui.checkbox input:focus ~ label {
-  color: rgba(0, 0, 0, 0.95);
+  color: #3B4256;
 }
 /*--------------
      Active
 ---------------*/
 .ui.checkbox input:checked ~ .box:before,
 .ui.checkbox input:checked ~ label:before {
-  background: #FFFFFF;
+  background: #0C49CD;
   border-color: rgba(34, 36, 38, 0.35);
 }
 .ui.checkbox input:checked ~ .box:after,
 .ui.checkbox input:checked ~ label:after {
   opacity: 1;
-  color: rgba(0, 0, 0, 0.95);
+  color: #FFFFFF;
 }
 /*--------------
   Indeterminate
 ---------------*/
 .ui.checkbox input:not([type=radio]):indeterminate ~ .box:before,
 .ui.checkbox input:not([type=radio]):indeterminate ~ label:before {
-  background: #FFFFFF;
+  background: #0C49CD;
   border-color: rgba(34, 36, 38, 0.35);
 }
 .ui.checkbox input:not([type=radio]):indeterminate ~ .box:after,
 .ui.checkbox input:not([type=radio]):indeterminate ~ label:after {
   opacity: 1;
-  color: rgba(0, 0, 0, 0.95);
+  color: #FFFFFF;
 }
 /*--------------
   Active Focus
@@ -30225,14 +30336,14 @@ a.ui.card:hover,
 .ui.checkbox input:not([type=radio]):indeterminate:focus ~ label:before,
 .ui.checkbox input:checked:focus ~ .box:before,
 .ui.checkbox input:checked:focus ~ label:before {
-  background: #FFFFFF;
-  border-color: #96C8DA;
+  background: #0C49CD;
+  border-color: #62B0FF;
 }
 .ui.checkbox input:not([type=radio]):indeterminate:focus ~ .box:after,
 .ui.checkbox input:not([type=radio]):indeterminate:focus ~ label:after,
 .ui.checkbox input:checked:focus ~ .box:after,
 .ui.checkbox input:checked:focus ~ label:after {
-  color: rgba(0, 0, 0, 0.95);
+  color: #FFFFFF;
 }
 /*--------------
     Read-Only
@@ -30272,19 +30383,19 @@ a.ui.card:hover,
      Radio
 ---------------*/
 .ui.radio.checkbox {
-  min-height: 15px;
+  min-height: 24px;
 }
 .ui.radio.checkbox .box,
 .ui.radio.checkbox label {
-  padding-left: 1.85714em;
+  padding-left: 40px;
 }
 /* Box */
 .ui.radio.checkbox .box:before,
 .ui.radio.checkbox label:before {
   content: '';
   transform: none;
-  width: 15px;
-  height: 15px;
+  width: 24px;
+  height: 24px;
   border-radius: 500rem;
   top: 1px;
   left: 0px;
@@ -30294,29 +30405,29 @@ a.ui.card:hover,
 .ui.radio.checkbox label:after {
   border: none;
   content: '' !important;
-  width: 15px;
-  height: 15px;
-  line-height: 15px;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
 }
 /* Radio Checkbox */
 .ui.radio.checkbox .box:after,
 .ui.radio.checkbox label:after {
   top: 1px;
   left: 0px;
-  width: 15px;
-  height: 15px;
+  width: 24px;
+  height: 24px;
   border-radius: 500rem;
-  transform: scale(0.46666667);
+  transform: scale(0.33333333);
   background-color: #3B4256;
 }
 /* Focus */
 .ui.radio.checkbox input:focus ~ .box:before,
 .ui.radio.checkbox input:focus ~ label:before {
-  background-color: #FFFFFF;
+  background-color: #F4F7FB;
 }
 .ui.radio.checkbox input:focus ~ .box:after,
 .ui.radio.checkbox input:focus ~ label:after {
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: #FFFFFF;
 }
 /* Indeterminate */
 .ui.radio.checkbox input:indeterminate ~ .box:after,
@@ -30326,20 +30437,20 @@ a.ui.card:hover,
 /* Active */
 .ui.radio.checkbox input:checked ~ .box:before,
 .ui.radio.checkbox input:checked ~ label:before {
-  background-color: #FFFFFF;
+  background-color: #0C49CD;
 }
 .ui.radio.checkbox input:checked ~ .box:after,
 .ui.radio.checkbox input:checked ~ label:after {
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: #FFFFFF;
 }
 /* Active Focus */
 .ui.radio.checkbox input:focus:checked ~ .box:before,
 .ui.radio.checkbox input:focus:checked ~ label:before {
-  background-color: #FFFFFF;
+  background-color: #0C49CD;
 }
 .ui.radio.checkbox input:focus:checked ~ .box:after,
 .ui.radio.checkbox input:focus:checked ~ label:after {
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: #FFFFFF;
 }
 /*--------------
      Slider
@@ -30397,7 +30508,7 @@ a.ui.card:hover,
 /* Focus */
 .ui.slider.checkbox input:focus ~ .box:before,
 .ui.slider.checkbox input:focus ~ label:before {
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: #FFFFFF;
   border: none;
 }
 /* Hover */
@@ -30435,22 +30546,22 @@ a.ui.card:hover,
      Toggle
 ---------------*/
 .ui.toggle.checkbox {
-  min-height: 1.5rem;
+  min-height: 24px;
 }
 /* Input */
 .ui.toggle.checkbox input {
-  width: 3.5rem;
-  height: 1.5rem;
+  width: 40px;
+  height: 24px;
 }
 /* Label */
 .ui.toggle.checkbox .box,
 .ui.toggle.checkbox label {
-  min-height: 1.5rem;
-  padding-left: 4.5rem;
+  min-height: 16px;
+  padding-left: 56px;
   color: #3B4256;
 }
 .ui.toggle.checkbox label {
-  padding-top: 0.15em;
+  padding-top: 0;
 }
 /* Switch */
 .ui.toggle.checkbox .box:before,
@@ -30461,11 +30572,11 @@ a.ui.card:hover,
   z-index: 1;
   transform: none;
   border: none;
-  top: 0rem;
-  background: rgba(0, 0, 0, 0.05);
+  top: 0;
+  background: #FFFFFF;
   box-shadow: none;
-  width: 3.5rem;
-  height: 1.5rem;
+  width: 40px;
+  height: 24px;
   border-radius: 500rem;
 }
 /* Handle */
@@ -30478,52 +30589,52 @@ a.ui.card:hover,
   z-index: 2;
   border: none;
   box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15), 0px 0px 0px 1px rgba(34, 36, 38, 0.15) inset;
-  width: 1.5rem;
-  height: 1.5rem;
-  top: 0rem;
+  width: 16px;
+  height: 16px;
+  top: 4px;
   left: 0em;
   border-radius: 500rem;
   transition: background 0.3s ease, left 0.3s ease;
 }
 .ui.toggle.checkbox input ~ .box:after,
 .ui.toggle.checkbox input ~ label:after {
-  left: -0.05rem;
-  box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15), 0px 0px 0px 1px rgba(34, 36, 38, 0.15) inset;
+  left: 4px;
+  box-shadow: none;
 }
 /* Focus */
 .ui.toggle.checkbox input:focus ~ .box:before,
 .ui.toggle.checkbox input:focus ~ label:before {
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: #FFFFFF;
   border: none;
 }
 /* Hover */
 .ui.toggle.checkbox .box:hover::before,
 .ui.toggle.checkbox label:hover::before {
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: #FFFFFF;
   border: none;
 }
 /* Active */
 .ui.toggle.checkbox input:checked ~ .box,
 .ui.toggle.checkbox input:checked ~ label {
-  color: rgba(0, 0, 0, 0.95) !important;
+  color: #3B4256 !important;
 }
 .ui.toggle.checkbox input:checked ~ .box:before,
 .ui.toggle.checkbox input:checked ~ label:before {
-  background-color: #7ba7d9 !important;
+  background-color: #0C49CD !important;
 }
 .ui.toggle.checkbox input:checked ~ .box:after,
 .ui.toggle.checkbox input:checked ~ label:after {
-  left: 2.15rem;
-  box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15), 0px 0px 0px 1px rgba(34, 36, 38, 0.15) inset;
+  left: 20px;
+  box-shadow: none;
 }
 /* Active Focus */
 .ui.toggle.checkbox input:focus:checked ~ .box,
 .ui.toggle.checkbox input:focus:checked ~ label {
-  color: rgba(0, 0, 0, 0.95) !important;
+  color: #3B4256 !important;
 }
 .ui.toggle.checkbox input:focus:checked ~ .box:before,
 .ui.toggle.checkbox input:focus:checked ~ label:before {
-  background-color: #5091dc !important;
+  background-color: #0C49CD !important;
 }
 /*******************************
             Variations
@@ -30537,7 +30648,7 @@ a.ui.card:hover,
 }
 .ui.fitted.toggle.checkbox,
 .ui.fitted.toggle.checkbox {
-  width: 3.5rem;
+  width: 40px;
 }
 .ui.fitted.slider.checkbox,
 .ui.fitted.slider.checkbox {
@@ -31265,9 +31376,15 @@ body.dimmable > .dimmer {
 /*-------------------
         Page
 --------------------*/
+/*---------------------
+        Defaults
+----------------------*/
 /*-------------------
         Input
 --------------------*/
+/*---------------------
+        Checkbox
+----------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -33269,9 +33386,15 @@ select.ui.dropdown {
 /*-------------------
         Page
 --------------------*/
+/*---------------------
+        Defaults
+----------------------*/
 /*-------------------
         Input
 --------------------*/
+/*---------------------
+        Checkbox
+----------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -33328,18 +33451,18 @@ select.ui.dropdown {
   border: none;
   box-shadow: 1px 3px 3px 0px rgba(0, 0, 0, 0.2), 1px 3px 15px 2px rgba(0, 0, 0, 0.2);
   transform-origin: 50% 25%;
-  border-radius: 0.25rem;
+  border-radius: 4px;
   user-select: text;
   will-change: top, left, margin, transform, opacity;
 }
 .ui.modal > :first-child:not(.icon),
 .ui.modal > .icon:first-child + * {
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 .ui.modal > :last-child {
-  border-bottom-left-radius: 0.25rem;
-  border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 /*******************************
             Content
@@ -37637,9 +37760,15 @@ a.ui.nag {
 /*-------------------
         Page
 --------------------*/
+/*---------------------
+        Defaults
+----------------------*/
 /*-------------------
         Input
 --------------------*/
+/*---------------------
+        Checkbox
+----------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -38379,9 +38508,15 @@ body.pushable > .pusher {
 /*-------------------
         Page
 --------------------*/
+/*---------------------
+        Defaults
+----------------------*/
 /*-------------------
         Input
 --------------------*/
+/*---------------------
+        Checkbox
+----------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -40545,9 +40680,15 @@ body.pushable > .pusher {
 /*-------------------
         Page
 --------------------*/
+/*---------------------
+        Defaults
+----------------------*/
 /*-------------------
         Input
 --------------------*/
+/*---------------------
+        Checkbox
+----------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -40855,9 +40996,15 @@ body.pushable > .pusher {
 /*-------------------
         Page
 --------------------*/
+/*---------------------
+        Defaults
+----------------------*/
 /*-------------------
         Input
 --------------------*/
+/*---------------------
+        Checkbox
+----------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -41153,9 +41300,15 @@ body.pushable > .pusher {
 /*-------------------
         Page
 --------------------*/
+/*---------------------
+        Defaults
+----------------------*/
 /*-------------------
         Input
 --------------------*/
+/*---------------------
+        Checkbox
+----------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -41545,9 +41698,15 @@ body.pushable > .pusher {
 /*-------------------
         Page
 --------------------*/
+/*---------------------
+        Defaults
+----------------------*/
 /*-------------------
         Input
 --------------------*/
+/*---------------------
+        Checkbox
+----------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -41858,9 +42017,15 @@ body.pushable > .pusher {
 /*-------------------
         Page
 --------------------*/
+/*---------------------
+        Defaults
+----------------------*/
 /*-------------------
         Input
 --------------------*/
+/*---------------------
+        Checkbox
+----------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -42225,9 +42390,15 @@ span.lookup-field {
 /*-------------------
         Page
 --------------------*/
+/*---------------------
+        Defaults
+----------------------*/
 /*-------------------
         Input
 --------------------*/
+/*---------------------
+        Checkbox
+----------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -42571,7 +42742,7 @@ div.ui.secondary.menu.no-margin {
   color: #FFFFFF;
 }
 .right.pointing.ui.icon.dropdown.button.active:hover i.icon.list.layout:before {
-  color: #7ba7d9;
+  color: #0C49CD;
 }
 /* styles from ember-flexberry\addon\styles\themes\blue-sky\elements\icon.overrides */
 /**************************************
@@ -42906,9 +43077,374 @@ i.icon.change:before:hover {
 /*-------------------
         Page
 --------------------*/
+/*---------------------
+        Defaults
+----------------------*/
 /*-------------------
         Input
 --------------------*/
+/*---------------------
+        Checkbox
+----------------------*/
+/*-------------------
+ Component Variables
+---------------------*/
+/* Default */
+/* Packaged Theme */
+/* Site Theme */
+/* Checkbox */
+/* Radio */
+/* Toggle */
+/*******************************
+             Mix-ins
+*******************************/
+/*------------------
+       Fonts
+-------------------*/
+/*------------------
+     Overrides
+-------------------*/
+/* End Config */
+/* Checkbox */
+.ui.checkbox label,
+.ui.checkbox + label {
+  font-weight: bold;
+}
+.ui.checkbox.read-only .box:before,
+.ui.checkbox.read-only label:before,
+.ui.checkbox.read-only input:checked ~ .box:before,
+.ui.checkbox.read-only input:checked ~ label:before {
+  pointer-events: none;
+  background: #DDE1E6 !important;
+  border: 1px solid #DDE1E6;
+}
+.ui.checkbox.read-only label,
+.ui.checkbox.read-only + label {
+  pointer-events: none;
+  color: #848E99 !important;
+}
+/* Toggle */
+.ui.toggle.checkbox .box:before,
+.ui.toggle.checkbox label:before {
+  border: 1px solid #DDE1E6;
+}
+.ui.toggle.checkbox .box:after,
+.ui.toggle.checkbox label:after {
+  background: #FFFFFF;
+  border: 1px solid #DDE1E6;
+}
+.ui.toggle.checkbox.read-only input ~ .box,
+.ui.toggle.checkbox.read-only input ~ label {
+  color: #848E99 !important;
+}
+.ui.toggle.checkbox.checked .box::before,
+.ui.toggle.checkbox.checked label::before {
+  border: none;
+}
+.ui.toggle.checkbox.checked .box:after,
+.ui.toggle.checkbox.checked label:after {
+  background: #FFFFFF;
+  border: none;
+}
+.ui.toggle.checkbox:not(.checked) .box:hover::before,
+.ui.toggle.checkbox:not(.checked) label:hover::before {
+  border: 1px solid #0C49CD;
+}
+.ui.toggle.checkbox:not(.checked) .box:hover::after,
+.ui.toggle.checkbox:not(.checked) label:hover::after {
+  background: #FFFFFF;
+  border: 1px solid #0C49CD;
+}
+.ui.toggle.checkbox label:hover,
+.ui.toggle.checkbox.checked label:hover {
+  color: #0C49CD !important;
+}
+.ui.toggle.checkbox input:focus ~ .box:before,
+.ui.toggle.checkbox input:focus ~ label:before,
+.ui.toggle.checkbox.checked input:focus ~ .box:before,
+.ui.toggle.checkbox.checked input:focus ~ label:before {
+  border: 1px solid #62B0FF;
+}
+/*
+
+████████╗██╗  ██╗███████╗███╗   ███╗███████╗███████╗
+╚══██╔══╝██║  ██║██╔════╝████╗ ████║██╔════╝██╔════╝
+   ██║   ███████║█████╗  ██╔████╔██║█████╗  ███████╗
+   ██║   ██╔══██║██╔══╝  ██║╚██╔╝██║██╔══╝  ╚════██║
+   ██║   ██║  ██║███████╗██║ ╚═╝ ██║███████╗███████║
+   ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝╚══════╝╚══════╝
+
+*/
+/*******************************
+        Theme Selection
+*******************************/
+/* To override a theme for an individual element
+   specify theme name below
+*/
+/* Global */
+/* Elements */
+/* Collections */
+/* Modules */
+/* Views */
+/* Сontrols */
+/* Forms */
+/*******************************
+            Folders
+*******************************/
+/* Path to semantic ui theme packages */
+/* Path to ember flexberry theme packages */
+/* Path to site override folder */
+/*******************************
+         Import Theme
+*******************************/
+/*******************************
+        Import Directives
+*******************************/
+/*--------------------
+   Site Variables
+---------------------*/
+/* Default */
+/*******************************
+         Site Settings
+*******************************/
+/*-------------------
+       Fonts
+--------------------*/
+/*-------------------
+      Base Sizes
+--------------------*/
+/* This is the single variable that controls them all */
+/* The size of page text  */
+/*-------------------
+    Border Radius
+--------------------*/
+/* See Power-user section below
+   for explanation of @px variables
+*/
+/*-------------------
+    Brand Colors
+--------------------*/
+/*--------------
+  Page Heading
+---------------*/
+/*--------------
+   Form Input
+---------------*/
+/* This adjusts the default form input across all elements */
+/* Input Text Color */
+/* Line Height Default For Inputs in Browser (Descendors are 17px at 14px base em) */
+/*-------------------
+    Focused Input
+--------------------*/
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
+/*-------------------
+        Sizes
+--------------------*/
+/*
+  Sizes are all expressed in terms of 14px/em (default em)
+  This ensures these "ratios" remain constant despite changes in EM
+*/
+/*-------------------
+        Page
+--------------------*/
+/*-------------------
+      Paragraph
+--------------------*/
+/*-------------------
+       Links
+--------------------*/
+/*-------------------
+    Scroll Bars
+--------------------*/
+/* Inverted */
+/*-------------------
+  Highlighted Text
+--------------------*/
+/*-------------------
+       Loader
+--------------------*/
+/*-------------------
+        Grid
+--------------------*/
+/*-------------------
+     Transitions
+--------------------*/
+/*-------------------
+     Breakpoints
+--------------------*/
+/*-------------------
+      Site Colors
+--------------------*/
+/*---  Colors  ---*/
+/*---  Light Colors  ---*/
+/*---   Neutrals  ---*/
+/*--- Colored Backgrounds ---*/
+/*--- Colored Headers ---*/
+/*--- Colored Text ---*/
+/*--- Colored Border ---*/
+/*-------------------
+     Alpha Colors
+--------------------*/
+/*-------------------
+       Accents
+--------------------*/
+/* Differentiating Neutrals */
+/* Differentiating Layers */
+/*******************************
+           Power-User
+*******************************/
+/*-------------------
+    Emotive Colors
+--------------------*/
+/* Positive */
+/* Negative */
+/* Info */
+/* Warning */
+/*-------------------
+        Paths
+--------------------*/
+/* For source only. Modified in gulp for dist */
+/*-------------------
+       Em Sizes
+--------------------*/
+/*
+  This rounds @size values to the closest pixel then expresses that value in (r)em.
+  This ensures all size values round to exact pixels
+*/
+/* em */
+/* rem */
+/*-------------------
+       Icons
+--------------------*/
+/* Maximum Glyph Width of Icon */
+/*-------------------
+     Neutral Text
+--------------------*/
+/*-------------------
+     Brand Colors
+--------------------*/
+/*-------------------
+      Borders
+--------------------*/
+/*-------------------
+    Derived Values
+--------------------*/
+/* Loaders Position Offset */
+/* Rendered Scrollbar Width */
+/* Maximum Single Character Glyph Width, aka Capital "W" */
+/* Used to match floats with text */
+/* Header Spacing */
+/* Minimum Mobile Width */
+/* Positive / Negative Dupes */
+/* Responsive */
+/*-------------------
+  Exact Pixel Values
+--------------------*/
+/*
+  These are used to specify exact pixel values in em
+  for things like borders that remain constantly
+  sized as emSize adjusts
+
+  Since there are many more sizes than names for sizes,
+  these are named by their original pixel values.
+
+*/
+/* Columns */
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
+/*-------------------
+        Hover
+--------------------*/
+/*---  Shadows  ---*/
+/*---  Colors  ---*/
+/*---  Emotive  ---*/
+/*---  Brand   ---*/
+/*---  Dark Tones  ---*/
+/*---  Light Tones  ---*/
+/*-------------------
+        Focus
+--------------------*/
+/*---  Colors  ---*/
+/*---  Emotive  ---*/
+/*---  Brand   ---*/
+/*---  Dark Tones  ---*/
+/*---  Light Tones  ---*/
+/*-------------------
+    Down (:active)
+--------------------*/
+/*---  Colors  ---*/
+/*---  Emotive  ---*/
+/*---  Brand   ---*/
+/*---  Dark Tones  ---*/
+/*---  Light Tones  ---*/
+/*-------------------
+        Active
+--------------------*/
+/*---  Colors  ---*/
+/*---  Emotive  ---*/
+/*---  Brand   ---*/
+/*---  Dark Tones  ---*/
+/*---  Light Tones  ---*/
+/* Packaged Theme */
+/*******************************
+         Site Settings
+*******************************/
+/*-------------------
+      Base Sizes
+--------------------*/
+/* This is the single variable that controls them all */
+/* The size of page text  */
+/*--------------
+  Page Heading
+---------------*/
+/*-------------------
+        Links
+--------------------*/
+/*-------------------
+      Site Colors
+--------------------*/
+/*---  Colors  ---*/
+/*---  Light Colors  ---*/
+/*-------------------
+        Hover
+--------------------*/
+/*---  Colors  ---*/
+/*-------------------
+        Grid
+--------------------*/
+/*-------------------
+    Scroll Bars
+--------------------*/
+/*-------------------
+        Paths
+--------------------*/
+/* For source only. Modified in gulp for dist */
+/*-------------------
+        Heights
+--------------------*/
+/*-------------------
+   Global Variables
+--------------------*/
+/*-------------------
+   Icon Variables
+--------------------*/
+/*-------------------
+        Page
+--------------------*/
+/*---------------------
+        Defaults
+----------------------*/
+/*-------------------
+        Input
+--------------------*/
+/*---------------------
+        Checkbox
+----------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
