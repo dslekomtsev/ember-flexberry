@@ -31293,6 +31293,14 @@ Floated Menu / Item
 /* Sizes */
 /* Colored */
 /* Packaged Theme */
+/* Card */
+/* Content */
+/* Header */
+/* Description */
+/*-------------------
+      Variations
+--------------------*/
+/* Link */
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -31438,8 +31446,8 @@ Floated Menu / Item
 /* Default Header Size */
 .ui.cards > .card > .content > .header:not(.ui),
 .ui.card > .content > .header:not(.ui) {
-  font-weight: bold;
-  font-size: 1.3125em;
+  font-weight: 500;
+  font-size: 1.5em;
   margin-top: -0.21425em;
   line-height: 1.28571429em;
 }
@@ -31700,8 +31708,8 @@ a.ui.card:hover,
   z-index: 5;
   background: #FFFFFF;
   border: none;
-  box-shadow: 0px 1px 3px 0px #BCBDBD, 0px 0px 0px 1px #D4D4D5;
-  transform: translateY(-3px);
+  box-shadow: 0px 2px 4px rgba(0, 7, 123, 0.04), 0px 8px 20px rgba(0, 0, 0, 0.06);
+  transform: none;
 }
 /*-------------------
        Colors
@@ -32482,7 +32490,23 @@ a.ui.card:hover,
 ---------------------*/
 /* Default */
 /* Packaged Theme */
+/* Card */
+/* Content */
+/* Header */
+/* Description */
+/*-------------------
+      Variations
+--------------------*/
+/* Link */
 /* Site Theme */
+/* Card */
+/* Content */
+/* Header */
+/* Description */
+/*-------------------
+      Variations
+--------------------*/
+/* Link */
 /*******************************
              Mix-ins
 *******************************/
