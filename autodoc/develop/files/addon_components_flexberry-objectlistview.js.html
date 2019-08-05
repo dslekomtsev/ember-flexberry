@@ -345,6 +345,17 @@ export default FlexberryBaseComponent.extend({
   }),
 
   /**
+    Flag indicate when component in hierarchycal mode has paging.
+
+    @property hierarchyPaging
+    @type Boolean
+    @default false
+  */
+  hierarchyPaging: Ember.computed(&#x27;currentController.hierarchyPaging&#x27;, function() {
+    return this.get(&#x27;currentController.hierarchyPaging&#x27;);
+  }),
+
+  /**
     Flag indicate when available the collapse/expand all hierarchies mode.
 
     @property availableCollExpandMode
@@ -1467,7 +1478,7 @@ export default FlexberryBaseComponent.extend({
     let eventsBus = this.get(&#x27;eventsBus&#x27;);
     if (eventsBus) {
       eventsBus.on(&#x27;setMenuWidth&#x27;, (componentName, tableWidth, containerWidth) =&gt; {
-        if (componentName === this.get(&#x27;componentName&#x27;) &amp;&amp; !this.get(&#x27;inHierarchicalMode&#x27;)) {
+        if (componentName === this.get(&#x27;componentName&#x27;) &amp;&amp; (!this.get(&#x27;inHierarchicalMode&#x27;) || this.get(&#x27;hierarchyPaging&#x27;))) {
           this._setMenuWidth(tableWidth, containerWidth);
         }
       });
