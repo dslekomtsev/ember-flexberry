@@ -21851,7 +21851,7 @@
         },
         {
             "file": "addon/mixins/reload-list-mixin.js",
-            "line": 145,
+            "line": 150,
             "description": "Create predicate for attribute. Can you overload this function for extended logic.\n\nDefault supported attribute types:\n- `string`\n- `number`",
             "example": [
                 "\n  ```javascript\n  // app/routes/example.js\n  ...\n  // Add support for logical attribute\n  predicateForAttribute(attribute, filter) {\n    switch (attribute.type) {\n      case 'boolean':\n        let yes = ['TRUE', 'True', 'true', 'YES', 'Yes', 'yes', 'ДА', 'Да', 'да', '1', '+'];\n        let no = ['False', 'False', 'false', 'NO', 'No', 'no', 'НЕТ', 'Нет', 'нет', '0', '-'];\n\n        if (yes.indexOf(filter) > 0) {\n          return new SimplePredicate(attribute.name, 'eq', 'true');\n        }\n\n        if (no.indexOf(filter) > 0) {\n          return new SimplePredicate(attribute.name, 'eq', 'false');\n        }\n\n        return null;\n\n      default:\n        return this._super(...arguments);\n    }\n  },\n  ...\n  ```"
@@ -21915,7 +21915,7 @@
         },
         {
             "file": "addon/mixins/reload-list-mixin.js",
-            "line": 241,
+            "line": 246,
             "description": "It forms the filter predicate for data loading.",
             "itemtype": "method",
             "name": "_getFilterPredicate",
@@ -21942,7 +21942,7 @@
         },
         {
             "file": "addon/mixins/reload-list-mixin.js",
-            "line": 267,
+            "line": 272,
             "description": "Generates array attributes for filter.",
             "itemtype": "method",
             "name": "_attributesForFilter",
@@ -21969,7 +21969,7 @@
         },
         {
             "file": "addon/mixins/reload-list-mixin.js",
-            "line": 314,
+            "line": 319,
             "description": "Generates new predicate for neq value predicate.",
             "itemtype": "method",
             "name": "_normalizeNeqPredicate",

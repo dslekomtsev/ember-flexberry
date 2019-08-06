@@ -324,7 +324,12 @@ export default Ember.Mixin.create({
       .selectByProjection(projectionName)
       .count();
 
-    if (reloadOptions.hierarchicalAttribute &amp;&amp; !reloadOptions.hierarchyPaging) {
+    if (reloadOptions.hierarchicalAttribute) {
+      if (reloadOptions.hierarchyPaging) {
+        builder.top(perPageNumber).skip((pageNumber - 1) * perPageNumber);
+        builder.orderBy(&#x27;id asc&#x27;);
+      }
+
       let hierarchicalPredicate = new SimplePredicate(reloadOptions.hierarchicalAttribute, &#x27;eq&#x27;, null);
       allPredicates.addObject(hierarchicalPredicate);
     } else {
