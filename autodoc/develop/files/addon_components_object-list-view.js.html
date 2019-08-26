@@ -1334,7 +1334,21 @@ export default FlexberryBaseComponent.extend(
           objectlistviewEventsService.updateWidthTrigger(componentName);
         }
       });
-    }
+    },
+
+    /**
+      Checks if &quot;Enter&quot; button was pressed.
+      If &quot;Enter&quot; button was pressed then apply filters.
+
+      @method actions.keyDownFilterAction
+    */
+    keyDownFilterAction(e) {
+      if (e.keyCode === 13) {
+        this.get(&#x27;currentController&#x27;).send(&#x27;refreshList&#x27;, this.get(&#x27;componentName&#x27;));
+        e.preventDefault();
+        return false;
+      }
+    },
   },
 
   /**
@@ -2813,7 +2827,9 @@ export default FlexberryBaseComponent.extend(
     let parent = Ember.$(settings.parent);
     let table = Ember.$(settings.table);
 
-    parent.append(table);
+    if (!parent.children(table).length) {
+      parent.append(table);
+    }
 
     Ember.$(&#x27;.full.height .flexberry-content .ui.main.container&#x27;).css(&#x27;margin-bottom&#x27;, &#x27;0&#x27;);
 
