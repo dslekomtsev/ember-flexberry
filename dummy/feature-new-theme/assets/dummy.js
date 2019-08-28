@@ -3331,7 +3331,7 @@ define('dummy/controllers/components-examples/flexberry-button/settings-example'
         settingName: 'class',
         settingType: 'css',
         settingDefaultValue: '',
-        settingAvailableItems: ['circular', 'fluid', 'loading', 'red', 'green', 'blue', 'top attached', 'bottom attached', 'left attached', 'right attached'],
+        settingAvailableItems: ['circular', 'fluid', 'loading', 'red', 'orange', 'yellow', 'olive', 'green', 'teal', 'blue', 'violet', 'purple', 'pink', 'brown', 'grey', 'black', 'top attached', 'bottom attached', 'left attached', 'right attached', 'tiny', 'small', 'large', 'big', 'huge', 'primary', 'secondary', 'basic'],
         bindedControllerPropertieName: 'class'
       });
       componentSettingsMetadata.pushObject({
@@ -3833,6 +3833,13 @@ define('dummy/controllers/components-examples/flexberry-field/settings-example',
         settingType: 'number',
         settingDefaultValue: undefined,
         bindedControllerPropertieName: 'maxlength'
+      });
+      componentSettingsMetadata.pushObject({
+        settingName: 'class',
+        settingType: 'css',
+        settingDefaultValue: '',
+        bindedControllerPropertieName: 'class',
+        settingAvailableItems: ['large']
       });
 
       return componentSettingsMetadata;
@@ -25034,7 +25041,7 @@ define("dummy/templates/components/flexberry-field", ["exports"], function (expo
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "Ln9lnHlb", "block": "{\"symbols\":[],\"statements\":[[4,\"if\",[[22,[\"label\"]]],null,{\"statements\":[[6,\"label\"],[8],[1,[20,\"label\"],false],[9],[0,\"\\n\"]],\"parameters\":[]},null],[1,[26,\"flexberry-textbox\",null,[[\"type\",\"value\",\"readonly\",\"required\",\"placeholder\",\"maxlength\"],[[22,[\"type\"]],[22,[\"value\"]],[26,\"if\",[[22,[\"readonly\"]],\"readonly\"],null],[22,[\"required\"]],[22,[\"placeholder\"]],[22,[\"maxlength\"]]]]],false],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/components/flexberry-field.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "D7nWP/2M", "block": "{\"symbols\":[],\"statements\":[[4,\"if\",[[22,[\"label\"]]],null,{\"statements\":[[6,\"label\"],[8],[1,[20,\"label\"],false],[9],[0,\"\\n\"]],\"parameters\":[]},null],[1,[26,\"flexberry-textbox\",null,[[\"class\",\"type\",\"value\",\"readonly\",\"required\",\"placeholder\",\"maxlength\"],[[22,[\"class\"]],[22,[\"type\"]],[22,[\"value\"]],[26,\"if\",[[22,[\"readonly\"]],\"readonly\"],null],[22,[\"required\"]],[22,[\"placeholder\"]],[22,[\"maxlength\"]]]]],false],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "dummy/templates/components/flexberry-field.hbs" } });
 });
 define("dummy/templates/components/flexberry-file", ["exports"], function (exports) {
   "use strict";
@@ -26068,6 +26075,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"3.1.0+dbd47d4b"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"3.1.0+26feaa68"});
 }
 //# sourceMappingURL=dummy.map
