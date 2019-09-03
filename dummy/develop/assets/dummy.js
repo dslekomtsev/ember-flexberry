@@ -12161,6 +12161,19 @@ define('dummy/ember-flexberry/tests/modules/ember-flexberry/services/objectlistv
     assert.ok(true, 'modules/ember-flexberry/services/objectlistview-events.js should pass jshint.');
   });
 });
+define('dummy/ember-flexberry/tests/modules/ember-flexberry/services/offline-globals.jscs-test', ['exports'], function (exports) {
+  module('JSCS - modules/ember-flexberry/services');
+  test('modules/ember-flexberry/services/offline-globals.js should pass jscs', function () {
+    ok(true, 'modules/ember-flexberry/services/offline-globals.js should pass jscs.');
+  });
+});
+define('dummy/ember-flexberry/tests/modules/ember-flexberry/services/offline-globals.jshint', ['exports'], function (exports) {
+  QUnit.module('JSHint - modules/ember-flexberry/services/offline-globals.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'modules/ember-flexberry/services/offline-globals.js should pass jshint.');
+  });
+});
 define('dummy/ember-flexberry/tests/modules/ember-flexberry/services/perf.jscs-test', ['exports'], function (exports) {
   module('JSCS - modules/ember-flexberry/services');
   test('modules/ember-flexberry/services/perf.js should pass jscs', function () {
@@ -23623,13 +23636,8 @@ define('dummy/services/moment', ['exports', 'ember', 'dummy/config/environment',
 define('dummy/services/objectlistview-events', ['exports', 'ember-flexberry/services/objectlistview-events'], function (exports, _emberFlexberryServicesObjectlistviewEvents) {
   exports['default'] = _emberFlexberryServicesObjectlistviewEvents['default'];
 });
-define('dummy/services/offline-globals', ['exports', 'ember-flexberry-data/services/offline-globals'], function (exports, _emberFlexberryDataServicesOfflineGlobals) {
-  Object.defineProperty(exports, 'default', {
-    enumerable: true,
-    get: function get() {
-      return _emberFlexberryDataServicesOfflineGlobals['default'];
-    }
-  });
+define('dummy/services/offline-globals', ['exports', 'ember-flexberry/services/offline-globals'], function (exports, _emberFlexberryServicesOfflineGlobals) {
+  exports['default'] = _emberFlexberryServicesOfflineGlobals['default'];
 });
 define('dummy/services/perf', ['exports', 'ember', 'ember-flexberry/services/perf', 'dummy/config/environment'], function (exports, _ember, _emberFlexberryServicesPerf, _dummyConfigEnvironment) {
 
@@ -69945,7 +69953,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.2.0-beta.11"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.2.0-beta.11+2edfa906"});
 }
 
 /* jshint ignore:end */

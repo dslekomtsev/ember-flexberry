@@ -22642,6 +22642,23 @@ define('dummy/tests/serializers/ember-flexberry-dummy-vote.jshint', ['exports'],
     assert.ok(true, 'serializers/ember-flexberry-dummy-vote.js should pass jshint.');
   });
 });
+define('dummy/tests/services/offline-globals.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - services');
+  test('services/offline-globals.js should pass jscs', function () {
+    ok(true, 'services/offline-globals.js should pass jscs.');
+  });
+});
+define('dummy/tests/services/offline-globals.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - services/offline-globals.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'services/offline-globals.js should pass jshint.');
+  });
+});
 define('dummy/tests/services/store.jscs-test', ['exports'], function (exports) {
   'use strict';
 
