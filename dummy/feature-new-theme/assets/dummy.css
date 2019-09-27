@@ -52655,6 +52655,44 @@ body.pushable > .pusher {
   line-height: 1.5em;
   margin: 0em 0em 0.5em 0em;
 }
+.ui.labeled-inside.field > .ui.input > input {
+  padding: 1.78571429em 1.5em 0.64285714em 0.78571429em;
+}
+.ui.labeled-inside.field > .ui.input > input::placeholder {
+  color: transparent;
+}
+.ui.labeled-inside.field > label {
+  height: 0px;
+  width: 0px;
+  white-space: nowrap;
+  position: relative;
+  z-index: 3;
+  pointer-events: none;
+  color: #848E99;
+  transition: all 0.3s ease-in-out 0s;
+  font-size: 0.875em;
+  line-height: 1.42857143em;
+  top: 1.85714286em;
+  margin: 0em 0em 0em 0.85714286em;
+}
+.ui.labeled-inside.has-text.field > label,
+.ui.labeled-inside.field:focus-within > label {
+  transform-origin: left bottom;
+  transform: scale(0.85714286) translateY(-1.42857143em);
+}
+.ui.large.labeled-inside.field > .ui.input > input {
+  padding: 1.8125em 0.9375em 0.5625em 0.9375em;
+}
+.ui.large.labeled-inside.field > label {
+  font-size: 1em;
+  line-height: 1.5em;
+  top: 1.875em;
+  margin: 0px 0px 0px 1em;
+}
+.ui.large.labeled-inside.has-text.field > label,
+.ui.large.labeled-inside.field:focus-within > label {
+  transform: scale(0.875) translateY(-1.5em);
+}
 .ui.form input:hover {
   border-color: #B3BBC3;
 }
@@ -52675,6 +52713,44 @@ body.pushable > .pusher {
   font-size: 1em;
   line-height: 1.5em;
   margin: 0em 0em 0.5em 0em;
+}
+.ui.labeled-inside.field > .ui.input > input {
+  padding: 1.78571429em 1.5em 0.64285714em 0.78571429em;
+}
+.ui.labeled-inside.field > .ui.input > input::placeholder {
+  color: transparent;
+}
+.ui.labeled-inside.field > label {
+  height: 0px;
+  width: 0px;
+  white-space: nowrap;
+  position: relative;
+  z-index: 3;
+  pointer-events: none;
+  color: #848E99;
+  transition: all 0.3s ease-in-out 0s;
+  font-size: 0.875em;
+  line-height: 1.42857143em;
+  top: 1.85714286em;
+  margin: 0em 0em 0em 0.85714286em;
+}
+.ui.labeled-inside.has-text.field > label,
+.ui.labeled-inside.field:focus-within > label {
+  transform-origin: left bottom;
+  transform: scale(0.85714286) translateY(-1.42857143em);
+}
+.ui.large.labeled-inside.field > .ui.input > input {
+  padding: 1.8125em 0.9375em 0.5625em 0.9375em;
+}
+.ui.large.labeled-inside.field > label {
+  font-size: 1em;
+  line-height: 1.5em;
+  top: 1.875em;
+  margin: 0px 0px 0px 1em;
+}
+.ui.large.labeled-inside.has-text.field > label,
+.ui.large.labeled-inside.field:focus-within > label {
+  transform: scale(0.875) translateY(-1.5em);
 }
 /*
 
