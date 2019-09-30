@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin');
+.display-flex {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
 /* Global */
 /*!
  * # Semantic UI - Reset
@@ -294,6 +307,12 @@
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -509,7 +528,6 @@
              Reset
 *******************************/
 /* Border-Box */
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin');
 *,
 *:before,
 *:after {
@@ -1604,6 +1622,12 @@ template {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -1661,6 +1685,12 @@ template {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -1909,6 +1939,12 @@ template {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /* Site Theme */
 /*******************************
          Site Settings
@@ -1967,6 +2003,12 @@ template {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
              Mix-ins
 *******************************/
@@ -1992,7 +2034,7 @@ body {
   padding: 0px;
   overflow-x: hidden;
   min-width: 320px;
-  background: #f4f7fb;
+  background: #F4F7FB;
   font-family: 'GOSTUI2', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.4285em;
@@ -2385,6 +2427,12 @@ input::selection {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -2442,6 +2490,12 @@ input::selection {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -2854,6 +2908,12 @@ lang {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -2911,6 +2971,12 @@ lang {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -3588,7 +3654,7 @@ lang {
 .ui.basic.buttons .button,
 .ui.basic.button {
   background: #F4F7FB !important;
-  color: #3B4256 !important;
+  color: #848E99 !important;
   font-weight: normal;
   border-radius: 4px;
   text-transform: none;
@@ -3606,26 +3672,26 @@ lang {
 .ui.basic.buttons .button:hover,
 .ui.basic.button:hover {
   background: #F4F7FB !important;
-  color: #3B4256 !important;
+  color: #848E99 !important;
   box-shadow: none;
 }
 .ui.basic.buttons .button:focus,
 .ui.basic.button:focus {
   background: #F4F7FB !important;
-  color: #3B4256 !important;
+  color: #848E99 !important;
   box-shadow: none;
 }
 .ui.basic.buttons .button:active,
 .ui.basic.button:active {
   background: #F4F7FB !important;
-  color: #3B4256 !important;
+  color: #848E99 !important;
   box-shadow: none;
 }
 .ui.basic.buttons .active.button,
 .ui.basic.active.button {
   background: #F4F7FB !important;
   box-shadow: none !important;
-  color: #3B4256 !important;
+  color: #848E99 !important;
 }
 .ui.basic.buttons .active.button:hover,
 .ui.basic.active.button:hover {
@@ -5889,7 +5955,7 @@ lang {
 .ui.secondary.buttons .button,
 .ui.secondary.button {
   background-color: #848E99;
-  color: #3B4256;
+  color: #848E99;
   text-shadow: none;
   background-image: none;
 }
@@ -5899,19 +5965,19 @@ lang {
 .ui.secondary.buttons .button:hover,
 .ui.secondary.button:hover {
   background-color: #919ba5;
-  color: #3B4256;
+  color: #848E99;
   text-shadow: none;
 }
 .ui.secondary.buttons .button:focus,
 .ui.secondary.button:focus {
   background-color: #99a2ad;
-  color: #3B4256;
+  color: #848E99;
   text-shadow: none;
 }
 .ui.secondary.buttons .button:active,
 .ui.secondary.button:active {
   background-color: #a0a8b0;
-  color: #3B4256;
+  color: #848E99;
   text-shadow: none;
 }
 .ui.secondary.buttons .active.button,
@@ -5919,7 +5985,7 @@ lang {
 .ui.secondary.active.button,
 .ui.secondary.button .active.button:active {
   background-color: #919ba6;
-  color: #3B4256;
+  color: #848E99;
   text-shadow: none;
 }
 /* Basic */
@@ -6448,6 +6514,12 @@ lang {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -6505,6 +6577,12 @@ lang {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -7015,6 +7093,12 @@ lang {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -7072,6 +7156,12 @@ lang {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -7504,6 +7594,12 @@ lang {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -8277,6 +8373,12 @@ lang {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -10791,6 +10893,12 @@ i.flag.zimbabwe:before {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -10848,6 +10956,12 @@ i.flag.zimbabwe:before {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -11790,6 +11904,12 @@ a.ui.inverted.grey.header:hover {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -11847,6 +11967,12 @@ a.ui.inverted.grey.header:hover {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -12585,6 +12711,12 @@ i.icons .inverted.corner.icon {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -12642,6 +12774,12 @@ i.icons .inverted.corner.icon {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -13226,6 +13364,12 @@ img.ui.bordered.image {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -13283,6 +13427,12 @@ img.ui.bordered.image {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -13346,7 +13496,7 @@ img.ui.bordered.image {
   line-height: 1.42857143em;
   font-family: 'GOSTUI2', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   padding: 0.42857143em 0.78571429em;
-  background: #FFFFFF;
+  background: #F4F7FB;
   border: 1px solid rgba(34, 36, 38, 0.15);
   color: #3B4256;
   border-radius: 4px;
@@ -13425,8 +13575,8 @@ img.ui.bordered.image {
 ---------------------*/
 .ui.input.focus input,
 .ui.input input:focus {
-  border-color: #85B7D9;
-  background: #FFFFFF;
+  border-color: #62B0FF;
+  background: #F4F7FB;
   color: rgba(0, 0, 0, 0.8);
   box-shadow: none;
 }
@@ -13593,7 +13743,7 @@ img.ui.bordered.image {
   border-left-color: transparent;
 }
 .ui.labeled.input:not([class*="corner labeled"]) .label:first-child + input:focus {
-  border-left-color: #85B7D9;
+  border-left-color: #62B0FF;
 }
 /* Regular Label on Right */
 .ui[class*="right labeled"].input input {
@@ -13606,7 +13756,7 @@ img.ui.bordered.image {
   border-bottom-left-radius: 0px;
 }
 .ui[class*="right labeled"].input input:focus {
-  border-right-color: #85B7D9 !important;
+  border-right-color: #62B0FF !important;
 }
 /* Corner Label */
 .ui.labeled.input .corner.label {
@@ -13677,7 +13827,7 @@ img.ui.bordered.image {
 }
 /* Input Focus */
 .ui.action.input:not([class*="left action"]) input:focus {
-  border-right-color: #85B7D9 !important;
+  border-right-color: #62B0FF !important;
 }
 /* Button on Left */
 .ui[class*="left action"].input > input {
@@ -13697,7 +13847,7 @@ img.ui.bordered.image {
 }
 /* Input Focus */
 .ui[class*="left action"].input > input:focus {
-  border-left-color: #85B7D9 !important;
+  border-left-color: #62B0FF !important;
 }
 /*--------------------
        Inverted
@@ -14034,6 +14184,12 @@ img.ui.bordered.image {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -14091,6 +14247,12 @@ img.ui.bordered.image {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -15552,6 +15714,12 @@ a.ui.basic.label:hover {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -17028,6 +17196,12 @@ ol.ui.horizontal.list li:before,
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -17860,6 +18034,12 @@ ol.ui.horizontal.list li:before,
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -18511,6 +18691,12 @@ ol.ui.horizontal.list li:before,
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -19236,6 +19422,12 @@ ol.ui.horizontal.list li:before,
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -19293,6 +19485,12 @@ ol.ui.horizontal.list li:before,
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -20278,6 +20476,12 @@ ol.ui.horizontal.list li:before,
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -20335,6 +20539,12 @@ ol.ui.horizontal.list li:before,
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -20412,8 +20622,7 @@ ol.ui.horizontal.list li:before,
 }
 .flexberry-content.ui.attached.segment {
   width: 100%;
-  background: #f4f7fb;
-  padding: 1.5rem 2rem;
+  background: #F4F7FB;
 }
 .ui.vertical.footer.segment > .flex-container > .ui.text.menu {
   margin: 0px;
@@ -20459,6 +20668,23 @@ ol.ui.horizontal.list li:before,
 .page-header-actions {
   margin: 0 2rem 0 auto;
 }
+.flexberry-container {
+  padding: 0 2rem;
+}
+.loading-message {
+  color: #aaa;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0px;
+  text-align: center;
+  transform: translateX(-50%) translateY(-250%);
+}
+.ui.inverted.dimmer.loading-pane .ui.loader {
+  color: #aaa;
+  display: flex;
+  transform: translateX(-50%) translateY(-30%);
+}
 @media only screen and (min-width: 1200px) {
   .ui.main.container {
     width: 100% !important;
@@ -20493,6 +20719,23 @@ ol.ui.horizontal.list li:before,
 }
 .page-header-actions {
   margin: 0 2rem 0 auto;
+}
+.flexberry-container {
+  padding: 0 2rem;
+}
+.loading-message {
+  color: #aaa;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0px;
+  text-align: center;
+  transform: translateX(-50%) translateY(-250%);
+}
+.ui.inverted.dimmer.loading-pane .ui.loader {
+  color: #aaa;
+  display: flex;
+  transform: translateX(-50%) translateY(-30%);
 }
 @media only screen and (min-width: 1200px) {
   .ui.main.container {
@@ -20798,6 +21041,12 @@ ol.ui.horizontal.list li:before,
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -21880,6 +22129,12 @@ ol.ui.horizontal.list li:before,
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -22499,6 +22754,12 @@ ol.ui.horizontal.list li:before,
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -22556,6 +22817,12 @@ ol.ui.horizontal.list li:before,
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -23818,6 +24085,12 @@ ol.ui.horizontal.list li:before,
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -26192,6 +26465,12 @@ ol.ui.horizontal.list li:before,
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -26249,6 +26528,12 @@ ol.ui.horizontal.list li:before,
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -28335,6 +28620,12 @@ Floated Menu / Item
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -29296,6 +29587,12 @@ Floated Menu / Item
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -29353,6 +29650,12 @@ Floated Menu / Item
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -30673,6 +30976,12 @@ Floated Menu / Item
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -31387,6 +31696,12 @@ Floated Menu / Item
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -31444,6 +31759,12 @@ Floated Menu / Item
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -32620,6 +32941,12 @@ a.ui.card:hover,
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -32677,6 +33004,12 @@ a.ui.card:hover,
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -33052,6 +33385,12 @@ a.ui.card:hover,
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -33835,6 +34174,12 @@ a.ui.card:hover,
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -34652,6 +34997,12 @@ a.ui.card:hover,
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -35625,6 +35976,12 @@ a.ui.card:hover,
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -36672,6 +37029,12 @@ a.ui.card:hover,
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -37450,6 +37813,12 @@ a.ui.card:hover,
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -37507,6 +37876,12 @@ a.ui.card:hover,
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -38333,6 +38708,12 @@ a.ui.card:hover,
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -39033,6 +39414,12 @@ body.dimmable > .dimmer {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -39090,6 +39477,12 @@ body.dimmable > .dimmer {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -40691,6 +41084,12 @@ select.ui.dropdown {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -41367,6 +41766,12 @@ select.ui.dropdown {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -41424,6 +41829,12 @@ select.ui.dropdown {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -42250,6 +42661,12 @@ select.ui.dropdown {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -42922,6 +43339,12 @@ a.ui.nag {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -44130,6 +44553,12 @@ a.ui.nag {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -45121,6 +45550,12 @@ a.ui.nag {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -45917,6 +46352,12 @@ a.ui.nag {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -46827,6 +47268,12 @@ a.ui.nag {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -47459,6 +47906,12 @@ a.ui.nag {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -47516,6 +47969,12 @@ a.ui.nag {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -47644,7 +48103,7 @@ body.pushable {
   z-index: 2;
 }
 body.pushable > .pusher {
-  background: #f4f7fb;
+  background: #F4F7FB;
 }
 /* Pusher should inherit background from context */
 .pushable > .pusher {
@@ -47707,11 +48166,11 @@ body.pushable > .pusher {
 /* Visible On Load */
 .ui.visible.left.sidebar ~ .fixed,
 .ui.visible.left.sidebar ~ .pusher {
-  transform: translate3d(260px, 0, 0);
+  transform: translate3d(240px, 0, 0);
 }
 .ui.visible.right.sidebar ~ .fixed,
 .ui.visible.right.sidebar ~ .pusher {
-  transform: translate3d(-260px, 0, 0);
+  transform: translate3d(-240px, 0, 0);
 }
 .ui.visible.top.sidebar ~ .fixed,
 .ui.visible.top.sidebar ~ .pusher {
@@ -47748,7 +48207,7 @@ body.pushable > .pusher {
 }
 .ui.left.sidebar,
 .ui.right.sidebar {
-  width: 260px;
+  width: 240px;
 }
 .ui.wide.left.sidebar,
 .ui.wide.right.sidebar {
@@ -48267,6 +48726,12 @@ body.pushable > .pusher {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -48324,6 +48789,12 @@ body.pushable > .pusher {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -48360,34 +48831,71 @@ body.pushable > .pusher {
   background: none;
 }
 .inverted.vertical.main.menu.sidebar {
-  padding: 1.5rem 0;
   overflow: visible ! important;
+  padding: 1.5rem 0;
 }
 .inverted.vertical.main.menu.sidebar .item {
   padding: 1rem;
 }
-.inverted.vertical.main.menu.sidebar .item::before {
-  display: none;
-}
 .inverted.vertical.main.menu.sidebar .dropdown.item .menu {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border-top: 0;
   height: 100%;
   padding: 1.5rem 0;
   position: fixed;
+}
+.inverted.vertical.main.menu.sidebar > div > .active.item {
+  background: none;
+}
+.inverted.vertical.main.menu.sidebar > div > .active.item:hover,
+.inverted.vertical.main.menu.sidebar > div > .active.item:active {
+  background: none;
+}
+.inverted.vertical.main.menu.sidebar > div > .item .title-item-menu .icon {
+  -webkit-opacity: 0.2;
+  -moz-opacity: 0.2;
+  opacity: 0.2;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -ms-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+}
+.inverted.vertical.main.menu.sidebar > div > .item::before {
+  display: none;
+}
+.inverted.vertical.main.menu.sidebar > div > .item:hover,
+.inverted.vertical.main.menu.sidebar > div > .item:active {
+  background: none;
+}
+.inverted.vertical.main.menu.sidebar > div > .item:hover .title-item-menu .icon,
+.inverted.vertical.main.menu.sidebar > div > .item:active .title-item-menu .icon {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
 }
 .launch.icon.item {
   padding: 0px 2rem 0px 1rem;
   font-size: 1.5rem;
 }
-.sitebar-footer {
-  position: absolute;
-  bottom: 1.5rem;
-  width: 100%;
-}
 .title-item-menu {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
   display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
 .title-item-menu .icon {
-  font-size: 1.2em;
+  font-size: 1.2rem;
   margin-right: 1rem;
 }
 .ui.vertical.inverted.menu .menu .item,
@@ -48399,36 +48907,122 @@ body.pushable > .pusher {
 .ui.vertical.inverted.menu .item .menu .link.item:hover {
   color: #3B4256;
   background: rgba(0, 0, 0, 0.1);
+}
+.full.height {
+  margin-left: 240px;
+}
+.full.height.content-opened {
+  margin-left: 56px;
+}
+.ui.sidebar.main.menu {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  visibility: visible;
+}
+.ui.sidebar.main.menu > div > .item > .dropdown.icon {
+  display: none;
+}
+.ui.sidebar.main.menu .ui.dropdown .menu .item .dropdown.icon:before {
+  content: "\e907";
+  font-family: 'guideline-icons';
+}
+.ui.sidebar.main.menu.sidebar-mini {
+  width: 56px;
+}
+.ui.sidebar.main.menu.sidebar-mini > div > .item {
+  font-size: 0;
+}
+.ui.sidebar.main.menu.sidebar-mini > div > .item .menu.transition {
+  font-size: 1rem;
+}
+.ui.sidebar.main.menu .ui.dropdown .menu > .item {
+  padding: 1em 0.5em 1em 1em !important;
+}
+.ui.sidebar.main.menu .ui.dropdown .menu > .item .title-item-menu {
+  margin-right: 1.5em;
+}
+.ui.visible.left.sidebar ~ .pusher {
+  -webkit-transform: translate3d(0, 0, 0) !important;
+  -moz-transform: translate3d(0, 0, 0) !important;
+  -ms-transform: translate3d(0, 0, 0) !important;
+  -o-transform: translate3d(0, 0, 0) !important;
+}
+.ui.uncover.sidebar {
+  z-index: 10;
+}
+.sitebar-footer {
+  position: absolute;
+  bottom: 1.5rem;
+  width: 100%;
 }
 .inverted.vertical.main.menu.sidebar {
-  padding: 1.5rem 0;
   overflow: visible ! important;
+  padding: 1.5rem 0;
 }
 .inverted.vertical.main.menu.sidebar .item {
   padding: 1rem;
 }
-.inverted.vertical.main.menu.sidebar .item::before {
-  display: none;
-}
 .inverted.vertical.main.menu.sidebar .dropdown.item .menu {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border-top: 0;
   height: 100%;
   padding: 1.5rem 0;
   position: fixed;
+}
+.inverted.vertical.main.menu.sidebar > div > .active.item {
+  background: none;
+}
+.inverted.vertical.main.menu.sidebar > div > .active.item:hover,
+.inverted.vertical.main.menu.sidebar > div > .active.item:active {
+  background: none;
+}
+.inverted.vertical.main.menu.sidebar > div > .item .title-item-menu .icon {
+  -webkit-opacity: 0.2;
+  -moz-opacity: 0.2;
+  opacity: 0.2;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -ms-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+}
+.inverted.vertical.main.menu.sidebar > div > .item::before {
+  display: none;
+}
+.inverted.vertical.main.menu.sidebar > div > .item:hover,
+.inverted.vertical.main.menu.sidebar > div > .item:active {
+  background: none;
+}
+.inverted.vertical.main.menu.sidebar > div > .item:hover .title-item-menu .icon,
+.inverted.vertical.main.menu.sidebar > div > .item:active .title-item-menu .icon {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
 }
 .launch.icon.item {
   padding: 0px 2rem 0px 1rem;
   font-size: 1.5rem;
 }
-.sitebar-footer {
-  position: absolute;
-  bottom: 1.5rem;
-  width: 100%;
-}
 .title-item-menu {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
   display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
 .title-item-menu .icon {
-  font-size: 1.2em;
+  font-size: 1.2rem;
   margin-right: 1rem;
 }
 .ui.vertical.inverted.menu .menu .item,
@@ -48440,6 +49034,55 @@ body.pushable > .pusher {
 .ui.vertical.inverted.menu .item .menu .link.item:hover {
   color: #3B4256;
   background: rgba(0, 0, 0, 0.1);
+}
+.full.height {
+  margin-left: 240px;
+}
+.full.height.content-opened {
+  margin-left: 56px;
+}
+.ui.sidebar.main.menu {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  visibility: visible;
+}
+.ui.sidebar.main.menu > div > .item > .dropdown.icon {
+  display: none;
+}
+.ui.sidebar.main.menu .ui.dropdown .menu .item .dropdown.icon:before {
+  content: "\e907";
+  font-family: 'guideline-icons';
+}
+.ui.sidebar.main.menu.sidebar-mini {
+  width: 56px;
+}
+.ui.sidebar.main.menu.sidebar-mini > div > .item {
+  font-size: 0;
+}
+.ui.sidebar.main.menu.sidebar-mini > div > .item .menu.transition {
+  font-size: 1rem;
+}
+.ui.sidebar.main.menu .ui.dropdown .menu > .item {
+  padding: 1em 0.5em 1em 1em !important;
+}
+.ui.sidebar.main.menu .ui.dropdown .menu > .item .title-item-menu {
+  margin-right: 1.5em;
+}
+.ui.visible.left.sidebar ~ .pusher {
+  -webkit-transform: translate3d(0, 0, 0) !important;
+  -moz-transform: translate3d(0, 0, 0) !important;
+  -ms-transform: translate3d(0, 0, 0) !important;
+  -o-transform: translate3d(0, 0, 0) !important;
+}
+.ui.uncover.sidebar {
+  z-index: 10;
+}
+.sitebar-footer {
+  position: absolute;
+  bottom: 1.5rem;
+  width: 100%;
 }
 /*!
  * # Semantic UI - Sticky
@@ -48736,6 +49379,12 @@ body.pushable > .pusher {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -49292,6 +49941,12 @@ body.pushable > .pusher {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -49865,6 +50520,12 @@ body.pushable > .pusher {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -52165,6 +52826,12 @@ body.pushable > .pusher {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -52222,6 +52889,12 @@ body.pushable > .pusher {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -52561,6 +53234,12 @@ body.pushable > .pusher {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -52618,6 +53297,12 @@ body.pushable > .pusher {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -53035,6 +53720,12 @@ body.pushable > .pusher {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -53092,6 +53783,12 @@ body.pushable > .pusher {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -53493,6 +54190,12 @@ body.pushable > .pusher {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -53550,6 +54253,12 @@ body.pushable > .pusher {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -53892,6 +54601,12 @@ body.pushable > .pusher {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -53949,6 +54664,12 @@ body.pushable > .pusher {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -54434,6 +55155,12 @@ body.pushable > .pusher {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -54491,6 +55218,12 @@ body.pushable > .pusher {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -54556,7 +55289,7 @@ body.pushable > .pusher {
   margin: 0;
 }
 .object-list-view-container.groupedit-container {
-  overflow: visible;
+  overflow: auto;
 }
 table.object-list-view.selectable tbody,
 table.object-list-view.selectable thead {
@@ -54690,19 +55423,6 @@ div.ui.secondary.menu.no-margin {
 .cell .button:hover {
   background: #FFFFFF;
 }
-.ui.ui-delete.button {
-  padding: 0px;
-  height: 30px;
-  width: 30px;
-  border: 1px solid #0C49CD;
-}
-.ui.ui-delete.button:hover {
-  border: 1px solid #FF7500;
-  background: #FFFFFF;
-}
-.ui.ui-delete.button:hover i.icon.minus:before {
-  color: #FF7500;
-}
 .ui.check-all-at-page-button.button {
   padding: 0px;
   height: 25px;
@@ -54818,29 +55538,6 @@ div.ui.secondary.menu.no-margin {
 }
 .ui.ui-edit.button:hover i.icon.edit:before {
   color: #FF7500;
-}
-.ui.ui-add.button {
-  padding: 0px;
-  height: 30px;
-  width: 30px;
-  border: 1px solid #0C49CD;
-}
-.ui.ui-add.button:hover {
-  border: 1px solid #7dd4b4;
-  background: #FFFFFF;
-}
-.ui.ui-add.button:hover i.icon.plus:before {
-  color: #7dd4b4;
-}
-.ui.ui-clear-settings.button {
-  padding: 0px;
-  height: 30px;
-  width: 30px;
-  border: 1px solid #0C49CD;
-  text-align: right;
-}
-.ui.ui-clear-settings.button:hover {
-  background: #FFFFFF;
 }
 .right.pointing.ui.icon.dropdown.button:hover i.icon.list.layout:before {
   color: #FFFFFF;
@@ -55193,6 +55890,12 @@ i.icon.change:before:hover {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -55250,6 +55953,12 @@ i.icon.change:before:hover {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -55695,6 +56404,12 @@ i.icon.change:before:hover {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*******************************
          Site Settings
 *******************************/
@@ -55752,6 +56467,12 @@ i.icon.change:before:hover {
 /*---------------------
         Checkbox
 ----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
 /*-------------------
  Component Variables
 ---------------------*/
@@ -55774,8 +56495,546 @@ i.icon.change:before:hover {
      Overrides
 -------------------*/
 /* End Config */
+.ui.form.flexberry-vertical-form {
+  background: #fff;
+  padding: 0 2rem;
+}
+.flexberry-content.ui.attached.segment {
+  padding: 1.5rem 0 0 0;
+}
+.ui.header {
+  padding-left: 2rem;
+  font-weight: 400;
+}
+.flexberry-edit-panel {
+  padding-top: 1rem;
+}
+.flexberry-edit-panel .ui.button:first-child {
+  padding-left: 0;
+}
+.flexberry-edit-panel .ui.button.save-button,
+.flexberry-edit-panel .ui.button.save-close-button,
+.flexberry-edit-panel .ui.button.save-del-button,
+.flexberry-edit-panel .ui.button.close-button {
+  background: #fff;
+  font-weight: 500;
+  color: #3B4256;
+}
+.flexberry-edit-panel .ui.button.save-button:focus,
+.flexberry-edit-panel .ui.button.save-close-button:focus,
+.flexberry-edit-panel .ui.button.save-del-button:focus,
+.flexberry-edit-panel .ui.button.close-button:focus {
+  border: none;
+}
+.ui.button.save-button::before {
+  content: "\f0c7";
+  font-family: outline-icons;
+  font-size: 16px;
+  padding-right: 10px;
+}
+.ui.button.save-close-button {
+  position: relative;
+}
+.ui.button.save-close-button::before {
+  content: "\f0c7";
+  font-family: outline-icons;
+  font-size: 16px;
+  padding-right: 10px;
+}
+.ui.button.save-close-button::after {
+  content: "\e915";
+  font-family: guideline-icons;
+  font-size: 16px;
+  position: absolute;
+  left: 1.2em;
+  top: 0.2em;
+}
+.ui.button.save-del-button::before {
+  content: "\e911";
+  font-family: guideline-icons;
+  font-size: 16px;
+  padding-right: 10px;
+}
+.ui.button.close-button {
+  font-size: 0;
+  float: right;
+  line-height: 1.5rem;
+  padding-top: 0.64285714em;
+}
+.ui.button.close-button::before {
+  content: "\e806";
+  font-family: 'Crimean';
+  font-size: 12px;
+  font-weight: 700;
+}
+.ui.form.flexberry-vertical-form {
+  background: #fff;
+  padding: 0 2rem;
+}
+.flexberry-content.ui.attached.segment {
+  padding: 1.5rem 0 0 0;
+}
+.ui.header {
+  padding-left: 2rem;
+  font-weight: 400;
+}
+.flexberry-edit-panel {
+  padding-top: 1rem;
+}
+.flexberry-edit-panel .ui.button:first-child {
+  padding-left: 0;
+}
+.flexberry-edit-panel .ui.button.save-button,
+.flexberry-edit-panel .ui.button.save-close-button,
+.flexberry-edit-panel .ui.button.save-del-button,
+.flexberry-edit-panel .ui.button.close-button {
+  background: #fff;
+  font-weight: 500;
+  color: #3B4256;
+}
+.flexberry-edit-panel .ui.button.save-button:focus,
+.flexberry-edit-panel .ui.button.save-close-button:focus,
+.flexberry-edit-panel .ui.button.save-del-button:focus,
+.flexberry-edit-panel .ui.button.close-button:focus {
+  border: none;
+}
+.ui.button.save-button::before {
+  content: "\f0c7";
+  font-family: outline-icons;
+  font-size: 16px;
+  padding-right: 10px;
+}
+.ui.button.save-close-button {
+  position: relative;
+}
+.ui.button.save-close-button::before {
+  content: "\f0c7";
+  font-family: outline-icons;
+  font-size: 16px;
+  padding-right: 10px;
+}
+.ui.button.save-close-button::after {
+  content: "\e915";
+  font-family: guideline-icons;
+  font-size: 16px;
+  position: absolute;
+  left: 1.2em;
+  top: 0.2em;
+}
+.ui.button.save-del-button::before {
+  content: "\e911";
+  font-family: guideline-icons;
+  font-size: 16px;
+  padding-right: 10px;
+}
+.ui.button.close-button {
+  font-size: 0;
+  float: right;
+  line-height: 1.5rem;
+  padding-top: 0.64285714em;
+}
+.ui.button.close-button::before {
+  content: "\e806";
+  font-family: 'Crimean';
+  font-size: 12px;
+  font-weight: 700;
+}
 /* Pages */
-.full.height {
-  width: calc(100% - 260px);
+/*
+
+████████╗██╗  ██╗███████╗███╗   ███╗███████╗███████╗
+╚══██╔══╝██║  ██║██╔════╝████╗ ████║██╔════╝██╔════╝
+   ██║   ███████║█████╗  ██╔████╔██║█████╗  ███████╗
+   ██║   ██╔══██║██╔══╝  ██║╚██╔╝██║██╔══╝  ╚════██║
+   ██║   ██║  ██║███████╗██║ ╚═╝ ██║███████╗███████║
+   ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝╚══════╝╚══════╝
+
+*/
+/*******************************
+        Theme Selection
+*******************************/
+/* To override a theme for an individual element
+   specify theme name below
+*/
+/* Global */
+/* Elements */
+/* Collections */
+/* Modules */
+/* Views */
+/* Сontrols */
+/* Forms */
+/*******************************
+            Folders
+*******************************/
+/* Path to semantic ui theme packages */
+/* Path to ember flexberry theme packages */
+/* Path to site override folder */
+/*******************************
+         Import Theme
+*******************************/
+/*******************************
+        Import Directives
+*******************************/
+/*--------------------
+   Site Variables
+---------------------*/
+/* Default */
+/*******************************
+         Site Settings
+*******************************/
+/*-------------------
+       Fonts
+--------------------*/
+/*-------------------
+      Base Sizes
+--------------------*/
+/* This is the single variable that controls them all */
+/* The size of page text  */
+/*-------------------
+    Border Radius
+--------------------*/
+/* See Power-user section below
+   for explanation of @px variables
+*/
+/*-------------------
+    Brand Colors
+--------------------*/
+/*--------------
+  Page Heading
+---------------*/
+/*--------------
+   Form Input
+---------------*/
+/* This adjusts the default form input across all elements */
+/* Input Text Color */
+/* Line Height Default For Inputs in Browser (Descendors are 17px at 14px base em) */
+/*-------------------
+    Focused Input
+--------------------*/
+/* Used on inputs, textarea etc */
+/* Used on dropdowns, other larger blocks */
+/*-------------------
+        Sizes
+--------------------*/
+/*
+  Sizes are all expressed in terms of 14px/em (default em)
+  This ensures these "ratios" remain constant despite changes in EM
+*/
+/*-------------------
+        Page
+--------------------*/
+/*-------------------
+      Paragraph
+--------------------*/
+/*-------------------
+       Links
+--------------------*/
+/*-------------------
+    Scroll Bars
+--------------------*/
+/* Inverted */
+/*-------------------
+  Highlighted Text
+--------------------*/
+/*-------------------
+       Loader
+--------------------*/
+/*-------------------
+        Grid
+--------------------*/
+/*-------------------
+     Transitions
+--------------------*/
+/*-------------------
+     Breakpoints
+--------------------*/
+/*-------------------
+      Site Colors
+--------------------*/
+/*---  Colors  ---*/
+/*---  Light Colors  ---*/
+/*---   Neutrals  ---*/
+/*--- Colored Backgrounds ---*/
+/*--- Colored Headers ---*/
+/*--- Colored Text ---*/
+/*--- Colored Border ---*/
+/*-------------------
+     Alpha Colors
+--------------------*/
+/*-------------------
+       Accents
+--------------------*/
+/* Differentiating Neutrals */
+/* Differentiating Layers */
+/*******************************
+           Power-User
+*******************************/
+/*-------------------
+    Emotive Colors
+--------------------*/
+/* Positive */
+/* Negative */
+/* Info */
+/* Warning */
+/*-------------------
+        Paths
+--------------------*/
+/* For source only. Modified in gulp for dist */
+/*-------------------
+       Em Sizes
+--------------------*/
+/*
+  This rounds @size values to the closest pixel then expresses that value in (r)em.
+  This ensures all size values round to exact pixels
+*/
+/* em */
+/* rem */
+/*-------------------
+       Icons
+--------------------*/
+/* Maximum Glyph Width of Icon */
+/*-------------------
+     Neutral Text
+--------------------*/
+/*-------------------
+     Brand Colors
+--------------------*/
+/*-------------------
+      Borders
+--------------------*/
+/*-------------------
+    Derived Values
+--------------------*/
+/* Loaders Position Offset */
+/* Rendered Scrollbar Width */
+/* Maximum Single Character Glyph Width, aka Capital "W" */
+/* Used to match floats with text */
+/* Header Spacing */
+/* Minimum Mobile Width */
+/* Positive / Negative Dupes */
+/* Responsive */
+/*-------------------
+  Exact Pixel Values
+--------------------*/
+/*
+  These are used to specify exact pixel values in em
+  for things like borders that remain constantly
+  sized as emSize adjusts
+
+  Since there are many more sizes than names for sizes,
+  these are named by their original pixel values.
+
+*/
+/* Columns */
+/*******************************
+             States
+*******************************/
+/*-------------------
+      Disabled
+--------------------*/
+/*-------------------
+        Hover
+--------------------*/
+/*---  Shadows  ---*/
+/*---  Colors  ---*/
+/*---  Emotive  ---*/
+/*---  Brand   ---*/
+/*---  Dark Tones  ---*/
+/*---  Light Tones  ---*/
+/*-------------------
+        Focus
+--------------------*/
+/*---  Colors  ---*/
+/*---  Emotive  ---*/
+/*---  Brand   ---*/
+/*---  Dark Tones  ---*/
+/*---  Light Tones  ---*/
+/*-------------------
+    Down (:active)
+--------------------*/
+/*---  Colors  ---*/
+/*---  Emotive  ---*/
+/*---  Brand   ---*/
+/*---  Dark Tones  ---*/
+/*---  Light Tones  ---*/
+/*-------------------
+        Active
+--------------------*/
+/*---  Colors  ---*/
+/*---  Emotive  ---*/
+/*---  Brand   ---*/
+/*---  Dark Tones  ---*/
+/*---  Light Tones  ---*/
+/* Packaged Theme */
+/*******************************
+         Site Settings
+*******************************/
+/*-------------------
+       Fonts
+--------------------*/
+/*-------------------
+      Base Sizes
+--------------------*/
+/* This is the single variable that controls them all */
+/* The size of page text  */
+/*--------------
+  Page Heading
+---------------*/
+/*-------------------
+        Links
+--------------------*/
+/*-------------------
+      Site Colors
+--------------------*/
+/*---  Colors  ---*/
+/*---  Light Colors  ---*/
+/*-------------------
+        Hover
+--------------------*/
+/*---  Colors  ---*/
+/*-------------------
+        Grid
+--------------------*/
+/*-------------------
+    Scroll Bars
+--------------------*/
+/*-------------------
+        Paths
+--------------------*/
+/* For source only. Modified in gulp for dist */
+/*-------------------
+        Heights
+--------------------*/
+/*-------------------
+   Global Variables
+--------------------*/
+/*-------------------
+   Icon Variables
+--------------------*/
+/*-------------------
+        Page
+--------------------*/
+/*---------------------
+        Defaults
+----------------------*/
+/*-------------------
+        Input
+--------------------*/
+/*---------------------
+        Checkbox
+----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
+/*******************************
+         Site Settings
+*******************************/
+/*-------------------
+       Fonts
+--------------------*/
+/*-------------------
+      Base Sizes
+--------------------*/
+/* This is the single variable that controls them all */
+/* The size of page text  */
+/*--------------
+  Page Heading
+---------------*/
+/*-------------------
+        Links
+--------------------*/
+/*-------------------
+      Site Colors
+--------------------*/
+/*---  Colors  ---*/
+/*---  Light Colors  ---*/
+/*-------------------
+        Hover
+--------------------*/
+/*---  Colors  ---*/
+/*-------------------
+        Grid
+--------------------*/
+/*-------------------
+    Scroll Bars
+--------------------*/
+/*-------------------
+        Paths
+--------------------*/
+/* For source only. Modified in gulp for dist */
+/*-------------------
+        Heights
+--------------------*/
+/*-------------------
+   Global Variables
+--------------------*/
+/*-------------------
+   Icon Variables
+--------------------*/
+/*-------------------
+        Page
+--------------------*/
+/*---------------------
+        Defaults
+----------------------*/
+/*-------------------
+        Input
+--------------------*/
+/*---------------------
+        Checkbox
+----------------------*/
+/*------------------------
+        COLOR SCHEME
+-------------------------*/
+/*------------------------
+        PGMU
+-------------------------*/
+/*-------------------
+ Component Variables
+---------------------*/
+/* Default */
+/* Packaged Theme */
+/* Site Theme */
+/*******************************
+             Mix-ins
+*******************************/
+/*------------------
+       Fonts
+-------------------*/
+/*------------------
+     Overrides
+-------------------*/
+/* End Config */
+.login-form-inner {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 12px rgba(95, 95, 95, 0.153646);
+  border-radius: 4px;
+  height: auto;
+  margin: auto;
+  padding: 2rem;
+  width: 424px;
+}
+.login-form-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% - 72px));
+}
+.login-form-inner .ui.header {
+  padding-left: 0;
+  margin-top: 0;
+}
+.login-form-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% - 72px));
+}
+.login-form-inner .ui.header {
+  padding-left: 0;
+  margin-top: 0;
 }
 /*# sourceMappingURL=/assets/dummy.css.map */

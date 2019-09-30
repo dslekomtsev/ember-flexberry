@@ -6034,6 +6034,11 @@ define('dummy/tests/app.lint-test', [], function () {
     assert.ok(true, 'controllers/log-service-examples/settings-example.js should pass ESLint\n\n');
   });
 
+  QUnit.test('controllers/login.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/login.js should pass ESLint\n\n');
+  });
+
   QUnit.test('controllers/new-platform-flexberry-services-lock-list.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'controllers/new-platform-flexberry-services-lock-list.js should pass ESLint\n\n');
@@ -6937,6 +6942,11 @@ define('dummy/tests/app.lint-test', [], function () {
   QUnit.test('routes/log-service-examples/settings-example.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/log-service-examples/settings-example.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('routes/login.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/login.js should pass ESLint\n\n');
   });
 
   QUnit.test('routes/user-setting-forms/user-setting-delete.js', function (assert) {
