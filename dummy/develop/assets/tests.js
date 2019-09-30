@@ -7461,6 +7461,23 @@ define('dummy/tests/controllers/components-examples/flexberry-objectlistview/lim
     assert.ok(true, 'controllers/components-examples/flexberry-objectlistview/limit-function-example.js should pass jshint.');
   });
 });
+define('dummy/tests/controllers/components-examples/flexberry-objectlistview/limited-text-size-example.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - controllers/components-examples/flexberry-objectlistview');
+  test('controllers/components-examples/flexberry-objectlistview/limited-text-size-example.js should pass jscs', function () {
+    ok(true, 'controllers/components-examples/flexberry-objectlistview/limited-text-size-example.js should pass jscs.');
+  });
+});
+define('dummy/tests/controllers/components-examples/flexberry-objectlistview/limited-text-size-example.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - controllers/components-examples/flexberry-objectlistview/limited-text-size-example.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/components-examples/flexberry-objectlistview/limited-text-size-example.js should pass jshint.');
+  });
+});
 define('dummy/tests/controllers/components-examples/flexberry-objectlistview/list-on-editform.jscs-test', ['exports'], function (exports) {
   'use strict';
 
@@ -7816,6 +7833,23 @@ define('dummy/tests/controllers/components-examples/flexberry-simpleolv/toolbar-
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'controllers/components-examples/flexberry-simpleolv/toolbar-custom-buttons-example.js should pass jshint.');
+  });
+});
+define('dummy/tests/controllers/components-examples/flexberry-text-cell/settings-example.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - controllers/components-examples/flexberry-text-cell');
+  test('controllers/components-examples/flexberry-text-cell/settings-example.js should pass jscs', function () {
+    ok(true, 'controllers/components-examples/flexberry-text-cell/settings-example.js should pass jscs.');
+  });
+});
+define('dummy/tests/controllers/components-examples/flexberry-text-cell/settings-example.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - controllers/components-examples/flexberry-text-cell/settings-example.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/components-examples/flexberry-text-cell/settings-example.js should pass jshint.');
   });
 });
 define('dummy/tests/controllers/components-examples/flexberry-textarea/settings-example.jscs-test', ['exports'], function (exports) {
@@ -21452,6 +21486,23 @@ define('dummy/tests/routes/components-examples/flexberry-objectlistview/limit-fu
     assert.ok(true, 'routes/components-examples/flexberry-objectlistview/limit-function-example.js should pass jshint.');
   });
 });
+define('dummy/tests/routes/components-examples/flexberry-objectlistview/limited-text-size-example.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - routes/components-examples/flexberry-objectlistview');
+  test('routes/components-examples/flexberry-objectlistview/limited-text-size-example.js should pass jscs', function () {
+    ok(true, 'routes/components-examples/flexberry-objectlistview/limited-text-size-example.js should pass jscs.');
+  });
+});
+define('dummy/tests/routes/components-examples/flexberry-objectlistview/limited-text-size-example.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - routes/components-examples/flexberry-objectlistview/limited-text-size-example.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/components-examples/flexberry-objectlistview/limited-text-size-example.js should pass jshint.');
+  });
+});
 define('dummy/tests/routes/components-examples/flexberry-objectlistview/list-on-editform.jscs-test', ['exports'], function (exports) {
   'use strict';
 
@@ -21807,6 +21858,23 @@ define('dummy/tests/routes/components-examples/flexberry-simpleolv/toolbar-custo
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/components-examples/flexberry-simpleolv/toolbar-custom-buttons-example.js should pass jshint.');
+  });
+});
+define('dummy/tests/routes/components-examples/flexberry-text-cell/settings-example.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - routes/components-examples/flexberry-text-cell');
+  test('routes/components-examples/flexberry-text-cell/settings-example.js should pass jscs', function () {
+    ok(true, 'routes/components-examples/flexberry-text-cell/settings-example.js should pass jscs.');
+  });
+});
+define('dummy/tests/routes/components-examples/flexberry-text-cell/settings-example.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - routes/components-examples/flexberry-text-cell/settings-example.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/components-examples/flexberry-text-cell/settings-example.js should pass jshint.');
   });
 });
 define('dummy/tests/routes/components-examples/flexberry-textarea/settings-example.jscs-test', ['exports'], function (exports) {
@@ -26159,6 +26227,61 @@ define('dummy/tests/unit/services/objectlistview-events-test.jshint', ['exports'
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/services/objectlistview-events-test.js should pass jshint.');
+  });
+});
+define('dummy/tests/unit/utils/cut-string-by-length-test', ['exports', 'dummy/utils/cut-string-by-length', 'qunit'], function (exports, _dummyUtilsCutStringByLength, _qunit) {
+
+  (0, _qunit.module)('Unit | Utility | cut string by length');
+
+  (0, _qunit.test)('cut by length', function (assert) {
+    var result = (0, _dummyUtilsCutStringByLength['default'])('test string', 6);
+    assert.equal(result, 'test s...');
+
+    result = (0, _dummyUtilsCutStringByLength['default'])('test string', 20);
+    assert.equal(result, 'test string');
+
+    result = (0, _dummyUtilsCutStringByLength['default'])('test string', 0);
+    assert.equal(result, 'test string');
+
+    result = (0, _dummyUtilsCutStringByLength['default'])('test string', 3);
+    assert.equal(result, 'tes...');
+  });
+
+  (0, _qunit.test)('cut by spaces', function (assert) {
+    var result = (0, _dummyUtilsCutStringByLength['default'])('test string with spaces', 6, true);
+    assert.equal(result, 'test...');
+
+    result = (0, _dummyUtilsCutStringByLength['default'])('test string with spaces', 50, true);
+    assert.equal(result, 'test string with spaces');
+
+    result = (0, _dummyUtilsCutStringByLength['default'])('test string with spaces', 0, true);
+    assert.equal(result, 'test string with spaces');
+
+    result = (0, _dummyUtilsCutStringByLength['default'])('test string with spaces', 3, true);
+    assert.equal(result, 'tes...');
+
+    result = (0, _dummyUtilsCutStringByLength['default'])('test string with spaces', 18, true);
+    assert.equal(result, 'test string with...');
+
+    result = (0, _dummyUtilsCutStringByLength['default'])('test string with spaces', 12, true);
+    assert.equal(result, 'test string...');
+  });
+});
+define('dummy/tests/unit/utils/cut-string-by-length-test.jscs-test', ['exports'], function (exports) {
+  'use strict';
+
+  module('JSCS - unit/utils');
+  test('unit/utils/cut-string-by-length-test.js should pass jscs', function () {
+    ok(true, 'unit/utils/cut-string-by-length-test.js should pass jscs.');
+  });
+});
+define('dummy/tests/unit/utils/cut-string-by-length-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - unit/utils/cut-string-by-length-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/utils/cut-string-by-length-test.js should pass jshint.');
   });
 });
 define('dummy/tests/unit/utils/deserialize-sorting-param-test', ['exports', 'ember', 'dummy/utils/deserialize-sorting-param', 'qunit'], function (exports, _ember, _dummyUtilsDeserializeSortingParam, _qunit) {

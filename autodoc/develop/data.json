@@ -279,6 +279,13 @@
             },
             "namespaces": {}
         },
+        "addon/components/flexberry-text-cell.js": {
+            "name": "addon/components/flexberry-text-cell.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
         "addon/components/flexberry-textarea.js": {
             "name": "addon/components/flexberry-textarea.js",
             "modules": {},
@@ -1281,6 +1288,13 @@
             "fors": {},
             "namespaces": {}
         },
+        "addon/utils/cut-string-by-length.js": {
+            "name": "addon/utils/cut-string-by-length.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
         "addon/utils/deserialize-sorting-param.js": {
             "name": "addon/utils/deserialize-sorting-param.js",
             "modules": {},
@@ -2149,7 +2163,7 @@
             "module": "ember-flexberry",
             "namespace": "",
             "file": "addon/components/object-list-view-cell.js",
-            "line": 8,
+            "line": 9,
             "extends": "FlexberryBaseComponent"
         },
         "ObjectListViewRowComponent": {
@@ -12494,6 +12508,68 @@
             "module": "ember-flexberry"
         },
         {
+            "file": "addon/components/flexberry-text-cell.js",
+            "line": 6,
+            "description": "Overload wrapper tag name for disabling wrapper.",
+            "class": "FlexberryTextarea",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/flexberry-text-cell.js",
+            "line": 11,
+            "description": "Displaying value.",
+            "itemtype": "property",
+            "name": "value",
+            "type": "String",
+            "default": "undefined",
+            "class": "FlexberryTextarea",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/flexberry-text-cell.js",
+            "line": 20,
+            "description": "Max number of displayed symbols.\nUnlimited when 0.",
+            "itemtype": "property",
+            "name": "maxTextLength",
+            "type": "Integer",
+            "default": "0",
+            "class": "FlexberryTextarea",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/flexberry-text-cell.js",
+            "line": 30,
+            "description": "Indicates when component value cuts by spaces.",
+            "itemtype": "property",
+            "name": "cutBySpaces",
+            "type": "Boolean",
+            "default": "false",
+            "class": "FlexberryTextarea",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/flexberry-text-cell.js",
+            "line": 39,
+            "description": "Displaying value.",
+            "itemtype": "property",
+            "name": "displayValue",
+            "type": "String",
+            "readonly": "",
+            "class": "FlexberryTextarea",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/flexberry-text-cell.js",
+            "line": 54,
+            "description": "Title value.",
+            "itemtype": "property",
+            "name": "titleValue",
+            "type": "String",
+            "readonly": "",
+            "class": "FlexberryTextarea",
+            "module": "ember-flexberry"
+        },
+        {
             "file": "addon/components/flexberry-textarea.js",
             "line": 24,
             "description": "Input value.",
@@ -13727,37 +13803,94 @@
         },
         {
             "file": "addon/components/object-list-view-cell.js",
-            "line": 13,
+            "line": 14,
             "description": "Overload wrapper tag name for disabling wrapper.",
             "class": "ObjectListViewCell",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/components/object-list-view-cell.js",
-            "line": 18,
+            "line": 19,
             "description": "Displaying value.",
             "itemtype": "property",
             "name": "value",
             "type": "String",
+            "default": "undefined",
             "class": "ObjectListViewCell",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/components/object-list-view-cell.js",
-            "line": 26,
+            "line": 28,
             "description": "Date format.",
             "itemtype": "property",
             "name": "dateFormat",
             "type": "String",
+            "default": "undefined",
             "class": "ObjectListViewCell",
             "module": "ember-flexberry"
         },
         {
             "file": "addon/components/object-list-view-cell.js",
-            "line": 34,
+            "line": 37,
+            "description": "Max number of displayed symbols.\nUnlimited when 0.",
+            "itemtype": "property",
+            "name": "maxTextLength",
+            "type": "Integer",
+            "default": "0",
+            "class": "ObjectListViewCell",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/object-list-view-cell.js",
+            "line": 47,
+            "description": "Indicates when component value cuts by spaces.",
+            "itemtype": "property",
+            "name": "cutBySpaces",
+            "type": "Boolean",
+            "default": "false",
+            "class": "ObjectListViewCell",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/object-list-view-cell.js",
+            "line": 56,
+            "description": "Path to property for display.",
+            "itemtype": "property",
+            "name": "displayMemberPath",
+            "type": "String",
+            "default": "undefined",
+            "class": "ObjectListViewCell",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/object-list-view-cell.js",
+            "line": 65,
             "description": "Formatted displaying value.",
             "itemtype": "property",
             "name": "formattedValue",
+            "type": "String",
+            "readonly": "",
+            "class": "ObjectListViewCell",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/object-list-view-cell.js",
+            "line": 91,
+            "description": "Displaying value.",
+            "itemtype": "property",
+            "name": "displayValue",
+            "type": "String",
+            "readonly": "",
+            "class": "ObjectListViewCell",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "addon/components/object-list-view-cell.js",
+            "line": 118,
+            "description": "Title value.",
+            "itemtype": "property",
+            "name": "titleValue",
             "type": "String",
             "readonly": "",
             "class": "ObjectListViewCell",
@@ -25457,6 +25590,36 @@
             "module": "ember-flexberry"
         },
         {
+            "file": "addon/utils/cut-string-by-length.js",
+            "line": 7,
+            "description": "Cuts string by specified length.",
+            "itemtype": "method",
+            "name": "cutStringByLength",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "Specified string.",
+                    "type": "String"
+                },
+                {
+                    "name": "maxTextLength",
+                    "description": "Maximum string length.",
+                    "type": "Integer"
+                },
+                {
+                    "name": "cutBySpaces",
+                    "description": "If true, string will be cutted by space.",
+                    "type": "Boolean"
+                }
+            ],
+            "return": {
+                "description": "Cutted string with ellipsis.",
+                "type": "String"
+            },
+            "class": "Utils.Layers",
+            "module": "ember-flexberry"
+        },
+        {
             "file": "addon/utils/deserialize-sorting-param.js",
             "line": 1,
             "description": "Convert string with sorting parameters to object.\n\nExpected string type: '+Name1-Name2...', where: '+' and '-' - sorting direction, 'NameX' - property name for soring.",
@@ -26044,6 +26207,10 @@
             "line": " addon/components/flexberry-tab-bar.js:156"
         },
         {
+            "message": "Missing item type\nOverload wrapper tag name for disabling wrapper.",
+            "line": " addon/components/flexberry-text-cell.js:6"
+        },
+        {
             "message": "Missing item type\nTable rows related to textarea.",
             "line": " addon/components/flexberry-textarea.js:60"
         },
@@ -26121,7 +26288,7 @@
         },
         {
             "message": "Missing item type\nOverload wrapper tag name for disabling wrapper.",
-            "line": " addon/components/object-list-view-cell.js:13"
+            "line": " addon/components/object-list-view-cell.js:14"
         },
         {
             "message": "Missing item type\nObserve inExpandMode changes.",

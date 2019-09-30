@@ -313,6 +313,14 @@ define('dummy/components/flexberry-tab-bar', ['exports', 'ember-flexberry/compon
     }
   });
 });
+define('dummy/components/flexberry-text-cell', ['exports', 'ember-flexberry/components/flexberry-text-cell'], function (exports, _emberFlexberryComponentsFlexberryTextCell) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _emberFlexberryComponentsFlexberryTextCell['default'];
+    }
+  });
+});
 define('dummy/components/flexberry-textarea', ['exports', 'ember-flexberry/components/flexberry-textarea'], function (exports, _emberFlexberryComponentsFlexberryTextarea) {
   exports['default'] = _emberFlexberryComponentsFlexberryTextarea['default'];
 });
@@ -1088,6 +1096,11 @@ define('dummy/controllers/application', ['exports', 'ember', 'dummy/config/envir
               caption: i18n.t('forms.application.sitemap.components-examples.flexberry-objectlistview.lock-services-editor-view-list.caption'),
               title: i18n.t('forms.application.sitemap.components-examples.flexberry-objectlistview.lock-services-editor-view-list.title'),
               children: null
+            }, {
+              link: 'components-examples/flexberry-objectlistview/limited-text-size-example',
+              caption: i18n.t('forms.application.sitemap.components-examples.flexberry-objectlistview.limited-text-size-example.caption'),
+              title: i18n.t('forms.application.sitemap.components-examples.flexberry-objectlistview.limited-text-size-example.title'),
+              children: null
             }]
           }, {
             link: null,
@@ -1136,6 +1149,16 @@ define('dummy/controllers/application', ['exports', 'ember', 'dummy/config/envir
               link: 'components-examples/flexberry-simpledatetime/settings-example',
               caption: i18n.t('forms.application.sitemap.components-examples.flexberry-simpledatetime.settings-example.caption'),
               title: i18n.t('forms.application.sitemap.components-examples.flexberry-simpledatetime.settings-example.title'),
+              children: null
+            }]
+          }, {
+            link: null,
+            caption: i18n.t('forms.application.sitemap.components-examples.flexberry-text-cell.caption'),
+            title: i18n.t('forms.application.sitemap.components-examples.flexberry-text-cell.title'),
+            children: [{
+              link: 'components-examples/flexberry-text-cell/settings-example',
+              caption: i18n.t('forms.application.sitemap.components-examples.flexberry-text-cell.settings-example.caption'),
+              title: i18n.t('forms.application.sitemap.components-examples.flexberry-text-cell.settings-example.title'),
               children: null
             }]
           }, {
@@ -6463,6 +6486,85 @@ define('dummy/controllers/components-examples/flexberry-objectlistview/limit-fun
     }
   });
 });
+define('dummy/controllers/components-examples/flexberry-objectlistview/limited-text-size-example', ['exports', 'ember', 'ember-flexberry/controllers/list-form'], function (exports, _ember, _emberFlexberryControllersListForm) {
+  exports['default'] = _emberFlexberryControllersListForm['default'].extend({
+    /**
+      Name of related edit form route (for 'flexberry-objectlistview' component 'editFormRoute' property).
+       @property editFormRoute
+      @type String
+     */
+    editFormRoute: 'ember-flexberry-dummy-suggestion-edit',
+
+    /**
+      'flexberry-text-cell' component's 'maxTextLength' property.
+       @property maxTextLength
+      @type Number
+     */
+    maxTextLength: 10,
+
+    /**
+      Flag for 'flexberry-text-cell' component 'cutBySpaces' property.
+       @property cutBySpaces
+      @type Boolean
+     */
+    cutBySpaces: false,
+
+    /**
+      Component settings metadata.
+       @property componentSettingsMetadata
+      @type Object[]
+     */
+    componentSettingsMetadata: _ember['default'].computed('i18n.locale', 'model.content', function () {
+      var componentSettingsMetadata = _ember['default'].A();
+      componentSettingsMetadata.pushObject({
+        settingName: 'maxTextLength',
+        settingType: 'number',
+        settingDefaultValue: 10,
+        bindedControllerPropertieName: 'maxTextLength'
+      });
+      componentSettingsMetadata.pushObject({
+        settingName: 'cutBySpaces',
+        settingType: 'boolean',
+        settingDefaultValue: false,
+        bindedControllerPropertieName: 'cutBySpaces'
+      });
+      return componentSettingsMetadata;
+    }),
+
+    /**
+      Method to get type and attributes of a component,
+      which will be embeded in object-list-view cell.
+       @method getCellComponent.
+      @param {Object} attr Attribute of projection property related to current table cell.
+      @param {String} bindingPath Path to model property related to current table cell.
+      @param {DS.Model} modelClass Model class of data record related to current table row.
+      @return {Object} Object containing name & properties of component, which will be used to render current table cell.
+      { componentName: 'my-component',  componentProperties: { ... } }.
+     */
+    getCellComponent: function getCellComponent(attr) {
+      var cellComponent = {
+        componentName: 'object-list-view-cell',
+        componentProperties: {
+          maxTextLength: this.get('maxTextLength'),
+          cutBySpaces: this.get('cutBySpaces'),
+          displayMemberPath: _ember['default'].get(attr, 'options.displayMemberPath')
+        }
+      };
+
+      if (attr.caption === 'Text') {
+        cellComponent = {
+          componentName: 'flexberry-text-cell',
+          componentProperties: {
+            maxTextLength: this.get('maxTextLength'),
+            cutBySpaces: this.get('cutBySpaces')
+          }
+        };
+      }
+
+      return cellComponent;
+    }
+  });
+});
 define('dummy/controllers/components-examples/flexberry-objectlistview/list-on-editform', ['exports', 'ember-flexberry/controllers/list-form'], function (exports, _emberFlexberryControllersListForm) {
   exports['default'] = _emberFlexberryControllersListForm['default'].extend({
     /**
@@ -8584,6 +8686,65 @@ define('dummy/controllers/components-examples/flexberry-simpleolv/toolbar-custom
     }
   });
 });
+define('dummy/controllers/components-examples/flexberry-text-cell/settings-example', ['exports', 'ember'], function (exports, _ember) {
+  exports['default'] = _ember['default'].Controller.extend({
+    /**
+      'flexberry-text-cell' component's 'value' property.
+       @property value
+      @type String
+    */
+    value: 'test string',
+
+    /**
+      'flexberry-text-cell' component's 'maxTextLength' property.
+       @property maxTextLength
+      @type Number
+    */
+    maxTextLength: 7,
+
+    /**
+      Flag for 'flexberry-text-cell' component 'cutBySpaces' property.
+       @property cutBySpaces
+      @type Boolean
+    */
+    cutBySpaces: false,
+
+    /**
+      Template text for 'flexberry-textarea' component.
+       @property componentTemplateText
+      @type String
+     */
+    componentTemplateText: new _ember['default'].Handlebars.SafeString('{{flexberry-text-cell<br>' + '  value=value<br>' + '  maxTextLength=maxTextLength<br>' + '  cutBySpaces=cutBySpaces<br>' + '}}'),
+
+    /**
+      Component settings metadata.
+       @property componentSettingsMetadata
+      @type Object[]
+    */
+    componentSettingsMetadata: _ember['default'].computed('i18n.locale', 'model.content', function () {
+      var componentSettingsMetadata = _ember['default'].A();
+      componentSettingsMetadata.pushObject({
+        settingName: 'value',
+        settingType: 'string',
+        settingDefaultValue: 'test string',
+        bindedControllerPropertieName: 'value'
+      });
+      componentSettingsMetadata.pushObject({
+        settingName: 'maxTextLength',
+        settingType: 'number',
+        settingDefaultValue: 7,
+        bindedControllerPropertieName: 'maxTextLength'
+      });
+      componentSettingsMetadata.pushObject({
+        settingName: 'cutBySpaces',
+        settingType: 'boolean',
+        settingDefaultValue: false,
+        bindedControllerPropertieName: 'cutBySpaces'
+      });
+      return componentSettingsMetadata;
+    })
+  });
+});
 define('dummy/controllers/components-examples/flexberry-textarea/settings-example', ['exports', 'ember', 'ember-i18n'], function (exports, _ember, _emberI18n) {
   exports['default'] = _ember['default'].Controller.extend({
     /**
@@ -10588,6 +10749,19 @@ define('dummy/ember-flexberry/tests/modules/ember-flexberry/components/flexberry
     assert.ok(true, 'modules/ember-flexberry/components/flexberry-tab-bar.js should pass jshint.');
   });
 });
+define('dummy/ember-flexberry/tests/modules/ember-flexberry/components/flexberry-text-cell.jscs-test', ['exports'], function (exports) {
+  module('JSCS - modules/ember-flexberry/components');
+  test('modules/ember-flexberry/components/flexberry-text-cell.js should pass jscs', function () {
+    ok(true, 'modules/ember-flexberry/components/flexberry-text-cell.js should pass jscs.');
+  });
+});
+define('dummy/ember-flexberry/tests/modules/ember-flexberry/components/flexberry-text-cell.jshint', ['exports'], function (exports) {
+  QUnit.module('JSHint - modules/ember-flexberry/components/flexberry-text-cell.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'modules/ember-flexberry/components/flexberry-text-cell.js should pass jshint.');
+  });
+});
 define('dummy/ember-flexberry/tests/modules/ember-flexberry/components/flexberry-textarea.jscs-test', ['exports'], function (exports) {
   module('JSCS - modules/ember-flexberry/components');
   test('modules/ember-flexberry/components/flexberry-textarea.js should pass jscs', function () {
@@ -12213,6 +12387,19 @@ define('dummy/ember-flexberry/tests/modules/ember-flexberry/services/user-settin
     assert.ok(true, 'modules/ember-flexberry/services/user-settings.js should pass jshint.');
   });
 });
+define('dummy/ember-flexberry/tests/modules/ember-flexberry/utils/cut-string-by-length.jscs-test', ['exports'], function (exports) {
+  module('JSCS - modules/ember-flexberry/utils');
+  test('modules/ember-flexberry/utils/cut-string-by-length.js should pass jscs', function () {
+    ok(true, 'modules/ember-flexberry/utils/cut-string-by-length.js should pass jscs.');
+  });
+});
+define('dummy/ember-flexberry/tests/modules/ember-flexberry/utils/cut-string-by-length.jshint', ['exports'], function (exports) {
+  QUnit.module('JSHint - modules/ember-flexberry/utils/cut-string-by-length.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'modules/ember-flexberry/utils/cut-string-by-length.js should pass jshint.');
+  });
+});
 define('dummy/ember-flexberry/tests/modules/ember-flexberry/utils/deserialize-sorting-param.jscs-test', ['exports'], function (exports) {
   module('JSCS - modules/ember-flexberry/utils');
   test('modules/ember-flexberry/utils/deserialize-sorting-param.js should pass jscs', function () {
@@ -13836,10 +14023,22 @@ define('dummy/locales/en/translations', ['exports', 'ember', 'ember-flexberry/lo
               'lock-services-editor-view-list': {
                 'caption': 'Example displaying username which the object was locked',
                 'title': ''
+              },
+              'limited-text-size-example': {
+                'caption': 'Limited text size example',
+                'title': ''
               }
             },
             'flexberry-simpledatetime': {
               'caption': 'flexberry-simpledatetime',
+              'title': '',
+              'settings-example': {
+                'caption': 'Settings example',
+                'title': ''
+              }
+            },
+            'flexberry-text-cell': {
+              'caption': 'flexberry-text-cell',
               'title': '',
               'settings-example': {
                 'caption': 'Settings example',
@@ -14239,6 +14438,9 @@ define('dummy/locales/en/translations', ['exports', 'ember', 'ember-flexberry/lo
           'settings-example': {
             'caption': 'Flexberry-objectlistview. Settings example'
           },
+          'limited-text-size-example': {
+            'caption': 'Flexberry-objectlistview. Limited text size example'
+          },
           'toolbar-custom-buttons-example': {
             'caption': 'Flexberry-objectlistview. Custom buttons on toolbar',
             'custom-message': 'Hello!',
@@ -14312,6 +14514,11 @@ define('dummy/locales/en/translations', ['exports', 'ember', 'ember-flexberry/lo
         'flexberry-simpledatetime': {
           'settings-example': {
             'caption': 'Flexberry-simpledatetime. Settings example'
+          }
+        },
+        'flexberry-text-cell': {
+          'settings-example': {
+            'caption': 'Flexberry-text-cell. Settings example'
           }
         },
         'flexberry-textarea': {
@@ -15018,10 +15225,22 @@ define('dummy/locales/ru/translations', ['exports', 'ember', 'ember-flexberry/lo
               'lock-services-editor-view-list': {
                 'caption': 'Пример отображение имени пользователя заблокировшего объект',
                 'title': ''
+              },
+              'limited-text-size-example': {
+                'caption': 'Пример ограничения длины текста в ячейках',
+                'title': ''
               }
             },
             'flexberry-simpledatetime': {
               'caption': 'flexberry-simpledatetime',
+              'title': '',
+              'settings-example': {
+                'caption': 'Пример работы с настройками',
+                'title': ''
+              }
+            },
+            'flexberry-text-cell': {
+              'caption': 'flexberry-text-cell',
               'title': '',
               'settings-example': {
                 'caption': 'Пример работы с настройками',
@@ -15421,6 +15640,9 @@ define('dummy/locales/ru/translations', ['exports', 'ember', 'ember-flexberry/lo
           'settings-example': {
             'caption': 'Flexberry-objectlistview. Пример работы с настройками'
           },
+          'limited-text-size-example': {
+            'caption': 'Flexberry-objectlistview. Пример ограничения длины текста в ячейках'
+          },
           'toolbar-custom-buttons-example': {
             'caption': 'Flexberry-objectlistview. Пользовательские кнопки',
             'custom-message': 'Привет!',
@@ -15494,6 +15716,11 @@ define('dummy/locales/ru/translations', ['exports', 'ember', 'ember-flexberry/lo
         'flexberry-simpledatetime': {
           'settings-example': {
             'caption': 'Flexberry-simpledatetime. Пример работы с настройками'
+          }
+        },
+        'flexberry-text-cell': {
+          'settings-example': {
+            'caption': 'Flexberry-text-cell. Пример работы с настройками'
           }
         },
         'flexberry-textarea': {
@@ -17694,6 +17921,7 @@ define('dummy/router', ['exports', 'ember', 'dummy/config/environment'], functio
     this.route('components-examples/flexberry-objectlistview/before-delete-record/folv-for-before-delete-record-with-promise-data-cancel');
     this.route('components-examples/flexberry-objectlistview/before-delete-record/folv-for-before-delete-record-data-immediately');
     this.route('components-examples/flexberry-objectlistview/before-delete-record/folv-for-before-delete-record-with-promise-data-immediately');
+    this.route('components-examples/flexberry-objectlistview/limited-text-size-example');
 
     this.route('components-examples/flexberry-simpleolv/settings-example');
     this.route('components-examples/flexberry-simpleolv/toolbar-custom-buttons-example');
@@ -17704,6 +17932,7 @@ define('dummy/router', ['exports', 'ember', 'dummy/config/environment'], functio
     this.route('components-examples/flexberry-simpleolv/configurate-rows');
     this.route('components-examples/flexberry-simpleolv/selected-rows');
     this.route('components-examples/flexberry-simpledatetime/settings-example');
+    this.route('components-examples/flexberry-text-cell/settings-example');
     this.route('components-examples/flexberry-textarea/settings-example');
     this.route('components-examples/flexberry-textbox/settings-example');
     this.route('components-examples/flexberry-toggler/settings-example');
@@ -20973,6 +21202,52 @@ define('dummy/routes/components-examples/flexberry-objectlistview/limit-function
     }
   });
 });
+define('dummy/routes/components-examples/flexberry-objectlistview/limited-text-size-example', ['exports', 'ember-flexberry/routes/list-form'], function (exports, _emberFlexberryRoutesListForm) {
+  exports['default'] = _emberFlexberryRoutesListForm['default'].extend({
+    /**
+      Name of model projection to be used as record's properties limitation.
+       @property modelProjection
+      @type String
+      @default 'SuggestionL'
+     */
+    modelProjection: 'SuggestionL',
+
+    /**
+    developerUserSettings.
+    {
+    <componentName>: {
+      <settingName>: {
+          colsOrder: [ { propName :<colName>, hide: true|false }, ... ],
+          sorting: [{ propName: <colName>, direction: "asc"|"desc" }, ... ],
+          colsWidths: [ <colName>:<colWidth>, ... ],
+        },
+        ...
+      },
+      ...
+    }
+    For default userSetting use empty name ('').
+    <componentName> may contain any of properties: colsOrder, sorting, colsWidth or being empty.
+     @property developerUserSettings
+    @type Object
+    @default {}
+    */
+    developerUserSettings: {
+      LimitedSizeOlv: {
+        'DEFAULT': {
+          'columnWidths': [{ 'propName': 'OlvRowToolbar', 'fixed': false, 'width': 90 }]
+        }
+      }
+    },
+
+    /**
+      Name of model to be used as list's records types.
+       @property modelName
+      @type String
+      @default 'ember-flexberry-dummy-suggestion'
+     */
+    modelName: 'ember-flexberry-dummy-suggestion'
+  });
+});
 define('dummy/routes/components-examples/flexberry-objectlistview/list-on-editform', ['exports', 'ember-flexberry/routes/list-form'], function (exports, _emberFlexberryRoutesListForm) {
   exports['default'] = _emberFlexberryRoutesListForm['default'].extend({
     /**
@@ -21969,6 +22244,9 @@ define('dummy/routes/components-examples/flexberry-simpleolv/toolbar-custom-butt
      */
     modelName: 'ember-flexberry-dummy-suggestion'
   });
+});
+define('dummy/routes/components-examples/flexberry-text-cell/settings-example', ['exports', 'ember'], function (exports, _ember) {
+  exports['default'] = _ember['default'].Route.extend({});
 });
 define('dummy/routes/components-examples/flexberry-textarea/settings-example', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Route.extend({
@@ -35374,6 +35652,122 @@ define("dummy/templates/components-examples/flexberry-objectlistview/limit-funct
     };
   })());
 });
+define("dummy/templates/components-examples/flexberry-objectlistview/limited-text-size-example", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template((function () {
+    var child0 = (function () {
+      return {
+        meta: {
+          "fragmentReason": false,
+          "revision": "Ember@2.4.6",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 5,
+              "column": 4
+            },
+            "end": {
+              "line": 36,
+              "column": 4
+            }
+          },
+          "moduleName": "dummy/templates/components-examples/flexberry-objectlistview/limited-text-size-example.hbs"
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("    ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createComment("");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
+          return morphs;
+        },
+        statements: [["inline", "flexberry-objectlistview", [], ["editFormRoute", ["subexpr", "@mut", [["get", "editFormRoute", ["loc", [null, [11, 20], [11, 33]]]]], [], []], "showCheckBoxInRow", true, "modelName", "ember-flexberry-dummy-suggestion", "modelProjection", ["subexpr", "@mut", [["get", "modelProjection", ["loc", [null, [14, 22], [14, 37]]]]], [], []], "content", ["subexpr", "@mut", [["get", "model", ["loc", [null, [15, 14], [15, 19]]]]], [], []], "filters", ["subexpr", "@mut", [["get", "filters", ["loc", [null, [16, 14], [16, 21]]]]], [], []], "refreshButton", true, "createNewButton", true, "sorting", ["subexpr", "@mut", [["get", "computedSorting", ["loc", [null, [19, 14], [19, 29]]]]], [], []], "sortByColumn", ["subexpr", "action", ["sortByColumn"], [], ["loc", [null, [20, 19], [20, 42]]]], "addColumnToSorting", ["subexpr", "action", ["addColumnToSorting"], [], ["loc", [null, [21, 25], [21, 54]]]], "beforeDeleteAllRecords", ["subexpr", "action", ["beforeDeleteAllRecords"], [], ["loc", [null, [22, 29], [22, 62]]]], "applyFilters", ["subexpr", "action", ["applyFilters"], [], ["loc", [null, [23, 19], [23, 42]]]], "resetFilters", ["subexpr", "action", ["resetFilters"], [], ["loc", [null, [24, 19], [24, 42]]]], "pages", ["subexpr", "@mut", [["get", "pages", ["loc", [null, [25, 12], [25, 17]]]]], [], []], "perPageValue", ["subexpr", "@mut", [["get", "perPageValue", ["loc", [null, [26, 19], [26, 31]]]]], [], []], "perPageValues", ["subexpr", "@mut", [["get", "perPageValues", ["loc", [null, [27, 20], [27, 33]]]]], [], []], "recordsTotalCount", ["subexpr", "@mut", [["get", "recordsTotalCount", ["loc", [null, [28, 24], [28, 41]]]]], [], []], "hasPreviousPage", ["subexpr", "@mut", [["get", "hasPreviousPage", ["loc", [null, [29, 22], [29, 37]]]]], [], []], "hasNextPage", ["subexpr", "@mut", [["get", "hasNextPage", ["loc", [null, [30, 18], [30, 29]]]]], [], []], "previousPage", ["subexpr", "action", ["previousPage"], [], ["loc", [null, [31, 19], [31, 42]]]], "gotoPage", ["subexpr", "action", ["gotoPage"], [], ["loc", [null, [32, 15], [32, 34]]]], "nextPage", ["subexpr", "action", ["nextPage"], [], ["loc", [null, [33, 15], [33, 34]]]], "componentName", "LimitedSizeOlv"], ["loc", [null, [10, 4], [35, 6]]]]],
+        locals: [],
+        templates: []
+      };
+    })();
+    return {
+      meta: {
+        "fragmentReason": {
+          "name": "missing-wrapper",
+          "problems": ["wrong-type", "multiple-nodes"]
+        },
+        "revision": "Ember@2.4.6",
+        "loc": {
+          "source": null,
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 39,
+            "column": 0
+          }
+        },
+        "moduleName": "dummy/templates/components-examples/flexberry-objectlistview/limited-text-size-example.hbs"
+      },
+      isEmpty: false,
+      arity: 0,
+      cachedFragment: null,
+      hasRendered: false,
+      buildFragment: function buildFragment(dom) {
+        var el0 = dom.createDocumentFragment();
+        var el1 = dom.createComment("");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createElement("h3");
+        dom.setAttribute(el1, "class", "ui header");
+        var el2 = dom.createComment("");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createElement("form");
+        dom.setAttribute(el1, "class", "ui form flexberry-vertical-form");
+        dom.setAttribute(el1, "role", "form");
+        var el2 = dom.createTextNode("\n  ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("div");
+        dom.setAttribute(el2, "class", "field");
+        var el3 = dom.createTextNode("\n");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createComment("");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("  ");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        return el0;
+      },
+      buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+        var morphs = new Array(3);
+        morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
+        morphs[1] = dom.createMorphAt(dom.childAt(fragment, [2]), 0, 0);
+        morphs[2] = dom.createMorphAt(dom.childAt(fragment, [4, 1]), 1, 1);
+        dom.insertBoundary(fragment, 0);
+        return morphs;
+      },
+      statements: [["inline", "flexberry-error", [], ["error", ["subexpr", "@mut", [["get", "error", ["loc", [null, [1, 24], [1, 29]]]]], [], []]], ["loc", [null, [1, 0], [1, 31]]]], ["inline", "t", ["forms.components-examples.flexberry-objectlistview.limited-text-size-example.caption"], [], ["loc", [null, [2, 22], [2, 114]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [6, 27], [6, 31]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [7, 32], [7, 57]]]]], [], []], "componentTemplateText", ""], 0, null, ["loc", [null, [5, 4], [36, 25]]]]],
+      locals: [],
+      templates: [child0]
+    };
+  })());
+});
 define("dummy/templates/components-examples/flexberry-objectlistview/list-on-editform", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template((function () {
     return {
@@ -40975,6 +41369,122 @@ define("dummy/templates/components-examples/flexberry-simpleolv/toolbar-custom-b
       statements: [["inline", "flexberry-error", [], ["error", ["subexpr", "@mut", [["get", "error", ["loc", [null, [1, 24], [1, 29]]]]], [], []]], ["loc", [null, [1, 0], [1, 31]]]], ["inline", "t", ["forms.components-examples.flexberry-simpleolv.toolbar-custom-buttons-example.caption"], [], ["loc", [null, [2, 22], [2, 114]]]], ["inline", "flexberry-simpleolv", [], ["modelName", "ember-flexberry-dummy-suggestion", "modelProjection", ["subexpr", "@mut", [["get", "modelProjection", ["loc", [null, [6, 18], [6, 33]]]]], [], []], "content", ["subexpr", "@mut", [["get", "model", ["loc", [null, [7, 10], [7, 15]]]]], [], []], "createNewButton", false, "showCheckBoxInRow", false, "showDeleteButtonInRow", false, "showEditMenuItemInRow", false, "showDeleteMenuItemInRow", false, "rowClickable", false, "refreshButton", false, "colsConfigButton", false, "pages", ["subexpr", "@mut", [["get", "pages", ["loc", [null, [18, 8], [18, 13]]]]], [], []], "perPageValue", ["subexpr", "@mut", [["get", "perPageValue", ["loc", [null, [19, 15], [19, 27]]]]], [], []], "perPageValues", ["subexpr", "@mut", [["get", "perPageValues", ["loc", [null, [20, 16], [20, 29]]]]], [], []], "recordsTotalCount", ["subexpr", "@mut", [["get", "recordsTotalCount", ["loc", [null, [21, 20], [21, 37]]]]], [], []], "hasPreviousPage", ["subexpr", "@mut", [["get", "hasPreviousPage", ["loc", [null, [22, 18], [22, 33]]]]], [], []], "hasNextPage", ["subexpr", "@mut", [["get", "hasNextPage", ["loc", [null, [23, 14], [23, 25]]]]], [], []], "previousPage", ["subexpr", "action", ["previousPage"], [], ["loc", [null, [24, 15], [24, 38]]]], "gotoPage", ["subexpr", "action", ["gotoPage"], [], ["loc", [null, [25, 11], [25, 30]]]], "nextPage", ["subexpr", "action", ["nextPage"], [], ["loc", [null, [26, 11], [26, 30]]]], "customButtons", ["subexpr", "@mut", [["get", "customButtons", ["loc", [null, [28, 16], [28, 29]]]]], [], []], "userButtonActionTest", "userButtonActionTest", "toggleHiButton", "toggleHiButton", "componentName", "SOLVToolbarCustomButtonsExample"], ["loc", [null, [4, 0], [32, 2]]]], ["content", "messageForUser", ["loc", [null, [34, 17], [34, 35]]]]],
       locals: [],
       templates: []
+    };
+  })());
+});
+define("dummy/templates/components-examples/flexberry-text-cell/settings-example", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template((function () {
+    var child0 = (function () {
+      return {
+        meta: {
+          "fragmentReason": false,
+          "revision": "Ember@2.4.6",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 5,
+              "column": 4
+            },
+            "end": {
+              "line": 15,
+              "column": 4
+            }
+          },
+          "moduleName": "dummy/templates/components-examples/flexberry-text-cell/settings-example.hbs"
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("    ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createComment("");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
+          return morphs;
+        },
+        statements: [["inline", "flexberry-text-cell", [], ["value", ["subexpr", "@mut", [["get", "value", ["loc", [null, [11, 12], [11, 17]]]]], [], []], "maxTextLength", ["subexpr", "@mut", [["get", "maxTextLength", ["loc", [null, [12, 20], [12, 33]]]]], [], []], "cutBySpaces", ["subexpr", "@mut", [["get", "cutBySpaces", ["loc", [null, [13, 18], [13, 29]]]]], [], []]], ["loc", [null, [10, 4], [14, 6]]]]],
+        locals: [],
+        templates: []
+      };
+    })();
+    return {
+      meta: {
+        "fragmentReason": {
+          "name": "missing-wrapper",
+          "problems": ["wrong-type", "multiple-nodes"]
+        },
+        "revision": "Ember@2.4.6",
+        "loc": {
+          "source": null,
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 18,
+            "column": 0
+          }
+        },
+        "moduleName": "dummy/templates/components-examples/flexberry-text-cell/settings-example.hbs"
+      },
+      isEmpty: false,
+      arity: 0,
+      cachedFragment: null,
+      hasRendered: false,
+      buildFragment: function buildFragment(dom) {
+        var el0 = dom.createDocumentFragment();
+        var el1 = dom.createComment("");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createElement("h3");
+        dom.setAttribute(el1, "class", "ui header");
+        var el2 = dom.createComment("");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createElement("form");
+        dom.setAttribute(el1, "class", "ui form flexberry-vertical-form");
+        dom.setAttribute(el1, "role", "form");
+        var el2 = dom.createTextNode("\n  ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("div");
+        dom.setAttribute(el2, "class", "field");
+        var el3 = dom.createTextNode("\n");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createComment("");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("  ");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        return el0;
+      },
+      buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+        var morphs = new Array(3);
+        morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
+        morphs[1] = dom.createMorphAt(dom.childAt(fragment, [2]), 0, 0);
+        morphs[2] = dom.createMorphAt(dom.childAt(fragment, [4, 1]), 1, 1);
+        dom.insertBoundary(fragment, 0);
+        return morphs;
+      },
+      statements: [["inline", "flexberry-error", [], ["error", ["subexpr", "@mut", [["get", "error", ["loc", [null, [1, 24], [1, 29]]]]], [], []]], ["loc", [null, [1, 0], [1, 31]]]], ["inline", "t", ["forms.components-examples.flexberry-text-cell.settings-example.caption"], [], ["loc", [null, [2, 22], [2, 100]]]], ["block", "settings-example", [], ["controllerProperties", ["subexpr", "@mut", [["get", "this", ["loc", [null, [6, 27], [6, 31]]]]], [], []], "componentSettingsMetadata", ["subexpr", "@mut", [["get", "componentSettingsMetadata", ["loc", [null, [7, 32], [7, 57]]]]], [], []], "componentTemplateText", ["subexpr", "@mut", [["get", "componentTemplateText", ["loc", [null, [8, 28], [8, 49]]]]], [], []]], 0, null, ["loc", [null, [5, 4], [15, 25]]]]],
+      locals: [],
+      templates: [child0]
     };
   })());
 });
@@ -48133,6 +48643,58 @@ define("dummy/templates/components/flexberry-tab-bar", ["exports"], function (ex
     };
   })());
 });
+define("dummy/templates/components/flexberry-text-cell", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template((function () {
+    return {
+      meta: {
+        "fragmentReason": {
+          "name": "triple-curlies"
+        },
+        "revision": "Ember@2.4.6",
+        "loc": {
+          "source": null,
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 2,
+            "column": 0
+          }
+        },
+        "moduleName": "dummy/templates/components/flexberry-text-cell.hbs"
+      },
+      isEmpty: false,
+      arity: 0,
+      cachedFragment: null,
+      hasRendered: false,
+      buildFragment: function buildFragment(dom) {
+        var el0 = dom.createDocumentFragment();
+        var el1 = dom.createElement("div");
+        dom.setAttribute(el1, "class", "flexberry-text-cell oveflow-text");
+        var el2 = dom.createComment("");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createComment("");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        return el0;
+      },
+      buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+        var element0 = dom.childAt(fragment, [0]);
+        var morphs = new Array(3);
+        morphs[0] = dom.createAttrMorph(element0, 'title');
+        morphs[1] = dom.createMorphAt(element0, 0, 0);
+        morphs[2] = dom.createMorphAt(element0, 1, 1);
+        return morphs;
+      },
+      statements: [["attribute", "title", ["get", "titleValue", ["loc", [null, [1, 54], [1, 64]]]]], ["content", "yield", ["loc", [null, [1, 67], [1, 76]]]], ["content", "displayValue", ["loc", [null, [1, 76], [1, 92]]]]],
+      locals: [],
+      templates: []
+    };
+  })());
+});
 define("dummy/templates/components/flexberry-textarea", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template((function () {
     return {
@@ -50233,12 +50795,13 @@ define("dummy/templates/components/object-list-view-cell", ["exports"], function
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
         var element0 = dom.childAt(fragment, [0]);
-        var morphs = new Array(2);
-        morphs[0] = dom.createMorphAt(element0, 0, 0);
-        morphs[1] = dom.createMorphAt(element0, 1, 1);
+        var morphs = new Array(3);
+        morphs[0] = dom.createAttrMorph(element0, 'title');
+        morphs[1] = dom.createMorphAt(element0, 0, 0);
+        morphs[2] = dom.createMorphAt(element0, 1, 1);
         return morphs;
       },
-      statements: [["content", "yield", ["loc", [null, [1, 26], [1, 35]]]], ["content", "formattedValue", ["loc", [null, [1, 35], [1, 53]]]]],
+      statements: [["attribute", "title", ["get", "titleValue", ["loc", [null, [1, 34], [1, 44]]]]], ["content", "yield", ["loc", [null, [1, 47], [1, 56]]]], ["content", "displayValue", ["loc", [null, [1, 56], [1, 72]]]]],
       locals: [],
       templates: []
     };
@@ -55082,50 +55645,77 @@ define("dummy/templates/components/olv-toolbar", ["exports"], function (exports)
 define("dummy/templates/components/settings-example", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template((function () {
     var child0 = (function () {
+      return {
+        meta: {
+          "fragmentReason": false,
+          "revision": "Ember@2.4.6",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 2,
+              "column": 2
+            },
+            "end": {
+              "line": 9,
+              "column": 2
+            }
+          },
+          "moduleName": "dummy/templates/components/settings-example.hbs"
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("  ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createElement("div");
+          dom.setAttribute(el1, "class", "ui segment");
+          var el2 = dom.createTextNode("\n    ");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createElement("div");
+          dom.setAttribute(el2, "class", "ui segment");
+          var el3 = dom.createTextNode("\n      ");
+          dom.appendChild(el2, el3);
+          var el3 = dom.createElement("h4");
+          dom.setAttribute(el3, "class", "ui header");
+          var el4 = dom.createComment("");
+          dom.appendChild(el3, el4);
+          dom.appendChild(el2, el3);
+          var el3 = dom.createTextNode("\n      ");
+          dom.appendChild(el2, el3);
+          var el3 = dom.createElement("pre");
+          var el4 = dom.createElement("code");
+          var el5 = dom.createComment("");
+          dom.appendChild(el4, el5);
+          dom.appendChild(el3, el4);
+          dom.appendChild(el2, el3);
+          var el3 = dom.createTextNode("\n    ");
+          dom.appendChild(el2, el3);
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("\n  ");
+          dom.appendChild(el1, el2);
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var element4 = dom.childAt(fragment, [1, 1]);
+          var morphs = new Array(2);
+          morphs[0] = dom.createMorphAt(dom.childAt(element4, [1]), 0, 0);
+          morphs[1] = dom.createMorphAt(dom.childAt(element4, [3, 0]), 0, 0);
+          return morphs;
+        },
+        statements: [["inline", "t", ["components.settings-example.component-template-caption"], [], ["loc", [null, [5, 28], [5, 90]]]], ["content", "componentTemplateText", ["loc", [null, [6, 17], [6, 42]]]]],
+        locals: [],
+        templates: []
+      };
+    })();
+    var child1 = (function () {
       var child0 = (function () {
         var child0 = (function () {
-          return {
-            meta: {
-              "fragmentReason": false,
-              "revision": "Ember@2.4.6",
-              "loc": {
-                "source": null,
-                "start": {
-                  "line": 21,
-                  "column": 16
-                },
-                "end": {
-                  "line": 23,
-                  "column": 16
-                }
-              },
-              "moduleName": "dummy/templates/components/settings-example.hbs"
-            },
-            isEmpty: false,
-            arity: 0,
-            cachedFragment: null,
-            hasRendered: false,
-            buildFragment: function buildFragment(dom) {
-              var el0 = dom.createDocumentFragment();
-              var el1 = dom.createTextNode("                  ");
-              dom.appendChild(el0, el1);
-              var el1 = dom.createComment("");
-              dom.appendChild(el0, el1);
-              var el1 = dom.createTextNode("=\n");
-              dom.appendChild(el0, el1);
-              return el0;
-            },
-            buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-              var morphs = new Array(1);
-              morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
-              return morphs;
-            },
-            statements: [["content", "settingMetadata.bindedControllerPropertieDisplayName", ["loc", [null, [22, 18], [22, 74]]]]],
-            locals: [],
-            templates: []
-          };
-        })();
-        var child1 = (function () {
           return {
             meta: {
               "fragmentReason": false,
@@ -55162,7 +55752,49 @@ define("dummy/templates/components/settings-example", ["exports"], function (exp
               morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
               return morphs;
             },
-            statements: [["content", "settingMetadata.bindedControllerPropertieName", ["loc", [null, [24, 18], [24, 67]]]]],
+            statements: [["content", "settingMetadata.bindedControllerPropertieDisplayName", ["loc", [null, [24, 18], [24, 74]]]]],
+            locals: [],
+            templates: []
+          };
+        })();
+        var child1 = (function () {
+          return {
+            meta: {
+              "fragmentReason": false,
+              "revision": "Ember@2.4.6",
+              "loc": {
+                "source": null,
+                "start": {
+                  "line": 25,
+                  "column": 16
+                },
+                "end": {
+                  "line": 27,
+                  "column": 16
+                }
+              },
+              "moduleName": "dummy/templates/components/settings-example.hbs"
+            },
+            isEmpty: false,
+            arity: 0,
+            cachedFragment: null,
+            hasRendered: false,
+            buildFragment: function buildFragment(dom) {
+              var el0 = dom.createDocumentFragment();
+              var el1 = dom.createTextNode("                  ");
+              dom.appendChild(el0, el1);
+              var el1 = dom.createComment("");
+              dom.appendChild(el0, el1);
+              var el1 = dom.createTextNode("=\n");
+              dom.appendChild(el0, el1);
+              return el0;
+            },
+            buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+              var morphs = new Array(1);
+              morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
+              return morphs;
+            },
+            statements: [["content", "settingMetadata.bindedControllerPropertieName", ["loc", [null, [26, 18], [26, 67]]]]],
             locals: [],
             templates: []
           };
@@ -55175,11 +55807,11 @@ define("dummy/templates/components/settings-example", ["exports"], function (exp
               "loc": {
                 "source": null,
                 "start": {
-                  "line": 28,
+                  "line": 30,
                   "column": 16
                 },
                 "end": {
-                  "line": 31,
+                  "line": 33,
                   "column": 16
                 }
               },
@@ -55204,7 +55836,7 @@ define("dummy/templates/components/settings-example", ["exports"], function (exp
               morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
               return morphs;
             },
-            statements: [["inline", "to-string", [["get", "settingMetadata.settingValue", ["loc", [null, [30, 30], [30, 58]]]]], [], ["loc", [null, [30, 18], [30, 60]]]]],
+            statements: [["inline", "to-string", [["get", "settingMetadata.settingValue", ["loc", [null, [32, 30], [32, 58]]]]], [], ["loc", [null, [32, 18], [32, 60]]]]],
             locals: [],
             templates: []
           };
@@ -55218,11 +55850,11 @@ define("dummy/templates/components/settings-example", ["exports"], function (exp
                 "loc": {
                   "source": null,
                   "start": {
-                    "line": 33,
+                    "line": 35,
                     "column": 18
                   },
                   "end": {
-                    "line": 38,
+                    "line": 40,
                     "column": 18
                   }
                 },
@@ -55247,7 +55879,7 @@ define("dummy/templates/components/settings-example", ["exports"], function (exp
                 morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
                 return morphs;
               },
-              statements: [["inline", "input", [], ["type", "checkbox", "checked", ["subexpr", "mut", [["subexpr", "get", [["get", "controllerProperties", ["loc", [null, [36, 40], [36, 60]]]], ["get", "settingMetadata.bindedControllerPropertieName", ["loc", [null, [36, 61], [36, 106]]]]], [], ["loc", [null, [36, 35], [36, 107]]]]], [], ["loc", [null, [36, 30], [36, 108]]]]], ["loc", [null, [34, 20], [37, 22]]]]],
+              statements: [["inline", "input", [], ["type", "checkbox", "checked", ["subexpr", "mut", [["subexpr", "get", [["get", "controllerProperties", ["loc", [null, [38, 40], [38, 60]]]], ["get", "settingMetadata.bindedControllerPropertieName", ["loc", [null, [38, 61], [38, 106]]]]], [], ["loc", [null, [38, 35], [38, 107]]]]], [], ["loc", [null, [38, 30], [38, 108]]]]], ["loc", [null, [36, 20], [39, 22]]]]],
               locals: [],
               templates: []
             };
@@ -55260,11 +55892,11 @@ define("dummy/templates/components/settings-example", ["exports"], function (exp
                 "loc": {
                   "source": null,
                   "start": {
-                    "line": 40,
+                    "line": 42,
                     "column": 18
                   },
                   "end": {
-                    "line": 45,
+                    "line": 47,
                     "column": 18
                   }
                 },
@@ -55289,7 +55921,7 @@ define("dummy/templates/components/settings-example", ["exports"], function (exp
                 morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
                 return morphs;
               },
-              statements: [["inline", "input", [], ["type", "text", "value", ["subexpr", "mut", [["subexpr", "get", [["get", "controllerProperties", ["loc", [null, [43, 38], [43, 58]]]], ["get", "settingMetadata.bindedControllerPropertieName", ["loc", [null, [43, 59], [43, 104]]]]], [], ["loc", [null, [43, 33], [43, 105]]]]], [], ["loc", [null, [43, 28], [43, 106]]]]], ["loc", [null, [41, 20], [44, 22]]]]],
+              statements: [["inline", "input", [], ["type", "text", "value", ["subexpr", "mut", [["subexpr", "get", [["get", "controllerProperties", ["loc", [null, [45, 38], [45, 58]]]], ["get", "settingMetadata.bindedControllerPropertieName", ["loc", [null, [45, 59], [45, 104]]]]], [], ["loc", [null, [45, 33], [45, 105]]]]], [], ["loc", [null, [45, 28], [45, 106]]]]], ["loc", [null, [43, 20], [46, 22]]]]],
               locals: [],
               templates: []
             };
@@ -55302,11 +55934,11 @@ define("dummy/templates/components/settings-example", ["exports"], function (exp
                 "loc": {
                   "source": null,
                   "start": {
-                    "line": 47,
+                    "line": 49,
                     "column": 18
                   },
                   "end": {
-                    "line": 51,
+                    "line": 53,
                     "column": 18
                   }
                 },
@@ -55331,7 +55963,7 @@ define("dummy/templates/components/settings-example", ["exports"], function (exp
                 morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
                 return morphs;
               },
-              statements: [["inline", "number-input", [], ["value", ["subexpr", "mut", [["subexpr", "get", [["get", "controllerProperties", ["loc", [null, [49, 38], [49, 58]]]], ["get", "settingMetadata.bindedControllerPropertieName", ["loc", [null, [49, 59], [49, 104]]]]], [], ["loc", [null, [49, 33], [49, 105]]]]], [], ["loc", [null, [49, 28], [49, 106]]]]], ["loc", [null, [48, 20], [50, 22]]]]],
+              statements: [["inline", "number-input", [], ["value", ["subexpr", "mut", [["subexpr", "get", [["get", "controllerProperties", ["loc", [null, [51, 38], [51, 58]]]], ["get", "settingMetadata.bindedControllerPropertieName", ["loc", [null, [51, 59], [51, 104]]]]], [], ["loc", [null, [51, 33], [51, 105]]]]], [], ["loc", [null, [51, 28], [51, 106]]]]], ["loc", [null, [50, 20], [52, 22]]]]],
               locals: [],
               templates: []
             };
@@ -55344,11 +55976,11 @@ define("dummy/templates/components/settings-example", ["exports"], function (exp
                 "loc": {
                   "source": null,
                   "start": {
-                    "line": 53,
+                    "line": 55,
                     "column": 18
                   },
                   "end": {
-                    "line": 58,
+                    "line": 60,
                     "column": 18
                   }
                 },
@@ -55373,7 +56005,7 @@ define("dummy/templates/components/settings-example", ["exports"], function (exp
                 morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
                 return morphs;
               },
-              statements: [["inline", "flexberry-simpledatetime", [], ["type", "datetime-local", "value", ["subexpr", "mut", [["subexpr", "get", [["get", "controllerProperties", ["loc", [null, [56, 38], [56, 58]]]], ["get", "settingMetadata.bindedControllerPropertieName", ["loc", [null, [56, 59], [56, 104]]]]], [], ["loc", [null, [56, 33], [56, 105]]]]], [], ["loc", [null, [56, 28], [56, 106]]]]], ["loc", [null, [54, 20], [57, 22]]]]],
+              statements: [["inline", "flexberry-simpledatetime", [], ["type", "datetime-local", "value", ["subexpr", "mut", [["subexpr", "get", [["get", "controllerProperties", ["loc", [null, [58, 38], [58, 58]]]], ["get", "settingMetadata.bindedControllerPropertieName", ["loc", [null, [58, 59], [58, 104]]]]], [], ["loc", [null, [58, 33], [58, 105]]]]], [], ["loc", [null, [58, 28], [58, 106]]]]], ["loc", [null, [56, 20], [59, 22]]]]],
               locals: [],
               templates: []
             };
@@ -55387,11 +56019,11 @@ define("dummy/templates/components/settings-example", ["exports"], function (exp
                   "loc": {
                     "source": null,
                     "start": {
-                      "line": 63,
+                      "line": 65,
                       "column": 22
                     },
                     "end": {
-                      "line": 67,
+                      "line": 69,
                       "column": 22
                     }
                   },
@@ -55425,7 +56057,7 @@ define("dummy/templates/components/settings-example", ["exports"], function (exp
                   morphs[2] = dom.createMorphAt(element0, 1, 1);
                   return morphs;
                 },
-                statements: [["attribute", "value", ["get", "item", ["loc", [null, [64, 40], [64, 44]]]]], ["attribute", "selected", ["subexpr", "eq", [["subexpr", "get", [["get", "controllerProperties", ["loc", [null, [64, 66], [64, 86]]]], ["get", "settingMetadata.bindedControllerPropertieName", ["loc", [null, [64, 87], [64, 132]]]]], [], ["loc", [null, [64, 61], [64, 133]]]], ["get", "item", ["loc", [null, [64, 134], [64, 138]]]]], [], ["loc", [null, [64, 56], [64, 140]]]]], ["inline", "to-string", [["get", "item", ["loc", [null, [65, 38], [65, 42]]]]], [], ["loc", [null, [65, 26], [65, 44]]]]],
+                statements: [["attribute", "value", ["get", "item", ["loc", [null, [66, 40], [66, 44]]]]], ["attribute", "selected", ["subexpr", "eq", [["subexpr", "get", [["get", "controllerProperties", ["loc", [null, [66, 66], [66, 86]]]], ["get", "settingMetadata.bindedControllerPropertieName", ["loc", [null, [66, 87], [66, 132]]]]], [], ["loc", [null, [66, 61], [66, 133]]]], ["get", "item", ["loc", [null, [66, 134], [66, 138]]]]], [], ["loc", [null, [66, 56], [66, 140]]]]], ["inline", "to-string", [["get", "item", ["loc", [null, [67, 38], [67, 42]]]]], [], ["loc", [null, [67, 26], [67, 44]]]]],
                 locals: ["item"],
                 templates: []
               };
@@ -55437,11 +56069,11 @@ define("dummy/templates/components/settings-example", ["exports"], function (exp
                 "loc": {
                   "source": null,
                   "start": {
-                    "line": 60,
+                    "line": 62,
                     "column": 18
                   },
                   "end": {
-                    "line": 69,
+                    "line": 71,
                     "column": 18
                   }
                 },
@@ -55478,7 +56110,7 @@ define("dummy/templates/components/settings-example", ["exports"], function (exp
                 morphs[1] = dom.createMorphAt(element1, 3, 3);
                 return morphs;
               },
-              statements: [["attribute", "onchange", ["subexpr", "action", [["subexpr", "mut", [["subexpr", "get", [["get", "controllerProperties", ["loc", [null, [61, 56], [61, 76]]]], ["get", "settingMetadata.bindedControllerPropertieName", ["loc", [null, [61, 77], [61, 122]]]]], [], ["loc", [null, [61, 51], [61, 123]]]]], [], ["loc", [null, [61, 46], [61, 124]]]]], ["value", "target.value"], ["loc", [null, [61, 37], [61, 147]]]]], ["block", "each", [["get", "settingMetadata.settingAvailableItems", ["loc", [null, [63, 30], [63, 67]]]]], [], 0, null, ["loc", [null, [63, 22], [67, 31]]]]],
+              statements: [["attribute", "onchange", ["subexpr", "action", [["subexpr", "mut", [["subexpr", "get", [["get", "controllerProperties", ["loc", [null, [63, 56], [63, 76]]]], ["get", "settingMetadata.bindedControllerPropertieName", ["loc", [null, [63, 77], [63, 122]]]]], [], ["loc", [null, [63, 51], [63, 123]]]]], [], ["loc", [null, [63, 46], [63, 124]]]]], ["value", "target.value"], ["loc", [null, [63, 37], [63, 147]]]]], ["block", "each", [["get", "settingMetadata.settingAvailableItems", ["loc", [null, [65, 30], [65, 67]]]]], [], 0, null, ["loc", [null, [65, 22], [69, 31]]]]],
               locals: [],
               templates: [child0]
             };
@@ -55491,11 +56123,11 @@ define("dummy/templates/components/settings-example", ["exports"], function (exp
                 "loc": {
                   "source": null,
                   "start": {
-                    "line": 71,
+                    "line": 73,
                     "column": 18
                   },
                   "end": {
-                    "line": 76,
+                    "line": 78,
                     "column": 18
                   }
                 },
@@ -55520,7 +56152,7 @@ define("dummy/templates/components/settings-example", ["exports"], function (exp
                 morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
                 return morphs;
               },
-              statements: [["inline", "css-picker", [], ["value", ["subexpr", "mut", [["subexpr", "get", [["get", "controllerProperties", ["loc", [null, [73, 38], [73, 58]]]], ["get", "settingMetadata.bindedControllerPropertieName", ["loc", [null, [73, 59], [73, 104]]]]], [], ["loc", [null, [73, 33], [73, 105]]]]], [], ["loc", [null, [73, 28], [73, 106]]]], "items", ["subexpr", "@mut", [["get", "settingMetadata.settingAvailableItems", ["loc", [null, [74, 28], [74, 65]]]]], [], []]], ["loc", [null, [72, 20], [75, 22]]]]],
+              statements: [["inline", "css-picker", [], ["value", ["subexpr", "mut", [["subexpr", "get", [["get", "controllerProperties", ["loc", [null, [75, 38], [75, 58]]]], ["get", "settingMetadata.bindedControllerPropertieName", ["loc", [null, [75, 59], [75, 104]]]]], [], ["loc", [null, [75, 33], [75, 105]]]]], [], ["loc", [null, [75, 28], [75, 106]]]], "items", ["subexpr", "@mut", [["get", "settingMetadata.settingAvailableItems", ["loc", [null, [76, 28], [76, 65]]]]], [], []]], ["loc", [null, [74, 20], [77, 22]]]]],
               locals: [],
               templates: []
             };
@@ -55533,11 +56165,11 @@ define("dummy/templates/components/settings-example", ["exports"], function (exp
                 "loc": {
                   "source": null,
                   "start": {
-                    "line": 78,
+                    "line": 80,
                     "column": 18
                   },
                   "end": {
-                    "line": 80,
+                    "line": 82,
                     "column": 18
                   }
                 },
@@ -55562,7 +56194,7 @@ define("dummy/templates/components/settings-example", ["exports"], function (exp
                 morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
                 return morphs;
               },
-              statements: [["inline", "to-string", [["subexpr", "get", [["get", "controllerProperties", ["loc", [null, [79, 37], [79, 57]]]], ["get", "settingMetadata.bindedControllerPropertieName", ["loc", [null, [79, 58], [79, 103]]]]], [], ["loc", [null, [79, 32], [79, 104]]]]], [], ["loc", [null, [79, 20], [79, 106]]]]],
+              statements: [["inline", "to-string", [["subexpr", "get", [["get", "controllerProperties", ["loc", [null, [81, 37], [81, 57]]]], ["get", "settingMetadata.bindedControllerPropertieName", ["loc", [null, [81, 58], [81, 103]]]]], [], ["loc", [null, [81, 32], [81, 104]]]]], [], ["loc", [null, [81, 20], [81, 106]]]]],
               locals: [],
               templates: []
             };
@@ -55575,11 +56207,11 @@ define("dummy/templates/components/settings-example", ["exports"], function (exp
                 "loc": {
                   "source": null,
                   "start": {
-                    "line": 82,
+                    "line": 84,
                     "column": 18
                   },
                   "end": {
-                    "line": 84,
+                    "line": 86,
                     "column": 18
                   }
                 },
@@ -55604,7 +56236,7 @@ define("dummy/templates/components/settings-example", ["exports"], function (exp
                 morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
                 return morphs;
               },
-              statements: [["inline", "to-string", [["subexpr", "get", [["get", "controllerProperties", ["loc", [null, [83, 37], [83, 57]]]], ["get", "settingMetadata.bindedControllerPropertieName", ["loc", [null, [83, 58], [83, 103]]]]], [], ["loc", [null, [83, 32], [83, 104]]]]], [], ["loc", [null, [83, 20], [83, 106]]]]],
+              statements: [["inline", "to-string", [["subexpr", "get", [["get", "controllerProperties", ["loc", [null, [85, 37], [85, 57]]]], ["get", "settingMetadata.bindedControllerPropertieName", ["loc", [null, [85, 58], [85, 103]]]]], [], ["loc", [null, [85, 32], [85, 104]]]]], [], ["loc", [null, [85, 20], [85, 106]]]]],
               locals: [],
               templates: []
             };
@@ -55616,11 +56248,11 @@ define("dummy/templates/components/settings-example", ["exports"], function (exp
               "loc": {
                 "source": null,
                 "start": {
-                  "line": 31,
+                  "line": 33,
                   "column": 16
                 },
                 "end": {
-                  "line": 85,
+                  "line": 87,
                   "column": 16
                 }
               },
@@ -55678,7 +56310,7 @@ define("dummy/templates/components/settings-example", ["exports"], function (exp
               dom.insertBoundary(fragment, null);
               return morphs;
             },
-            statements: [["block", "if", [["subexpr", "eq", [["get", "settingMetadata.settingType", ["loc", [null, [33, 28], [33, 55]]]], "boolean"], [], ["loc", [null, [33, 24], [33, 66]]]]], [], 0, null, ["loc", [null, [33, 18], [38, 25]]]], ["block", "if", [["subexpr", "eq", [["get", "settingMetadata.settingType", ["loc", [null, [40, 28], [40, 55]]]], "string"], [], ["loc", [null, [40, 24], [40, 65]]]]], [], 1, null, ["loc", [null, [40, 18], [45, 25]]]], ["block", "if", [["subexpr", "eq", [["get", "settingMetadata.settingType", ["loc", [null, [47, 28], [47, 55]]]], "number"], [], ["loc", [null, [47, 24], [47, 65]]]]], [], 2, null, ["loc", [null, [47, 18], [51, 25]]]], ["block", "if", [["subexpr", "or", [["subexpr", "eq", [["get", "settingMetadata.settingType", ["loc", [null, [53, 32], [53, 59]]]], "date"], [], ["loc", [null, [53, 28], [53, 67]]]], ["subexpr", "eq", [["get", "settingMetadata.settingType", ["loc", [null, [53, 72], [53, 99]]]], "datetime"], [], ["loc", [null, [53, 68], [53, 111]]]]], [], ["loc", [null, [53, 24], [53, 112]]]]], [], 3, null, ["loc", [null, [53, 18], [58, 25]]]], ["block", "if", [["subexpr", "eq", [["get", "settingMetadata.settingType", ["loc", [null, [60, 28], [60, 55]]]], "enumeration"], [], ["loc", [null, [60, 24], [60, 70]]]]], [], 4, null, ["loc", [null, [60, 18], [69, 25]]]], ["block", "if", [["subexpr", "eq", [["get", "settingMetadata.settingType", ["loc", [null, [71, 28], [71, 55]]]], "css"], [], ["loc", [null, [71, 24], [71, 62]]]]], [], 5, null, ["loc", [null, [71, 18], [76, 25]]]], ["block", "if", [["subexpr", "eq", [["get", "settingMetadata.settingType", ["loc", [null, [78, 28], [78, 55]]]], "hasManyArray"], [], ["loc", [null, [78, 24], [78, 71]]]]], [], 6, null, ["loc", [null, [78, 18], [80, 25]]]], ["block", "if", [["subexpr", "eq", [["get", "settingMetadata.settingType", ["loc", [null, [82, 28], [82, 55]]]], "model"], [], ["loc", [null, [82, 24], [82, 64]]]]], [], 7, null, ["loc", [null, [82, 18], [84, 25]]]]],
+            statements: [["block", "if", [["subexpr", "eq", [["get", "settingMetadata.settingType", ["loc", [null, [35, 28], [35, 55]]]], "boolean"], [], ["loc", [null, [35, 24], [35, 66]]]]], [], 0, null, ["loc", [null, [35, 18], [40, 25]]]], ["block", "if", [["subexpr", "eq", [["get", "settingMetadata.settingType", ["loc", [null, [42, 28], [42, 55]]]], "string"], [], ["loc", [null, [42, 24], [42, 65]]]]], [], 1, null, ["loc", [null, [42, 18], [47, 25]]]], ["block", "if", [["subexpr", "eq", [["get", "settingMetadata.settingType", ["loc", [null, [49, 28], [49, 55]]]], "number"], [], ["loc", [null, [49, 24], [49, 65]]]]], [], 2, null, ["loc", [null, [49, 18], [53, 25]]]], ["block", "if", [["subexpr", "or", [["subexpr", "eq", [["get", "settingMetadata.settingType", ["loc", [null, [55, 32], [55, 59]]]], "date"], [], ["loc", [null, [55, 28], [55, 67]]]], ["subexpr", "eq", [["get", "settingMetadata.settingType", ["loc", [null, [55, 72], [55, 99]]]], "datetime"], [], ["loc", [null, [55, 68], [55, 111]]]]], [], ["loc", [null, [55, 24], [55, 112]]]]], [], 3, null, ["loc", [null, [55, 18], [60, 25]]]], ["block", "if", [["subexpr", "eq", [["get", "settingMetadata.settingType", ["loc", [null, [62, 28], [62, 55]]]], "enumeration"], [], ["loc", [null, [62, 24], [62, 70]]]]], [], 4, null, ["loc", [null, [62, 18], [71, 25]]]], ["block", "if", [["subexpr", "eq", [["get", "settingMetadata.settingType", ["loc", [null, [73, 28], [73, 55]]]], "css"], [], ["loc", [null, [73, 24], [73, 62]]]]], [], 5, null, ["loc", [null, [73, 18], [78, 25]]]], ["block", "if", [["subexpr", "eq", [["get", "settingMetadata.settingType", ["loc", [null, [80, 28], [80, 55]]]], "hasManyArray"], [], ["loc", [null, [80, 24], [80, 71]]]]], [], 6, null, ["loc", [null, [80, 18], [82, 25]]]], ["block", "if", [["subexpr", "eq", [["get", "settingMetadata.settingType", ["loc", [null, [84, 28], [84, 55]]]], "model"], [], ["loc", [null, [84, 24], [84, 64]]]]], [], 7, null, ["loc", [null, [84, 18], [86, 25]]]]],
             locals: [],
             templates: [child0, child1, child2, child3, child4, child5, child6, child7]
           };
@@ -55690,11 +56322,11 @@ define("dummy/templates/components/settings-example", ["exports"], function (exp
             "loc": {
               "source": null,
               "start": {
-                "line": 19,
+                "line": 21,
                 "column": 12
               },
               "end": {
-                "line": 86,
+                "line": 88,
                 "column": 14
               }
             },
@@ -55722,59 +56354,12 @@ define("dummy/templates/components/settings-example", ["exports"], function (exp
             dom.insertBoundary(fragment, null);
             return morphs;
           },
-          statements: [["block", "if", [["get", "settingMetadata.bindedControllerPropertieDisplayName", ["loc", [null, [21, 22], [21, 74]]]]], [], 0, 1, ["loc", [null, [21, 16], [25, 23]]]], ["block", "if", [["get", "settingMetadata.settingIsWithoutUI", ["loc", [null, [28, 22], [28, 56]]]]], [], 2, 3, ["loc", [null, [28, 16], [85, 23]]]]],
+          statements: [["block", "if", [["get", "settingMetadata.bindedControllerPropertieDisplayName", ["loc", [null, [23, 22], [23, 74]]]]], [], 0, 1, ["loc", [null, [23, 16], [27, 23]]]], ["block", "if", [["get", "settingMetadata.settingIsWithoutUI", ["loc", [null, [30, 22], [30, 56]]]]], [], 2, 3, ["loc", [null, [30, 16], [87, 23]]]]],
           locals: [],
           templates: [child0, child1, child2, child3]
         };
       })();
       var child1 = (function () {
-        return {
-          meta: {
-            "fragmentReason": false,
-            "revision": "Ember@2.4.6",
-            "loc": {
-              "source": null,
-              "start": {
-                "line": 89,
-                "column": 14
-              },
-              "end": {
-                "line": 91,
-                "column": 14
-              }
-            },
-            "moduleName": "dummy/templates/components/settings-example.hbs"
-          },
-          isEmpty: false,
-          arity: 0,
-          cachedFragment: null,
-          hasRendered: false,
-          buildFragment: function buildFragment(dom) {
-            var el0 = dom.createDocumentFragment();
-            var el1 = dom.createTextNode("                ");
-            dom.appendChild(el0, el1);
-            var el1 = dom.createComment("");
-            dom.appendChild(el0, el1);
-            var el1 = dom.createTextNode("=");
-            dom.appendChild(el0, el1);
-            var el1 = dom.createComment("");
-            dom.appendChild(el0, el1);
-            var el1 = dom.createTextNode("\n");
-            dom.appendChild(el0, el1);
-            return el0;
-          },
-          buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-            var morphs = new Array(2);
-            morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
-            morphs[1] = dom.createMorphAt(fragment, 3, 3, contextualElement);
-            return morphs;
-          },
-          statements: [["content", "settingMetadata.settingName", ["loc", [null, [90, 16], [90, 47]]]], ["inline", "to-string", [["get", "settingMetadata.settingValue", ["loc", [null, [90, 60], [90, 88]]]]], [], ["loc", [null, [90, 48], [90, 90]]]]],
-          locals: [],
-          templates: []
-        };
-      })();
-      var child2 = (function () {
         return {
           meta: {
             "fragmentReason": false,
@@ -55816,7 +56401,54 @@ define("dummy/templates/components/settings-example", ["exports"], function (exp
             morphs[1] = dom.createMorphAt(fragment, 3, 3, contextualElement);
             return morphs;
           },
-          statements: [["inline", "to-string", [["get", "settingMetadata.settingName", ["loc", [null, [92, 28], [92, 55]]]]], [], ["loc", [null, [92, 16], [92, 57]]]], ["inline", "to-string", [["subexpr", "get", [["get", "controllerProperties", ["loc", [null, [92, 75], [92, 95]]]], ["get", "settingMetadata.bindedControllerPropertieName", ["loc", [null, [92, 96], [92, 141]]]]], [], ["loc", [null, [92, 70], [92, 142]]]]], [], ["loc", [null, [92, 58], [92, 144]]]]],
+          statements: [["content", "settingMetadata.settingName", ["loc", [null, [92, 16], [92, 47]]]], ["inline", "to-string", [["get", "settingMetadata.settingValue", ["loc", [null, [92, 60], [92, 88]]]]], [], ["loc", [null, [92, 48], [92, 90]]]]],
+          locals: [],
+          templates: []
+        };
+      })();
+      var child2 = (function () {
+        return {
+          meta: {
+            "fragmentReason": false,
+            "revision": "Ember@2.4.6",
+            "loc": {
+              "source": null,
+              "start": {
+                "line": 93,
+                "column": 14
+              },
+              "end": {
+                "line": 95,
+                "column": 14
+              }
+            },
+            "moduleName": "dummy/templates/components/settings-example.hbs"
+          },
+          isEmpty: false,
+          arity: 0,
+          cachedFragment: null,
+          hasRendered: false,
+          buildFragment: function buildFragment(dom) {
+            var el0 = dom.createDocumentFragment();
+            var el1 = dom.createTextNode("                ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createComment("");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("=");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createComment("");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n");
+            dom.appendChild(el0, el1);
+            return el0;
+          },
+          buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+            var morphs = new Array(2);
+            morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
+            morphs[1] = dom.createMorphAt(fragment, 3, 3, contextualElement);
+            return morphs;
+          },
+          statements: [["inline", "to-string", [["get", "settingMetadata.settingName", ["loc", [null, [94, 28], [94, 55]]]]], [], ["loc", [null, [94, 16], [94, 57]]]], ["inline", "to-string", [["subexpr", "get", [["get", "controllerProperties", ["loc", [null, [94, 75], [94, 95]]]], ["get", "settingMetadata.bindedControllerPropertieName", ["loc", [null, [94, 96], [94, 141]]]]], [], ["loc", [null, [94, 70], [94, 142]]]]], [], ["loc", [null, [94, 58], [94, 144]]]]],
           locals: [],
           templates: []
         };
@@ -55828,11 +56460,11 @@ define("dummy/templates/components/settings-example", ["exports"], function (exp
           "loc": {
             "source": null,
             "start": {
-              "line": 16,
+              "line": 18,
               "column": 8
             },
             "end": {
-              "line": 99,
+              "line": 101,
               "column": 8
             }
           },
@@ -55898,7 +56530,7 @@ define("dummy/templates/components/settings-example", ["exports"], function (exp
           morphs[3] = dom.createMorphAt(element3, 3, 3);
           return morphs;
         },
-        statements: [["block", "if", [["get", "settingMetadata.bindedControllerPropertieName", ["loc", [null, [19, 18], [19, 63]]]]], [], 0, null, ["loc", [null, [19, 12], [86, 21]]]], ["block", "if", [["subexpr", "or", [["get", "settingMetadata.settingIsWithoutUI", ["loc", [null, [89, 24], [89, 58]]]], ["subexpr", "not", [["get", "settingMetadata.bindedControllerPropertieName", ["loc", [null, [89, 64], [89, 109]]]]], [], ["loc", [null, [89, 59], [89, 110]]]]], [], ["loc", [null, [89, 20], [89, 111]]]]], [], 1, 2, ["loc", [null, [89, 14], [93, 21]]]], ["inline", "to-string", [["get", "settingMetadata.settingName", ["loc", [null, [96, 26], [96, 53]]]]], [], ["loc", [null, [96, 14], [96, 55]]]], ["inline", "to-string", [["get", "settingMetadata.settingDefaultValue", ["loc", [null, [96, 68], [96, 103]]]]], [], ["loc", [null, [96, 56], [96, 105]]]]],
+        statements: [["block", "if", [["get", "settingMetadata.bindedControllerPropertieName", ["loc", [null, [21, 18], [21, 63]]]]], [], 0, null, ["loc", [null, [21, 12], [88, 21]]]], ["block", "if", [["subexpr", "or", [["get", "settingMetadata.settingIsWithoutUI", ["loc", [null, [91, 24], [91, 58]]]], ["subexpr", "not", [["get", "settingMetadata.bindedControllerPropertieName", ["loc", [null, [91, 64], [91, 109]]]]], [], ["loc", [null, [91, 59], [91, 110]]]]], [], ["loc", [null, [91, 20], [91, 111]]]]], [], 1, 2, ["loc", [null, [91, 14], [95, 21]]]], ["inline", "to-string", [["get", "settingMetadata.settingName", ["loc", [null, [98, 26], [98, 53]]]]], [], ["loc", [null, [98, 14], [98, 55]]]], ["inline", "to-string", [["get", "settingMetadata.settingDefaultValue", ["loc", [null, [98, 68], [98, 103]]]]], [], ["loc", [null, [98, 56], [98, 105]]]]],
         locals: ["settingMetadata"],
         templates: [child0, child1, child2]
       };
@@ -55916,7 +56548,7 @@ define("dummy/templates/components/settings-example", ["exports"], function (exp
             "column": 0
           },
           "end": {
-            "line": 110,
+            "line": 112,
             "column": 0
           }
         },
@@ -55930,36 +56562,11 @@ define("dummy/templates/components/settings-example", ["exports"], function (exp
         var el0 = dom.createDocumentFragment();
         var el1 = dom.createElement("div");
         dom.setAttribute(el1, "class", "ui segments");
-        var el2 = dom.createTextNode("\n  ");
+        var el2 = dom.createTextNode("\n");
         dom.appendChild(el1, el2);
-        var el2 = dom.createElement("div");
-        dom.setAttribute(el2, "class", "ui segment");
-        var el3 = dom.createTextNode("\n    ");
-        dom.appendChild(el2, el3);
-        var el3 = dom.createElement("div");
-        dom.setAttribute(el3, "class", "ui segment");
-        var el4 = dom.createTextNode("\n      ");
-        dom.appendChild(el3, el4);
-        var el4 = dom.createElement("h4");
-        dom.setAttribute(el4, "class", "ui header");
-        var el5 = dom.createComment("");
-        dom.appendChild(el4, el5);
-        dom.appendChild(el3, el4);
-        var el4 = dom.createTextNode("\n      ");
-        dom.appendChild(el3, el4);
-        var el4 = dom.createElement("pre");
-        var el5 = dom.createElement("code");
-        var el6 = dom.createComment("");
-        dom.appendChild(el5, el6);
-        dom.appendChild(el4, el5);
-        dom.appendChild(el3, el4);
-        var el4 = dom.createTextNode("\n    ");
-        dom.appendChild(el3, el4);
-        dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode("\n  ");
-        dom.appendChild(el2, el3);
+        var el2 = dom.createComment("");
         dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n  ");
+        var el2 = dom.createTextNode("  ");
         dom.appendChild(el1, el2);
         var el2 = dom.createElement("div");
         dom.setAttribute(el2, "class", "ui segment");
@@ -56042,26 +56649,24 @@ define("dummy/templates/components/settings-example", ["exports"], function (exp
         return el0;
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-        var element4 = dom.childAt(fragment, [0]);
-        var element5 = dom.childAt(element4, [1, 1]);
-        var element6 = dom.childAt(element4, [3, 1]);
+        var element5 = dom.childAt(fragment, [0]);
+        var element6 = dom.childAt(element5, [3, 1]);
         var element7 = dom.childAt(element6, [1, 1]);
-        var element8 = dom.childAt(element4, [5, 1]);
-        var morphs = new Array(9);
-        morphs[0] = dom.createMorphAt(dom.childAt(element5, [1]), 0, 0);
-        morphs[1] = dom.createMorphAt(dom.childAt(element5, [3, 0]), 0, 0);
-        morphs[2] = dom.createMorphAt(dom.childAt(element7, [0]), 0, 0);
-        morphs[3] = dom.createMorphAt(dom.childAt(element7, [2]), 0, 0);
-        morphs[4] = dom.createMorphAt(dom.childAt(element7, [4]), 0, 0);
-        morphs[5] = dom.createMorphAt(dom.childAt(element6, [3]), 1, 1);
-        morphs[6] = dom.createAttrMorph(element8, 'style');
-        morphs[7] = dom.createMorphAt(dom.childAt(element8, [1]), 0, 0);
-        morphs[8] = dom.createMorphAt(element8, 3, 3);
+        var element8 = dom.childAt(element5, [5, 1]);
+        var morphs = new Array(8);
+        morphs[0] = dom.createMorphAt(element5, 1, 1);
+        morphs[1] = dom.createMorphAt(dom.childAt(element7, [0]), 0, 0);
+        morphs[2] = dom.createMorphAt(dom.childAt(element7, [2]), 0, 0);
+        morphs[3] = dom.createMorphAt(dom.childAt(element7, [4]), 0, 0);
+        morphs[4] = dom.createMorphAt(dom.childAt(element6, [3]), 1, 1);
+        morphs[5] = dom.createAttrMorph(element8, 'style');
+        morphs[6] = dom.createMorphAt(dom.childAt(element8, [1]), 0, 0);
+        morphs[7] = dom.createMorphAt(element8, 3, 3);
         return morphs;
       },
-      statements: [["inline", "t", ["components.settings-example.component-template-caption"], [], ["loc", [null, [4, 28], [4, 90]]]], ["content", "componentTemplateText", ["loc", [null, [5, 17], [5, 42]]]], ["inline", "t", ["components.settings-example.controller-properties-caption"], [], ["loc", [null, [11, 16], [11, 81]]]], ["inline", "t", ["components.settings-example.component-current-settings-caption"], [], ["loc", [null, [12, 12], [12, 82]]]], ["inline", "t", ["components.settings-example.component-default-settings-caption"], [], ["loc", [null, [13, 12], [13, 82]]]], ["block", "each", [["get", "componentSettingsMetadata", ["loc", [null, [16, 16], [16, 41]]]]], [], 0, null, ["loc", [null, [16, 8], [99, 17]]]], ["attribute", "style", ["concat", ["overflow: ", ["get", "componentBlockOverflow", ["loc", [null, [104, 47], [104, 69]]]]]]], ["inline", "t", ["components.settings-example.component-with-applied-settings-caption"], [], ["loc", [null, [105, 28], [105, 103]]]], ["content", "yield", ["loc", [null, [106, 6], [106, 15]]]]],
+      statements: [["block", "if", [["get", "componentTemplateText", ["loc", [null, [2, 8], [2, 29]]]]], [], 0, null, ["loc", [null, [2, 2], [9, 9]]]], ["inline", "t", ["components.settings-example.controller-properties-caption"], [], ["loc", [null, [13, 16], [13, 81]]]], ["inline", "t", ["components.settings-example.component-current-settings-caption"], [], ["loc", [null, [14, 12], [14, 82]]]], ["inline", "t", ["components.settings-example.component-default-settings-caption"], [], ["loc", [null, [15, 12], [15, 82]]]], ["block", "each", [["get", "componentSettingsMetadata", ["loc", [null, [18, 16], [18, 41]]]]], [], 1, null, ["loc", [null, [18, 8], [101, 17]]]], ["attribute", "style", ["concat", ["overflow: ", ["get", "componentBlockOverflow", ["loc", [null, [106, 47], [106, 69]]]]]]], ["inline", "t", ["components.settings-example.component-with-applied-settings-caption"], [], ["loc", [null, [107, 28], [107, 103]]]], ["content", "yield", ["loc", [null, [108, 6], [108, 15]]]]],
       locals: [],
-      templates: [child0]
+      templates: [child0, child1]
     };
   })());
 });
@@ -69862,6 +70467,14 @@ define('dummy/utils/batch-queries', ['exports', 'ember-flexberry-data/utils/batc
     }
   });
 });
+define('dummy/utils/cut-string-by-length', ['exports', 'ember-flexberry/utils/cut-string-by-length'], function (exports, _emberFlexberryUtilsCutStringByLength) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _emberFlexberryUtilsCutStringByLength['default'];
+    }
+  });
+});
 define('dummy/utils/deserialize-sorting-param', ['exports', 'ember-flexberry/utils/deserialize-sorting-param'], function (exports, _emberFlexberryUtilsDeserializeSortingParam) {
   Object.defineProperty(exports, 'default', {
     enumerable: true,
@@ -69953,7 +70566,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.2.0-beta.14+a95e4d29"});
+  require("dummy/app")["default"].create({"name":"dummy","backendUrl":"http://stands-backend.flexberry.net","backendUrls":{"root":"http://stands-backend.flexberry.net","api":"http://stands-backend.flexberry.net/odata"},"log":{"enabled":true,"storeErrorMessages":true,"storeWarnMessages":true,"storeLogMessages":false,"storeInfoMessages":true,"storeDebugMessages":true,"storeDeprecationMessages":true,"storePromiseErrors":true,"showPromiseErrors":true},"perf":{"enabled":false},"lock":{"enabled":true,"openReadOnly":true,"unlockObject":true},"useUserSettingsService":true,"useAdvLimitService":true,"components":{"flexberryFile":{"uploadUrl":"http://stands-backend.flexberry.net/api/File","maxUploadFileSize":null,"uploadOnModelPreSave":true,"showUploadButton":true,"showModalDialogOnUploadError":true,"showModalDialogOnDownloadError":true}},"version":"2.2.0-beta.14+b946d003"});
 }
 
 /* jshint ignore:end */
